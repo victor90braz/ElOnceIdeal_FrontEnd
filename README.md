@@ -1,70 +1,112 @@
-# Getting Started with Create React App
+# FRONT END
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# COMPONENTS
 
-## Available Scripts
+- App
+- List
+- LogIn
+- Register
+- LogInPage
+- RegisterPage
+- GamePage
+- 404Page
 
-In the project directory, you can run:
+# Task App
 
-### `npm start`
+- root
+- styles
+- test
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# List
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Task LogIn
 
-### `npm test`
+- form
+  - username
+  - password
+- styles
+- test
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Task Register
 
-### `npm run build`
+- form
+  - name
+  - username
+  - password
+- styles
+- test
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Task LogInPage
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- form
+- styles
+- test
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Task LOG IN PAGE
 
-### `npm run eject`
+- styles
+- test
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Task RegisterPage
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- styles
+- test
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Task GamePage
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- styles
+- test
 
-## Learn More
+# Task 404Page
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- styles
+- test
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Responsabilities
 
-### Code Splitting
+- Datos
+  - Create User
+  - UpdateUser
+- App
+  - Render setting the router
+    - login form page
+    - register form page
+    - not found page
+    - game page
+- NotFoundPage
+  - Render a header with a text "404 page not found"
+- GamePage
+  - Render a header with a text "list of games"
+- LoginFormPage
+  - Dato:
+    - formData
+      - Create
+      - Update
+      - Delete
+  - Render a form with:
+    - label + input (username)
+    - label + input (password)
+  - Render an input type submit
+  - Onchange
+    - switch status when it receives an value
+  - Onsubmit
+    - send lanza ler item de actualizar el estado
+  - Clean form
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Architecture Pattern Redux
 
-### Analyzing the Bundle Size
+# SliceUser
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- LogIn
+  - test
+- LogOut
+  - test
 
-### Making a Progressive Web App
+# Store
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+# Thunks
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Register
+  - test
+- Login
+  - login
