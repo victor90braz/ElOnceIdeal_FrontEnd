@@ -1,12 +1,18 @@
-import "./App.css";
-import FormRegister from "./components/Form/FormRegister";
+import styled from "styled-components";
+
+const AppStyle = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 function App() {
   return (
-    <div className="App">
-      <h1>Register</h1>
-      <FormRegister />
-    </div>
+    <>
+      <AppStyle>
+        <h1>El Once Ideal</h1>
+      </AppStyle>
+    </>
   );
 }
 
