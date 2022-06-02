@@ -6,8 +6,8 @@ import store from "../../redux/store/store";
 import RegisterForm from "./RegisterForm";
 
 describe("Given a RegisterForm component", () => {
-  describe("When the word 'Name' is written to the username input field", () => {
-    test("Then the value of the username input field should be 'Name'", () => {
+  describe("When the word 'hello' is written to the username input field", () => {
+    test("Then the value of the username input field should be 'hello'", () => {
       const labelToFind = "Name";
 
       render(
