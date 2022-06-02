@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { registerThunk } from "../../redux/thunks/userThunks";
+
 import RegisterFormStyle from "./RegisterFormStyle";
 
 const RegisterForm = () => {
