@@ -3,6 +3,7 @@ import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 
 import App from "./App";
+import RegisterForm from "./components/RegisterForm/RegisterForm";
 import store from "./redux/store/store";
 
 describe("Given a App component", () => {
@@ -14,6 +15,7 @@ describe("Given a App component", () => {
         <Provider store={store}>
           <BrowserRouter>
             <App />
+            <RegisterForm />
           </BrowserRouter>
         </Provider>
       );
