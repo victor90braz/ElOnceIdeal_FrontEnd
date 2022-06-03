@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import LoginForm from "./components/LoginForm/LoginForm";
 import RegisterForm from "./components/RegisterForm/RegisterForm";
 
 const AppStyle = styled.div`
@@ -22,7 +21,6 @@ function App() {
         <h1>El Once Ideal</h1>
         <div className="container">
           <RegisterForm />
-          <LoginForm />
         </div>
       </AppStyle>
     </>

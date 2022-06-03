@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given a RegistersPage Component When it's rendered Then it alwais show the same structure 1`] = `
+Array [
+  <h2>
+    User Register
+  </h2>,
+  <div
+    className="sc-bczRLJ eeDLXW"
+  >
+    <form
+      autoComplete="off"
+      noValidate={true}
+      onSubmit={[Function]}
+    >
+      <label
+        htmlFor="name"
+      >
+        Name
+      </label>
+      <input
+        id="name"
+        onChange={[Function]}
+        placeholder="Name"
+        type="text"
+        value=""
+      />
+      <label
+        htmlFor="username"
+      >
+        Username
+      </label>
+      <input
+        id="username"
+        onChange={[Function]}
+        placeholder="Username"
+        type="text"
+        value=""
+      />
+      <label
+        htmlFor="password"
+      >
+        Password
+      </label>
+      <input
+        id="password"
+        onChange={[Function]}
+        placeholder="Password"
+        type="password"
+        value=""
+      />
+      <button
+        className="form-button"
+        disabled={
+          Object {
+            "name": "",
+            "password": "",
+            "username": "",
+          }
+        }
+        type="submit"
+      >
+        create
+      </button>
+    </form>
+  </div>,
+  <a
+    className=""
+    href="/login"
+    onClick={[Function]}
+  >
+    Login
+  </a>,
+]
+`;
