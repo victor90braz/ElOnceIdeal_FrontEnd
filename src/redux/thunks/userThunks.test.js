@@ -1,5 +1,4 @@
 import { mockUserLogin, mockUserRegister } from "../../mocks/mockUser";
-
 import { loginThunk, registerThunk } from "./userThunks";
 
 jest.mock("jwt-decode", () => () => ({
