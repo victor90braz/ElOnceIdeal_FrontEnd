@@ -1,6 +1,7 @@
+import { Navigate, Route, Routes } from "react-router-dom";
 import styled from "styled-components";
-import LoginForm from "./components/LoginForm/LoginForm";
-import RegisterForm from "./components/RegisterForm/RegisterForm";
+import LoginPage from "./pages/LoginPage/LoginPage";
+import RegisterPage from "./pages/RegisterPage/RegisterPage";
 
 const AppStyle = styled.div`
   display: flex;
@@ -21,8 +22,11 @@ function App() {
       <AppStyle>
         <h1>El Once Ideal</h1>
         <div className="container">
-          <RegisterForm />
-          <LoginForm />
+          <Routes>
+            <Route path="/" element={<Navigate to="/login" />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+          </Routes>
         </div>
       </AppStyle>
     </>
