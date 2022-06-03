@@ -12,10 +12,8 @@ describe("Given a loginThunk function", () => {
     test("It should dispatch the loginActionCreator with the data from the token", async () => {
       const dispatch = jest.fn();
 
-      try {
-        const thunk = loginThunk(mockUserLogin);
-        await thunk(dispatch).catch();
-      } catch (error) {}
+      const thunk = loginThunk(mockUserLogin);
+      await thunk(dispatch).catch();
 
       expect(dispatch).toHaveBeenCalled();
     });
