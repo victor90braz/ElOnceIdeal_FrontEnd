@@ -1,5 +1,4 @@
 import { mockUserLogin } from "../../mocks/mockUser";
-import { server } from "../../mocks/server";
 
 import { loginThunk } from "./userThunks";
 
@@ -8,10 +7,6 @@ jest.mock("jwt-decode", () => () => ({
   password: "buffon1977",
 }));
 
-beforeEach(() => server.listen());
-afterEach(() => server.resetHandlers());
-afterAll(() => server.close());
-
 describe("Given a loginThunk function", () => {
   describe("When it's called", () => {
     test("It should dispatch the loginActionCreator with the data from the token", async () => {
@@ -19,7 +14,7 @@ describe("Given a loginThunk function", () => {
 
       try {
         const thunk = loginThunk(mockUserLogin);
-        await thunk(dispatch);
+        await thunk(dispatch).catch();
       } catch (error) {}
 
       expect(dispatch).toHaveBeenCalled();
