@@ -14,4 +14,15 @@ export const handlres = [
       })
     );
   }),
+  rest.post(
+    `${process.env.REACT_APP_API_URL}users/register`,
+    (req, res, ctx) => {
+      return res(
+        ctx.status(200),
+        ctx.json({
+          mockUserLogin,
+        })
+      );
+    }
+  ),
 ];
