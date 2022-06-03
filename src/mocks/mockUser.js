@@ -5,18 +5,12 @@ export const mockUserLogin = {
   password: "buffon1977",
 };
 
-export const mockUserRegister = {
-  username: "maicol",
-  password: "maicol1998",
-  name: "maikemaike",
-};
-
 export const handlres = [
   rest.post(`${process.env.REACT_APP_API_URL}users/login`, (req, res, ctx) => {
     return res(
-      ctx.status(201),
+      ctx.status(200),
       ctx.json({
-        mockUserRegister,
+        mockUserLogin,
       })
     );
   }),

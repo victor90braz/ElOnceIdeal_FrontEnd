@@ -1,5 +1,5 @@
-import axios from "axios";
 import { mockUserLogin } from "../../mocks/mockUser";
+
 import { loginThunk } from "./userThunks";
 
 jest.mock("jwt-decode", () => () => ({
@@ -14,7 +14,6 @@ describe("Given a loginThunk function", () => {
 
       const thunk = loginThunk(mockUserLogin);
       await thunk(dispatch);
-      axios.get = jest.fn().mockResolvedValue(true);
 
       expect(dispatch).toHaveBeenCalled();
     });
