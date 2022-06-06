@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { mockPlayer } from "../../mocks/mockPlayer";
+import { mockPlayer } from "../../mocks/playerMock";
 
 import Player from "./Player";
 

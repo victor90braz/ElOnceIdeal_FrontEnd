@@ -5,11 +5,9 @@ const Player = ({ player: { name, image, username } }) => {
     <PlayerStyles className="player">
       <h2>Goalkeeper</h2>
       <div className="player_info">
-        <ul>
-          <li>{name}</li>
-          <li>{image}</li>
-          <li>{username}</li>
-        </ul>
+        <li>{name}</li>
+        <li>{image}</li>
+        <li>{username}</li>
       </div>
     </PlayerStyles>
   );
