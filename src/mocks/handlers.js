@@ -1,6 +1,7 @@
 import { rest } from "msw";
 
 import { mockToken, mockUserRegister } from "./mockUser";
+import { mockPlayers } from "./playerMock";
 
 export const handlers = [
   rest.post(
@@ -21,4 +22,8 @@ export const handlers = [
       );
     }
   ),
+
+  rest.get(`${process.env.REACT_APP_API_URL}players/`, (req, res, context) => {
+    return res(context.status(200), context.json(mockPlayers));
+  }),
 ];
