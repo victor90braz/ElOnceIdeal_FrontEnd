@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { mockPlayer } from "../../mocks/mockPlayer";
+
 import Player from "./Player";
 
 describe("Given the Player component", () => {
