@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
+import { NavLink } from "react-router-dom";
 import ListPlayers from "../../components/ListPlayers/ListPlayers";
 import { loadPlayersThunk } from "../../redux/thunks/playersThunks";
 
-const PlayerPage = () => {
+const HomePage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -12,10 +13,11 @@ const PlayerPage = () => {
 
   return (
     <>
-      <h2>Players</h2>
+      <NavLink to={"/login"}>Login</NavLink>
+      <NavLink to={"/register"}>Register</NavLink>
       <ListPlayers />
     </>
   );
 };
 
-export default PlayerPage;
+export default HomePage;
