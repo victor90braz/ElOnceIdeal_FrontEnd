@@ -6,16 +6,18 @@ import App from "./App";
 import store from "./redux/store/store";
 
 describe("Given a App component", () => {
-  describe("When the word 'El Once Ideal' is written to the header element", () => {
-    test("Then the value of the header element should be 'El Once Ideal'", () => {
-      const expectedResult = "El Once Ideal";
+  describe("When the word 'Register' is written to the navlink", () => {
+    test("Then the value of the navlink element should be 'Register'", () => {
+      const expectedResult = "Register";
 
       render(
-        <Provider store={store}>
-          <BrowserRouter>
-            <App />
-          </BrowserRouter>
-        </Provider>
+        <>
+          <Provider store={store}>
+            <BrowserRouter>
+              <App />
+            </BrowserRouter>
+          </Provider>
+        </>
       );
 
       const receivedResult = screen.getByText(expectedResult);

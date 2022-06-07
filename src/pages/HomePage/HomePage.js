@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import ListPlayers from "../../components/ListPlayers/ListPlayers";
-import Navigation from "../../components/Navigation/Navigation";
+import NavigationComponent from "../../components/Navigation/NavigationComponent";
+
 import { loadPlayersThunk } from "../../redux/thunks/playersThunks";
 
 const HomePage = () => {
@@ -13,16 +14,11 @@ const HomePage = () => {
 
   return (
     <>
-      <Navigation />
-
-      <main>
-        <h2>Make your dream team</h2>
-
-        <h3>List of all players</h3>
-        <ul>
-          <ListPlayers />
-        </ul>
-      </main>
+      <NavigationComponent />
+      <header>
+        <h1>El Once Ideal</h1>
+      </header>
+      <ListPlayers />
     </>
   );
 };

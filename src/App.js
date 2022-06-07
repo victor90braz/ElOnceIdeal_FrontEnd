@@ -39,9 +39,6 @@ function App() {
 
   return (
     <AppStyle>
-      <header>
-        <h1>El Once Ideal</h1>
-      </header>
       <Routes>
         <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/login" element={<LoginPage />} />
