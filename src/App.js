@@ -1,9 +1,13 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import AccessControl from "./pages/AccessControl/AccessControl";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import jwtDecode from "jwt-decode";
+import { loginActionCreator } from "./redux/features/userSlice";
 
 const AppStyle = styled.div`
   display: flex;
@@ -19,6 +23,20 @@ const AppStyle = styled.div`
 `;
 
 function App() {
+  const { logged } = useSelector((state) => state.user);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token || logged) {
+      const userInfo = jwtDecode(token);
+
+      dispatch(loginActionCreator(userInfo));
+      navigate("/home");
+    }
+  }, [dispatch, navigate, logged]);
+
   return (
     <AppStyle>
       <header>
