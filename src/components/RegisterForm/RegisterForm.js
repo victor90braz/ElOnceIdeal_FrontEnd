@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { registerThunk } from "../../redux/thunks/userThunks";
 
 import RegisterFormStyle from "./RegisterFormStyle";
@@ -26,9 +26,9 @@ const RegisterForm = () => {
     setFormData({ ...formData, [event.target.id]: event.target.value });
   };
 
-  const submitRegister = (event) => {
+  const submitRegister = async (event) => {
     event.preventDefault();
-    dispatch(registerThunk(formData));
+    await dispatch(registerThunk(formData));
     setFormData(blankFields);
 
     navigate("/login");
