@@ -8,3 +8,9 @@ export const loadPlayersThunk = () => async (dispatch) => {
 
   dispatch(loadAllPlayersActionCreator(data));
 };
+
+export const getPlayerThunk = (idPlayer) => async (dispatch) => {
+  const { data: player } = await axios.get(`${url}players/${idPlayer}`);
+
+  dispatch(loadAllPlayersActionCreator(player));
+};

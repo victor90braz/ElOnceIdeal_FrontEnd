@@ -28,7 +28,7 @@ describe("Given a RegisterForm component", () => {
   });
 
   describe("When the two inputs have text and the submit button is clicked", () => {
-    test("Then the two inputs should be empty", () => {
+    test("Then the two inputs should render a text 'hello'", () => {
       const usernameLabel = "Username";
       const passwordLabel = "Password";
       const nameLabel = "Name";
@@ -52,14 +52,14 @@ describe("Given a RegisterForm component", () => {
       userEvent.type(name, inputText);
       userEvent.click(submitButton);
 
-      expect(username).toHaveValue("");
-      expect(password).toHaveValue("");
-      expect(name).toHaveValue("");
+      expect(username).toHaveValue("hello");
+      expect(password).toHaveValue("hello");
+      expect(name).toHaveValue("hello");
     });
   });
 
   describe("When the username is 'hello', the password input is empty and the submit is clicked", () => {
-    test("Then the username should be 'hello'", () => {
+    test("Then the username should be 'hello'", async () => {
       const usernameLabel = "Username";
       const inputText = "hello";
 
@@ -77,7 +77,7 @@ describe("Given a RegisterForm component", () => {
 
       userEvent.type(username, inputText);
 
-      userEvent.click(submitButton);
+      await userEvent.click(submitButton);
 
       expect(username).toHaveValue(inputText);
     });

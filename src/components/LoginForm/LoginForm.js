@@ -18,12 +18,12 @@ const LoginForm = () => {
     setFormValues({ ...formValues, [event.target.id]: event.target.value });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     if (formValues.username === "" || formValues.password === "") {
       return;
     }
-    dispatch(loginThunk(formValues));
+    await dispatch(loginThunk(formValues));
     setFormValues(initialFormValue);
   };
 

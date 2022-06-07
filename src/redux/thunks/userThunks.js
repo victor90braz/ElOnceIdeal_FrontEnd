@@ -25,15 +25,18 @@ export const registerThunk = (userData) => async (dispatch) => {
 
 export const loginThunk = (userData) => async (dispatch) => {
   try {
-    const { data } = await axios.post(
+    const { data, status } = await axios.post(
       `${process.env.REACT_APP_API_URL}users/login`,
       userData
     );
-    loggedIn();
-    const { id, username } = jwtDecode(data.token);
-    localStorage.setItem("token", data.token);
 
-    dispatch(loginActionCreator({ id, username }));
+    if (status === 200) {
+      loggedIn();
+      const { id, username } = jwtDecode(data.token);
+      localStorage.setItem("token", data.token);
+
+      dispatch(loginActionCreator({ id, username }));
+    }
   } catch (error) {
     errorModal("Ops!! tiene un errorrr");
   }

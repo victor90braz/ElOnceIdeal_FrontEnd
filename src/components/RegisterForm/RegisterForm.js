@@ -24,9 +24,9 @@ const RegisterForm = () => {
     setFormData({ ...formData, [event.target.id]: event.target.value });
   };
 
-  const submitRegister = (event) => {
+  const submitRegister = async (event) => {
     event.preventDefault();
-    dispatch(registerThunk(formData));
+    await dispatch(registerThunk(formData));
     setFormData(blankFields);
   };
 
@@ -59,7 +59,7 @@ const RegisterForm = () => {
           placeholder="Password"
         />
         <button disabled={buttonDisabled} type="submit" className="form-button">
-          create
+          Register
         </button>
       </form>
     </RegisterFormStyle>

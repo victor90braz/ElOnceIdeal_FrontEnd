@@ -7,7 +7,7 @@ import HomePage from "./HomePage";
 describe("Given a LoginPage Component", () => {
   describe("When it's invoked", () => {
     test("Then it should render the text 'Login'", () => {
-      const expectedResult = "Login";
+      const expectedResult = "Make your dream team";
 
       render(
         <>
