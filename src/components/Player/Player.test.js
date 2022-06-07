@@ -6,7 +6,7 @@ import Player from "./Player";
 describe("Given the Player component", () => {
   describe("When its rendered", () => {
     test("Then it should show a heading h2 element", () => {
-      const expectedResult = "Make your dream team";
+      const expectedResult = "PAC";
 
       render(<Player player={mockPlayer} />);
 
