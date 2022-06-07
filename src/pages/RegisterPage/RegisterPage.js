@@ -6,7 +6,6 @@ const RegisterPage = () => {
     <>
       <RegisterForm />
       <NavLink to="/login">Login</NavLink>
-      <NavLink to="/home">HomePage</NavLink>
     </>
   );
 };

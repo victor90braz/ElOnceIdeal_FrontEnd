@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { NavLink, useNavigate } from "react-router-dom";
 import { loginThunk } from "../../redux/thunks/userThunks";
 
 import LoginFormStyle from "./LoginFormStyle";
 
 const LoginForm = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const initialFormValue = {
     username: "",
@@ -18,13 +20,14 @@ const LoginForm = () => {
     setFormValues({ ...formValues, [event.target.id]: event.target.value });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     if (formValues.username === "" || formValues.password === "") {
       return;
     }
-    dispatch(loginThunk(formValues));
+    await dispatch(loginThunk(formValues));
     setFormValues(initialFormValue);
+    navigate("/home");
   };
 
   return (

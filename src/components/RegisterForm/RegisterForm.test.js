@@ -28,7 +28,7 @@ describe("Given a RegisterForm component", () => {
   });
 
   describe("When the two inputs have text and the submit button is clicked", () => {
-    test("Then the two inputs should be empty", () => {
+    test.only("Then the two inputs should be empty", () => {
       const usernameLabel = "Username";
       const passwordLabel = "Password";
       const nameLabel = "Name";

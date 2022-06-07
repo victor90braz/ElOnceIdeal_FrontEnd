@@ -1,9 +1,8 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import styled from "styled-components";
 import HomePage from "./pages/HomePage/HomePage";
-
 import LoginPage from "./pages/LoginPage/LoginPage";
-
+import AccessControl from "./pages/AccessControl/AccessControl";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 
 const AppStyle = styled.div`
@@ -21,17 +20,24 @@ const AppStyle = styled.div`
 
 function App() {
   return (
-    <>
-      <AppStyle>
+    <AppStyle>
+      <header>
         <h1>El Once Ideal</h1>
-        <Routes>
-          <Route path="/" element={<Navigate to="/home" />} />
-          <Route path="/home" element={<HomePage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-        </Routes>
-      </AppStyle>
-    </>
+      </header>
+      <Routes>
+        <Route path="/" element={<Navigate to="/login" />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route
+          path="/home"
+          element={
+            <AccessControl>
+              <HomePage />
+            </AccessControl>
+          }
+        />
+      </Routes>
+    </AppStyle>
   );
 }
 

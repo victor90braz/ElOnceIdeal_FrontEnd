@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { Navigate, useNavigate } from "react-router-dom";
 import { registerThunk } from "../../redux/thunks/userThunks";
 
 import RegisterFormStyle from "./RegisterFormStyle";
 
 const RegisterForm = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const blankFields = {
     name: "",
@@ -28,6 +30,8 @@ const RegisterForm = () => {
     event.preventDefault();
     dispatch(registerThunk(formData));
     setFormData(blankFields);
+
+    navigate("/login");
   };
 
   return (
@@ -59,7 +63,7 @@ const RegisterForm = () => {
           placeholder="Password"
         />
         <button disabled={buttonDisabled} type="submit" className="form-button">
-          create
+          Register
         </button>
       </form>
     </RegisterFormStyle>

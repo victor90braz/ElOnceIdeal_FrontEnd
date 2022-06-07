@@ -6,7 +6,6 @@ const LoginPage = () => {
     <>
       <LoginForm />
       <NavLink to={"/register"}>Register</NavLink>
-      <NavLink to="/home">HomePage</NavLink>
     </>
   );
 };
