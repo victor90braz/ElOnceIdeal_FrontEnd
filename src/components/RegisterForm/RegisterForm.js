@@ -1,13 +1,11 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { registerThunk } from "../../redux/thunks/userThunks";
 
 import RegisterFormStyle from "./RegisterFormStyle";
 
 const RegisterForm = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const blankFields = {
     name: "",
@@ -30,8 +28,6 @@ const RegisterForm = () => {
     event.preventDefault();
     await dispatch(registerThunk(formData));
     setFormData(blankFields);
-
-    navigate("/login");
   };
 
   return (
