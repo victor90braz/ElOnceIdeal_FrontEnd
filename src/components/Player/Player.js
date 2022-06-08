@@ -1,6 +1,16 @@
+import { useDispatch } from "react-redux";
+import { deletePlayerThunk } from "../../redux/thunks/playersThunks";
 import PlayerStyles from "./PlayerStyles";
 
-const Player = ({ player: { name, image, pac, sho, pass, dri, def, phy } }) => {
+const Player = ({
+  player: { name, image, pac, sho, pass, dri, def, phy, id },
+}) => {
+  const dispatch = useDispatch();
+
+  const handleDelete = () => {
+    dispatch(deletePlayerThunk(id));
+  };
+
   return (
     <PlayerStyles>
       <div className="card">
@@ -26,6 +36,11 @@ const Player = ({ player: { name, image, pac, sho, pass, dri, def, phy } }) => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="container-button">
+        <button className="btn_delete" onClick={handleDelete}>
+          DELETE
+        </button>
       </div>
     </PlayerStyles>
   );

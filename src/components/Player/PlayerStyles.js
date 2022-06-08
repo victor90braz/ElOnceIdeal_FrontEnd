@@ -73,6 +73,16 @@ const PlayerStyles = styled.div`
     line-height: 1.2em;
     font-weight: 600;
   }
+
+  .container-button {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .btn_delete {
+    font-size: 2em;
+  }
 `;
 
 export default PlayerStyles;
