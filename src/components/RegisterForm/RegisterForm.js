@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { registerThunk } from "../../redux/thunks/userThunks";
+import { errorModal, registered } from "../modals/modals";
 
 import RegisterFormStyle from "./RegisterFormStyle";
 
 const RegisterForm = () => {
   const dispatch = useDispatch();
+  const Navigate = useNavigate();
 
   const blankFields = {
     name: "",
@@ -25,9 +28,15 @@ const RegisterForm = () => {
   };
 
   const submitRegister = async (event) => {
-    event.preventDefault();
-    await dispatch(registerThunk(formData));
-    setFormData(blankFields);
+    try {
+      event.preventDefault();
+      await dispatch(registerThunk(formData));
+      setFormData(blankFields);
+      registered();
+      Navigate("/login");
+    } catch (error) {
+      errorModal("You have already an account. Please go to login");
+    }
   };
 
   return (

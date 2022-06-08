@@ -9,7 +9,6 @@ export const wrongAction = (message) => toast.error(message);
 export const setLoadingOn = (message) => {
   idLoadingModal = toast.loading(message);
 };
-
 export const setLoadingOff = () => toast.dismiss(idLoadingModal);
 
 export const registered = () =>
