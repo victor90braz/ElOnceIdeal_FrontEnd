@@ -1,26 +1,16 @@
 import axios from "axios";
 import jwtDecode from "jwt-decode";
-import { toast } from "react-toastify";
+import {
+  errorModal,
+  loggedIn,
+  registered,
+} from "../../components/modals/modals";
+
 import { loginActionCreator } from "../features/userSlice";
-
-const registerred = () =>
-  toast.success("Great! Account created!", {
-    position: toast.POSITION.TOP_CENTER,
-  });
-
-const errorModal = (error) =>
-  toast.error(error, {
-    position: toast.POSITION.TOP_CENTER,
-  });
-
-const loggedIn = () =>
-  toast.success("Great! You are logged in!", {
-    position: toast.POSITION.TOP_CENTER,
-  });
 
 export const registerThunk = (userData) => async (dispatch) => {
   await axios.post(`${process.env.REACT_APP_API_URL}users/register`, userData);
-  registerred();
+  registered();
 };
 
 export const loginThunk = (userData) => async (dispatch) => {
