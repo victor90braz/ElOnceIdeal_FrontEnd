@@ -11,13 +11,11 @@ describe("Given a App component", () => {
       const expectedResult = "Register";
 
       render(
-        <>
-          <Provider store={store}>
-            <BrowserRouter>
-              <App />
-            </BrowserRouter>
-          </Provider>
-        </>
+        <Provider store={store}>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </Provider>
       );
 
       const receivedResult = screen.getByText(expectedResult);

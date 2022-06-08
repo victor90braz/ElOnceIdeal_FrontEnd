@@ -18,7 +18,10 @@ const HomePage = () => {
       <header>
         <h1>El Once Ideal</h1>
       </header>
-      <ListPlayers />
+      <main>
+        <h2>Make your dream team</h2>
+        <ListPlayers />
+      </main>
     </>
   );
 };

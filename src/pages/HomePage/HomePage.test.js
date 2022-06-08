@@ -6,8 +6,8 @@ import HomePage from "./HomePage";
 
 describe("Given a HomePage Component", () => {
   describe("When it's invoked", () => {
-    test("Then it should render the text 'List of all players'", () => {
-      const expectedResult = "List of all players";
+    test("Then it should render the text 'Make your dream team'", () => {
+      const expectedResult = "Make your dream team";
 
       render(
         <>
