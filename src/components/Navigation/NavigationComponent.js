@@ -1,7 +1,20 @@
-import { NavLink } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { NavLink, useNavigate } from "react-router-dom";
+import { logoutActionCreator } from "../../redux/features/userSlice";
+import { correctAction } from "../modals/modals";
 import { NavigationComponentStyled } from "./NavigationComponentStyle";
 
 const NavigationComponent = () => {
+  const Navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const logOut = () => {
+    localStorage.removeItem("token");
+    dispatch(logoutActionCreator());
+    Navigate("/login");
+    correctAction("Logged out");
+  };
+
   return (
     <NavigationComponentStyled>
       <nav className="top-nav">
@@ -10,7 +23,11 @@ const NavigationComponent = () => {
             <NavLink to="/home">Home Page</NavLink>
           </li>
           <li>
-            <NavLink to="/home">Log out</NavLink>
+            <NavLink to="/home">
+              <button onClick={logOut} className="logOut">
+                Logout
+              </button>
+            </NavLink>
           </li>
         </ul>
       </nav>

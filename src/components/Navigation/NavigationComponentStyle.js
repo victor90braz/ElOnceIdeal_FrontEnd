@@ -27,7 +27,11 @@ export const NavigationComponentStyled = styled.header`
     color: white;
   }
 
-  .menu li {
-    color: red;
+  .logOut {
+    cursor: pointer;
+    font-size: 1.2em;
+  }
+  .menu li a {
+    color: white;
   }
 `;

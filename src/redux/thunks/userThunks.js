@@ -1,6 +1,10 @@
 import axios from "axios";
 import jwtDecode from "jwt-decode";
-import { loggedIn, registered } from "../../components/modals/modals";
+import {
+  loggedIn,
+  registered,
+  wrongAction,
+} from "../../components/modals/modals";
 import { loginActionCreator } from "../features/userSlice";
 
 export const registerThunk = (userData) => async (dispatch) => {
@@ -22,5 +26,7 @@ export const loginThunk = (userData) => async (dispatch) => {
 
       dispatch(loginActionCreator({ id, username }));
     }
-  } catch (error) {}
+  } catch (error) {
+    wrongAction("Incorrect username or password. Please retry!");
+  }
 };
