@@ -15,10 +15,18 @@ const playerSlice = createSlice({
       ...players,
       singlePlayer: action.payload,
     }),
+    deletePlayer: (players, action) => ({
+      ...players,
+      allPlayers: players.allPlayers.filter(
+        (player) => player.id !== action.payload
+      ),
+    }),
   },
 });
 
 export default playerSlice.reducer;
 
-export const { loadAllPlayers: loadAllPlayersActionCreator } =
-  playerSlice.actions;
+export const {
+  loadAllPlayers: loadAllPlayersActionCreator,
+  deletePlayer: deletePlayerActionCreator,
+} = playerSlice.actions;
