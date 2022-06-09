@@ -31,7 +31,7 @@ function App() {
   const token = localStorage.getItem("token");
 
   useEffect(() => {
-    if (!logged && token) {
+    if (logged || token) {
       const userInfo = jwtDecode(token);
 
       dispatch(loginActionCreator(userInfo));
@@ -50,6 +50,8 @@ function App() {
             </header>
           </>
         )}
+
+      <CreatorPlayer />
       <Routes>
         <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/login" element={<LoginPage />} />
