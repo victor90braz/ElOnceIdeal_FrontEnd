@@ -8,6 +8,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import jwtDecode from "jwt-decode";
 import { loginActionCreator } from "./redux/features/userSlice";
+import CreatorPlayer from "./components/CreaterPlayer.js/CreatorPlayer";
+import NavigationComponent from "./components/Navigation/NavigationComponent";
 
 const AppStyle = styled.div`
   display: flex;
@@ -26,23 +28,40 @@ function App() {
   const { logged } = useSelector((state) => state.user);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const token = localStorage.getItem("token");
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token || logged) {
+    if (!logged && token) {
       const userInfo = jwtDecode(token);
 
       dispatch(loginActionCreator(userInfo));
       navigate("/home");
     }
-  }, [dispatch, navigate, logged]);
+  }, [dispatch, logged, navigate, token]);
 
   return (
     <AppStyle>
+      {window.location.pathname !== "/login" &&
+        window.location.pathname !== "/register" && (
+          <>
+            <NavigationComponent />
+            <header>
+              <h1>El Once Ideal</h1>
+            </header>
+          </>
+        )}
       <Routes>
         <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
+        <Route
+          path="/create"
+          element={
+            <AccessControl>
+              <CreatorPlayer />
+            </AccessControl>
+          }
+        />
         <Route
           path="/home"
           element={

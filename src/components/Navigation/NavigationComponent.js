@@ -20,7 +20,10 @@ const NavigationComponent = () => {
       <nav className="top-nav">
         <ul className="menu">
           <li>
-            <NavLink to="/home">Home Page</NavLink>
+            <NavLink to="/home">Home</NavLink>
+          </li>
+          <li>
+            <NavLink to="/create">Create Card</NavLink>
           </li>
           <li>
             <NavLink to="/home">
