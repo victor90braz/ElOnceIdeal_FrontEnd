@@ -4,16 +4,11 @@ const playerSlice = createSlice({
   name: "player",
   initialState: {
     allPlayers: [],
-    singlePlayer: {},
   },
   reducers: {
     loadAllPlayers: (players, action) => ({
       ...players,
       allPlayers: action.payload,
-    }),
-    loadPlayer: (players, action) => ({
-      ...players,
-      singlePlayer: action.payload,
     }),
     deletePlayer: (players, action) => ({
       ...players,

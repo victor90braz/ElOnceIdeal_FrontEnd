@@ -7,7 +7,7 @@ import HomePage from "./HomePage";
 describe("Given a HomePage Component", () => {
   describe("When it's invoked", () => {
     test("Then it should render the text 'Make your dream team'", () => {
-      const expectedResult = "Make your dream team";
+      const expectedText = "Make your dream team";
 
       render(
         <>
@@ -19,9 +19,8 @@ describe("Given a HomePage Component", () => {
         </>
       );
 
-      const receivedResult = screen.getByText(expectedResult);
-
-      expect(receivedResult).toBeInTheDocument();
+      const result = screen.getByRole("heading", { level: 2 });
+      expect(result.textContent).toBe(expectedText);
     });
   });
 });

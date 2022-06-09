@@ -6,8 +6,8 @@ import ListPlayers from "./ListPlayers";
 
 describe("Given a ListPlayers component", () => {
   describe("When it's invoked", () => {
-    test("Then it should render a title with a text 'List of all players'", () => {
-      const expectedText = "List of all players";
+    test("Then it should render a title with a text 'All Players'", () => {
+      const expectedText = "All Players";
       render(
         <Provider store={store}>
           <BrowserRouter>
@@ -15,7 +15,7 @@ describe("Given a ListPlayers component", () => {
           </BrowserRouter>
         </Provider>
       );
-      const result = screen.getByRole("heading");
+      const result = screen.getByRole("heading", { level: 3 });
       expect(result.textContent).toBe(expectedText);
     });
   });

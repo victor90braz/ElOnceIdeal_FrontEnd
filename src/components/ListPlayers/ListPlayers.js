@@ -7,12 +7,10 @@ const ListPlayers = () => {
 
   return (
     <ListPlayersStyles>
-      <h3>List of all players</h3>
-      <ul>
-        {allPlayers.map((player) => (
-          <Player player={player} key={player.id} />
-        ))}
-      </ul>
+      <h3>All Players</h3>
+      {allPlayers.map((player) => (
+        <Player player={player} key={player.id} />
+      ))}
     </ListPlayersStyles>
   );
 };

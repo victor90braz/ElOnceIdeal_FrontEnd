@@ -9,14 +9,11 @@ const AccessControl = ({ children }) => {
   useEffect(() => {
     if (!logged) {
       navigate("/login");
+      return;
     }
   }, [logged, navigate]);
 
-  if (logged) {
-    return children;
-  } else {
-    return null;
-  }
+  return children;
 };
 
 export default AccessControl;
