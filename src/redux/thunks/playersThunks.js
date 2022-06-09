@@ -1,5 +1,4 @@
 import axios from "axios";
-import { correctAction } from "../../components/modals/modals";
 import {
   deletePlayerActionCreator,
   loadAllPlayersActionCreator,
@@ -33,6 +32,5 @@ export const deletePlayerThunk = (id) => async (dispatch) => {
 
   if (status === 200) {
     dispatch(deletePlayerActionCreator(id));
-    correctAction("Player has been deleted correctly");
   }
 };

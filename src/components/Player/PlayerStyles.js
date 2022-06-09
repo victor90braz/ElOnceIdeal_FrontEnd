@@ -82,6 +82,7 @@ const PlayerStyles = styled.div`
   }
   .btn_delete {
     font-size: 2em;
+    cursor: pointer;
   }
 `;
 
