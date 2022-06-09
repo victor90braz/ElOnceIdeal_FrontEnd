@@ -1,14 +1,16 @@
 import { useDispatch } from "react-redux";
 import { deletePlayerThunk } from "../../redux/thunks/playersThunks";
+import { correctAction } from "../modals/modals";
 import PlayerStyles from "./PlayerStyles";
 
 const Player = ({
-  player: { name, image, pac, sho, pass, dri, def, phy, id },
+  player: { name, image, speed, shoot, pass, agility, defense, strength, id },
 }) => {
   const dispatch = useDispatch();
 
   const handleDelete = () => {
     dispatch(deletePlayerThunk(id));
+    correctAction(`${name} Player has been deleted correctly`);
   };
 
   return (
@@ -24,14 +26,14 @@ const Player = ({
           <div className="card-content_details">
             <div className="data">
               <div className="data_props">
-                <h3>PAC {pac}</h3>
-                <h3>SHO {sho}</h3>
+                <h3>SPEED {speed}</h3>
+                <h3>SHOOT {shoot}</h3>
                 <h3>PASS {pass}</h3>
               </div>
               <div className="data_props">
-                <h3>DRI {dri}</h3>
-                <h3>DEF {def}</h3>
-                <h3>PHY {phy}</h3>
+                <h3>AGILITY {agility}</h3>
+                <h3>DEFENSE {defense}</h3>
+                <h3>STRENGTH {strength}</h3>
               </div>
             </div>
           </div>

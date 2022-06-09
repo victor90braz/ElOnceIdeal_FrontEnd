@@ -4,12 +4,12 @@ export const mockPlayer = [
       "https://www.futbin.com/content/fifa22/img/players/p50332827.png?v=15",
     name: "Buffon",
     position: "goalkeeper",
-    pac: "80",
-    sho: "77",
-    pass: "73",
-    dri: "80",
-    def: "37",
-    phy: "93",
+    speed: "66",
+    shoot: "55",
+    pass: "55",
+    agility: "45",
+    defense: "88",
+    strength: "99",
   },
 ];
 
