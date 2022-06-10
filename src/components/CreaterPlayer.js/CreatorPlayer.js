@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { createrThunk } from "../../redux/thunks/playersThunks";
-import { createdAction, errorModal } from "../modals/modals";
+import { correctAction, wrongAction } from "../modals/modals";
 import CreatorPlayerStyle from "./CreatorPlayerStyle";
 
 const CreatorPlayer = () => {
@@ -41,10 +41,10 @@ const CreatorPlayer = () => {
       event.preventDefault();
       await dispatch(createrThunk(formPlayer));
       setFormPlayer(blankFields);
-      createdAction();
+      correctAction("Nice!! Player created XD");
       navigate("/home");
     } catch (error) {
-      errorModal("Error to create a player. Try again!");
+      wrongAction("Error to create your player. Try again!");
     }
   };
 

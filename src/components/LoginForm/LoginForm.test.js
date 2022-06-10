@@ -6,6 +6,16 @@ import store from "../../redux/store/store";
 
 import LoginForm from "./LoginForm";
 
+global.window = Object.create(window);
+const url = "http://dummy.com";
+Object.defineProperty(window, "location", {
+  value: {
+    href: url,
+  },
+});
+
+expect(window.location.href).toEqual(url);
+
 describe("Given a LoginForm component", () => {
   describe("When the word 'hello' is written to the username input field", () => {
     test("Then the value of the username input field should be 'hello'", () => {

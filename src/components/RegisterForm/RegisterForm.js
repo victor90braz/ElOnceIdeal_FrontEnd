@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { registerThunk } from "../../redux/thunks/userThunks";
-import { errorModal, registered } from "../modals/modals";
+import { correctAction, wrongAction } from "../modals/modals";
 
 import RegisterFormStyle from "./RegisterFormStyle";
 
@@ -32,10 +32,10 @@ const RegisterForm = () => {
       event.preventDefault();
       await dispatch(registerThunk(formData));
       setFormData(blankFields);
-      registered();
+      correctAction("Register successfully.");
       Navigate("/login");
     } catch (error) {
-      errorModal("You have already an account. Please go to login");
+      wrongAction("Sorry. Username already exists. Try again please.");
     }
   };
 
