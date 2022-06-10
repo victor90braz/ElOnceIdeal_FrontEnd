@@ -16,12 +16,19 @@ const playerSlice = createSlice({
         (player) => player.id !== action.payload
       ),
     }),
+    editPlayer: (players, action) => ({
+      ...players,
+      allPlayers: players.allPlayers.map((player) =>
+        player.id === action.payload.id ? { ...action.payload } : { ...player }
+      ),
+    }),
   },
 });
-
-export default playerSlice.reducer;
 
 export const {
   loadAllPlayers: loadAllPlayersActionCreator,
   deletePlayer: deletePlayerActionCreator,
+  editPlayer: editPlayerActionCreator,
 } = playerSlice.actions;
+
+export default playerSlice.reducer;
