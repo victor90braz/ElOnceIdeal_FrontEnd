@@ -1,6 +1,6 @@
 import axios from "axios";
 import jwtDecode from "jwt-decode";
-import { loggedIn, wrongAction } from "../../components/modals/modals";
+import { correctAction, wrongAction } from "../../components/modals/modals";
 import { loginActionCreator } from "../features/userSlice";
 
 export const registerThunk = (userData) => async (dispatch) => {
@@ -15,7 +15,7 @@ export const loginThunk = (userData) => async (dispatch) => {
     );
 
     if (status === 200) {
-      loggedIn();
+      correctAction("Login correct!");
       const { id, username } = jwtDecode(data.token);
       localStorage.setItem("token", data.token);
 

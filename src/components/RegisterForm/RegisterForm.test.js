@@ -82,4 +82,29 @@ describe("Given a RegisterForm component", () => {
       expect(username).toHaveValue(inputText);
     });
   });
+
+  describe("When an user only types 'hello wolrd' in the username input field", () => {
+    test("Then the value of the username input field should be 'hello wolrd' but the register buttom shall remain disable", () => {
+      const usernameTextField = "Username";
+      const inputUserNAme = "hello wolrd";
+
+      render(
+        <Provider store={store}>
+          <BrowserRouter>
+            <RegisterForm />
+          </BrowserRouter>
+        </Provider>
+      );
+
+      const createdButton = screen.getByRole("button", {
+        name: /Register/i,
+      });
+
+      const usernameField = screen.getByLabelText(usernameTextField);
+      userEvent.type(usernameField, inputUserNAme);
+
+      expect(usernameField).toHaveValue(inputUserNAme);
+      expect(createdButton).toBeDisabled();
+    });
+  });
 });
