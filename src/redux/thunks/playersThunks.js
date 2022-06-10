@@ -1,6 +1,7 @@
 import axios from "axios";
 import {
   deletePlayerActionCreator,
+  editPlayerActionCreator,
   loadAllPlayersActionCreator,
 } from "../features/playerSlice";
 
@@ -37,4 +38,21 @@ export const deletePlayerThunk = (id) => async (dispatch) => {
 
 export const createrThunk = (playerData) => async (dispatch) => {
   await axios.post(`${process.env.REACT_APP_API_URL}players/`, playerData);
+};
+
+export const editPlayerThunk = (idToEdit, formPlayer) => async (dispatch) => {
+  const token = localStorage.getItem("token");
+
+  if (token) {
+    const { data: dataPlayer } = await axios.put(
+      `${process.env.REACT_APP_API_URL}players/${idToEdit}`,
+      formPlayer,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    dispatch(editPlayerActionCreator(dataPlayer));
+  }
 };
