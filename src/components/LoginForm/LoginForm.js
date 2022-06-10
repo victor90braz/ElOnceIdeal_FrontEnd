@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { loginThunk } from "../../redux/thunks/userThunks";
 
 import LoginFormStyle from "./LoginFormStyle";
 
 const LoginForm = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const initialFormValue = {
     username: "",
@@ -25,6 +27,7 @@ const LoginForm = () => {
     }
     await dispatch(loginThunk(formValues));
     setFormValues(initialFormValue);
+    navigate("/home");
   };
 
   return (
