@@ -26,6 +26,10 @@ const NavigationComponent = () => {
             <NavLink to="/create">Create Card</NavLink>
           </li>
           <li>
+            <NavLink to="/edit">Edit Card</NavLink>
+          </li>
+
+          <li>
             <NavLink to="/home">
               <button onClick={logOut} className="logOut">
                 Logout

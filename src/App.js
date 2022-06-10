@@ -10,6 +10,7 @@ import jwtDecode from "jwt-decode";
 import { loginActionCreator } from "./redux/features/userSlice";
 import CreatorPlayer from "./components/CreaterPlayer.js/CreatorPlayer";
 import NavigationComponent from "./components/Navigation/NavigationComponent";
+import EditPage from "./pages/EditPage/EditPage";
 
 const AppStyle = styled.div`
   display: flex;
@@ -63,6 +64,16 @@ function App() {
             </AccessControl>
           }
         />
+
+        <Route
+          path="/edit"
+          element={
+            <AccessControl>
+              <EditPage />
+            </AccessControl>
+          }
+        />
+
         <Route
           path="/home"
           element={
