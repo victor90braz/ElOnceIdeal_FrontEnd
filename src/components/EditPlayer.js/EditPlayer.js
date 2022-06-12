@@ -33,7 +33,7 @@ const EditPlayer = ({ editPlayer }) => {
     formEditPlayer.defense === "" ||
     formEditPlayer.strength === "";
 
-  const changePlayerData = (event) => {
+  const editPlayerData = (event) => {
     setFormEditPlayer({
       ...formEditPlayer,
       [event.target.id]: event.target.value,
@@ -69,7 +69,7 @@ const EditPlayer = ({ editPlayer }) => {
           type="text"
           id="name"
           value={formEditPlayer.name}
-          onChange={changePlayerData}
+          onChange={editPlayerData}
           placeholder="Name"
         />
 
@@ -78,7 +78,7 @@ const EditPlayer = ({ editPlayer }) => {
           type="url"
           id="image"
           value={formEditPlayer.image}
-          onChange={changePlayerData}
+          onChange={editPlayerData}
           placeholder="Insert image URL"
         />
 
@@ -87,7 +87,7 @@ const EditPlayer = ({ editPlayer }) => {
           type="number"
           id="speed"
           value={formEditPlayer.speed}
-          onChange={changePlayerData}
+          onChange={editPlayerData}
           placeholder="Insert speed"
         />
 
@@ -96,7 +96,7 @@ const EditPlayer = ({ editPlayer }) => {
           type="number"
           id="shoot"
           value={formEditPlayer.shoot}
-          onChange={changePlayerData}
+          onChange={editPlayerData}
           placeholder="Insert shoot"
         />
 
@@ -105,7 +105,7 @@ const EditPlayer = ({ editPlayer }) => {
           type="number"
           id="pass"
           value={formEditPlayer.pass}
-          onChange={changePlayerData}
+          onChange={editPlayerData}
           placeholder="Insert pass"
         />
 
@@ -114,7 +114,7 @@ const EditPlayer = ({ editPlayer }) => {
           type="number"
           id="agility"
           value={formEditPlayer.agility}
-          onChange={changePlayerData}
+          onChange={editPlayerData}
           placeholder="Insert agility"
         />
 
@@ -123,7 +123,7 @@ const EditPlayer = ({ editPlayer }) => {
           type="number"
           id="defense"
           value={formEditPlayer.defense}
-          onChange={changePlayerData}
+          onChange={editPlayerData}
           placeholder="Insert defense"
         />
 
@@ -132,7 +132,7 @@ const EditPlayer = ({ editPlayer }) => {
           type="number"
           id="strength"
           value={formEditPlayer.strength}
-          onChange={changePlayerData}
+          onChange={editPlayerData}
           placeholder="Insert strength"
         />
 

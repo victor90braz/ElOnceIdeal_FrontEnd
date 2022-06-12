@@ -3,6 +3,7 @@ import {
   deletePlayerActionCreator,
   editPlayerActionCreator,
   loadAllPlayersActionCreator,
+  loadPlayerActionCreator,
 } from "../features/playerSlice";
 
 const url = process.env.REACT_APP_API_URL;
@@ -14,9 +15,11 @@ export const loadPlayersThunk = () => async (dispatch) => {
 };
 
 export const getPlayerThunk = (idPlayer) => async (dispatch) => {
-  const { data: player } = await axios.get(`${url}players/${idPlayer}`);
+  const {
+    data: { player },
+  } = await axios.get(`${url}players/${idPlayer}`);
 
-  dispatch(loadAllPlayersActionCreator(player));
+  dispatch(loadPlayerActionCreator(player));
 };
 
 export const deletePlayerThunk = (id) => async (dispatch) => {

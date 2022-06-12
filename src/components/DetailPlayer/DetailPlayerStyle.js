@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const CardPlayerStyle = styled.div`
+const DetailPlayerStyle = styled.div`
   ul li {
     padding: 0;
     list-style-type: none;
@@ -10,6 +10,7 @@ const CardPlayerStyle = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transform: translateY(160px);
 
     .card {
       position: relative;
@@ -128,4 +129,4 @@ const CardPlayerStyle = styled.div`
   }
 `;
 
-export default CardPlayerStyle;
+export default DetailPlayerStyle;
