@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import ListPlayers from "../../components/ListPlayers/ListPlayers";
+import NavigationComponent from "../../components/Navigation/NavigationComponent";
 
 import { loadPlayersThunk } from "../../redux/thunks/playersThunks";
 
@@ -15,6 +16,7 @@ const HomePage = () => {
     <>
       <h2>Make your dream team</h2>
       <ListPlayers />
+      <NavigationComponent />
     </>
   );
 };
