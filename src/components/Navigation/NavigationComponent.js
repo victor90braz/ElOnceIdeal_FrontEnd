@@ -51,18 +51,18 @@ const NavigationComponent = () => {
           </li>
 
           <li>
-            <NavLink to="/home">
+            <NavLink to="/detail/:id">
               <div className="container-image">
                 <img
-                  src="https://www.kindpng.com/picc/m/207-2070607_back-to-the-home-page-back-to-home.png"
-                  alt="Home page with the list of all players"
+                  src="https://static.vecteezy.com/system/resources/previews/003/158/485/original/line-icon-for-policy-vector.jpg"
+                  alt="Detail page of player"
                 />
               </div>
             </NavLink>
           </li>
 
           <li>
-            <NavLink to="/home">
+            <NavLink to="/login">
               <div className="container-image">
                 <button onClick={logOut} className="logOut">
                   <img

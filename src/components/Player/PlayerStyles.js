@@ -74,13 +74,13 @@ const PlayerStyles = styled.div`
     font-weight: 600;
   }
 
-  .container-button {
+  .container-element {
     margin-top: 10px;
     display: flex;
     flex-direction: row;
     align-items: center;
   }
-  .btn_delete {
+  .elemento-add {
     font-size: 2em;
     cursor: pointer;
   }

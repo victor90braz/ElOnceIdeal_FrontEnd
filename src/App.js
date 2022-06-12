@@ -10,7 +10,7 @@ import jwtDecode from "jwt-decode";
 import { loginActionCreator } from "./redux/features/userSlice";
 import CreatorPlayer from "./components/CreaterPlayer.js/CreatorPlayer";
 import EditPage from "./pages/EditPage/EditPage";
-import CardPlayer from "./components/Card/CardPlayer";
+import DetailPlayer from "./components/DetailPlayer/DetailPlayer";
 import NavigationComponent from "./components/Navigation/NavigationComponent";
 
 const AppStyle = styled.div`
@@ -66,10 +66,10 @@ function App() {
         />
 
         <Route
-          path="/card"
+          path="/detail/:id"
           element={
             <AccessControl>
-              <CardPlayer />
+              <DetailPlayer />
             </AccessControl>
           }
         />
