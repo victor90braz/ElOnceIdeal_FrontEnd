@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
 export const NavigationComponentStyled = styled.header`
-  margin: 0;
   padding: 0;
   height: 70px;
-  background-color: black;
-  width: 100vw;
+  background-color: red;
+  padding: 20px;
   display: flex;
   justify-content: center;
-  opacity: 0.8;
+  width: 100%;
+  position: fixed;
 
   .top-nav {
     display: flex;
@@ -23,15 +23,23 @@ export const NavigationComponentStyled = styled.header`
     justify-content: space-around;
     gap: 20px;
     list-style-type: none;
-    font-size: 1.5em;
-    color: white;
+    padding: 0;
+
+    .container-image {
+      width: 50px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 30%;
+        object-fit: cover;
+      }
+    }
   }
 
   .logOut {
     cursor: pointer;
     font-size: 1.2em;
-  }
-  .menu li a {
-    color: white;
   }
 `;
