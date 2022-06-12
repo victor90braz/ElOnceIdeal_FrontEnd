@@ -5,25 +5,21 @@ import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import { mockPlayer } from "../../mocks/playerMock";
 import store from "../../redux/store/store";
+import CardPlayer from "./CardPlayer";
 
-import Player from "./Player";
-
-describe("Given the Player component", () => {
-  describe("When its rendered", () => {
-    test("Then it should show a heading h3 element", () => {
-      const expectedResult = "SPEED";
-
+describe("Given a CardPlayer", () => {
+  describe("When its called to be rendered", () => {
+    test("Then it should create a CardPlayer with four list components", () => {
       render(
         <Provider store={store}>
           <BrowserRouter>
-            <Player player={mockPlayer} />
+            <CardPlayer player={mockPlayer} />
           </BrowserRouter>
         </Provider>
       );
 
-      const receivedResult = screen.getByText(expectedResult);
-
-      expect(receivedResult).toBeInTheDocument();
+      const displayHeader = screen.getAllByRole("listitem");
+      expect(displayHeader).toHaveLength(1);
     });
   });
 
@@ -34,6 +30,7 @@ describe("Given the Player component", () => {
         initialState: {
           allPlayers: [],
         },
+        reducers: {},
       });
 
       const mockStore = configureStore({
@@ -43,7 +40,7 @@ describe("Given the Player component", () => {
       render(
         <Provider store={mockStore}>
           <BrowserRouter>
-            <Player player={mockPlayer} />
+            <CardPlayer player={mockPlayer} />
           </BrowserRouter>
         </Provider>
       );

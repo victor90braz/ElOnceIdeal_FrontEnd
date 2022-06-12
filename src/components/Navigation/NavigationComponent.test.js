@@ -16,7 +16,7 @@ describe("Given a NavigationComponent", () => {
       );
 
       const displayHeader = screen.getAllByRole("listitem");
-      expect(displayHeader).toHaveLength(4);
+      expect(displayHeader).toHaveLength(5);
     });
   });
 });
