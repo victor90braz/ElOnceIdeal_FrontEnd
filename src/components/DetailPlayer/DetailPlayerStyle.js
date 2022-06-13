@@ -54,11 +54,11 @@ const DetailPlayerStyle = styled.div`
         overflow: hidden;
 
         .details {
-          padding: 40px;
+          padding: 30px;
           text-align: center;
           width: 100%;
           transition: 0.5s;
-          transform: translateY(270px);
+          transform: translateY(345px);
           background: black;
           opacity: 0.8;
           border-radius: 0 0;
@@ -96,6 +96,7 @@ const DetailPlayerStyle = styled.div`
           .actionButton {
             display: flex;
             justify-content: space-around;
+            margin-top: 5px;
 
             button {
               padding: 10px 30px;

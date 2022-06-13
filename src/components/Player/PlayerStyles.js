@@ -78,9 +78,10 @@ const PlayerStyles = styled.div`
     margin-top: 10px;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    justify-content: space-around;
+    transform: translateY(-100%);
   }
-  .elemento-add {
+  .elemento-icon {
     font-size: 2em;
     cursor: pointer;
   }
