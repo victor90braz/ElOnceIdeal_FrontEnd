@@ -4,7 +4,6 @@ const EditPageContainer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  position: absolute;
   top: 150px;
   width: 100%;
 `;

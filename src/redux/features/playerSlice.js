@@ -15,15 +15,18 @@ const playerSlice = createSlice({
       ...player,
       player: action.payload,
     }),
+
+    blankState: () => ({ player: {} }),
+
     deletePlayer: (players, action) => ({
       ...players,
       allPlayers: players.allPlayers.filter(
         (player) => player.id !== action.payload
       ),
     }),
-    editPlayer: (players, action) => ({
-      ...players,
-      allPlayers: players.allPlayers.map((player) =>
+    editPlayer: (player, action) => ({
+      ...player,
+      allPlayers: player.allPlayers.map((player) =>
         player.id === action.payload.id ? { ...action.payload } : { ...player }
       ),
     }),
@@ -36,6 +39,7 @@ export const {
   deletePlayer: deletePlayerActionCreator,
   editPlayer: editPlayerActionCreator,
   loadPlayer: loadPlayerActionCreator,
+  blankState: blankStateActionCreator,
 } = playerSlice.actions;
 
 export default playerSlice.reducer;

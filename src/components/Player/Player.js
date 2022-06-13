@@ -1,6 +1,9 @@
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { deletePlayerThunk } from "../../redux/thunks/playersThunks";
+import {
+  deletePlayerThunk,
+  getPlayerThunk,
+} from "../../redux/thunks/playersThunks";
 import PlayerStyles from "./PlayerStyles";
 
 const Player = ({
@@ -16,6 +19,11 @@ const Player = ({
   const handleDelete = () => {
     dispatch(deletePlayerThunk(id));
     navigate(`/home`);
+  };
+
+  const handleEdit = () => {
+    dispatch(getPlayerThunk(id));
+    navigate(`/edit/${id}`);
   };
 
   return (
@@ -50,6 +58,9 @@ const Player = ({
         </button>
         <button className="elemento-icon" onClick={handleDelete}>
           delete
+        </button>
+        <button className="elemento-icon" onClick={handleEdit}>
+          edit
         </button>
       </div>
     </PlayerStyles>

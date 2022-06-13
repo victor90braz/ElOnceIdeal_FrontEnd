@@ -1,41 +1,32 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { blankStateActionCreator } from "../../redux/features/playerSlice";
 import { editPlayerThunk } from "../../redux/thunks/playersThunks";
-import CreatorPlayer from "../CreaterPlayer.js/CreatorPlayer";
 import { correctAction, wrongAction } from "../modals/modals";
 import EditPlayerStyle from "./EditPlayerStyle";
 
-const EditPlayer = ({ editPlayer }) => {
+const EditPlayer = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const blankFields = {
-    name: editPlayer ? editPlayer.name : "",
-    image: editPlayer ? editPlayer.image : "",
-    speed: editPlayer ? editPlayer.speed : "",
-    shoot: editPlayer ? editPlayer.shoot : "",
-    pass: editPlayer ? editPlayer.pass : "",
-    agility: editPlayer ? editPlayer.agility : "",
-    defense: editPlayer ? editPlayer.defense : "",
-    strength: editPlayer ? editPlayer.strength : "",
-  };
+  const { player } = useSelector((state) => state.player);
 
-  const [formEditPlayer, setFormEditPlayer] = useState(blankFields);
+  const [valuePlayer, setFormEditPlayer] = useState(player);
 
   const buttonDisabled =
-    formEditPlayer.name === "" ||
-    formEditPlayer.image === "" ||
-    formEditPlayer.speed === "" ||
-    formEditPlayer.shoot === "" ||
-    formEditPlayer.pass === "" ||
-    formEditPlayer.agility === "" ||
-    formEditPlayer.defense === "" ||
-    formEditPlayer.strength === "";
+    valuePlayer.name === "" ||
+    valuePlayer.image === "" ||
+    valuePlayer.speed === "" ||
+    valuePlayer.shoot === "" ||
+    valuePlayer.pass === "" ||
+    valuePlayer.agility === "" ||
+    valuePlayer.defense === "" ||
+    valuePlayer.strength === "";
 
   const editPlayerData = (event) => {
     setFormEditPlayer({
-      ...formEditPlayer,
+      ...valuePlayer,
       [event.target.id]: event.target.value,
     });
   };
@@ -44,17 +35,23 @@ const EditPlayer = ({ editPlayer }) => {
     try {
       event.preventDefault();
 
-      if (editPlayer) {
-        dispatch(editPlayerThunk(editPlayer.id, formEditPlayer));
-        return;
+      if (player) {
+        dispatch(
+          editPlayerThunk(valuePlayer.id, {
+            name: valuePlayer.name,
+            image: valuePlayer.image,
+            speed: valuePlayer.speed,
+            shoot: valuePlayer.shoot,
+            pass: valuePlayer.pass,
+            agility: valuePlayer.agility,
+            defense: valuePlayer.defense,
+            strength: valuePlayer.strength,
+          })
+        );
+        dispatch(blankStateActionCreator());
+        correctAction("Nice!! Player edited");
+        navigate("/home");
       }
-
-      dispatch(CreatorPlayer(formEditPlayer));
-      setFormEditPlayer(blankFields);
-
-      correctAction("Nice!! Player edited");
-
-      navigate("/home");
     } catch (error) {
       wrongAction("Error to edit your player. Try again!");
     }
@@ -68,7 +65,7 @@ const EditPlayer = ({ editPlayer }) => {
         <input
           type="text"
           id="name"
-          value={formEditPlayer.name}
+          value={valuePlayer.name}
           onChange={editPlayerData}
           placeholder="Name"
         />
@@ -77,7 +74,7 @@ const EditPlayer = ({ editPlayer }) => {
         <input
           type="url"
           id="image"
-          value={formEditPlayer.image}
+          value={valuePlayer.image}
           onChange={editPlayerData}
           placeholder="Insert image URL"
         />
@@ -86,7 +83,7 @@ const EditPlayer = ({ editPlayer }) => {
         <input
           type="number"
           id="speed"
-          value={formEditPlayer.speed}
+          value={valuePlayer.speed}
           onChange={editPlayerData}
           placeholder="Insert speed"
         />
@@ -95,7 +92,7 @@ const EditPlayer = ({ editPlayer }) => {
         <input
           type="number"
           id="shoot"
-          value={formEditPlayer.shoot}
+          value={valuePlayer.shoot}
           onChange={editPlayerData}
           placeholder="Insert shoot"
         />
@@ -104,7 +101,7 @@ const EditPlayer = ({ editPlayer }) => {
         <input
           type="number"
           id="pass"
-          value={formEditPlayer.pass}
+          value={valuePlayer.pass}
           onChange={editPlayerData}
           placeholder="Insert pass"
         />
@@ -113,16 +110,16 @@ const EditPlayer = ({ editPlayer }) => {
         <input
           type="number"
           id="agility"
-          value={formEditPlayer.agility}
+          value={valuePlayer.agility}
           onChange={editPlayerData}
           placeholder="Insert agility"
         />
 
-        <label htmlFor="speed">Defense</label>
+        <label htmlFor="defense">Defense</label>
         <input
           type="number"
           id="defense"
-          value={formEditPlayer.defense}
+          value={valuePlayer.defense}
           onChange={editPlayerData}
           placeholder="Insert defense"
         />
@@ -131,7 +128,7 @@ const EditPlayer = ({ editPlayer }) => {
         <input
           type="number"
           id="strength"
-          value={formEditPlayer.strength}
+          value={valuePlayer.strength}
           onChange={editPlayerData}
           placeholder="Insert strength"
         />
@@ -140,7 +137,7 @@ const EditPlayer = ({ editPlayer }) => {
           disabled={buttonDisabled}
           type="submit"
           className="form-button"
-          value={editPlayer ? "edit" : "create"}
+          value={player}
         >
           Edit
         </button>

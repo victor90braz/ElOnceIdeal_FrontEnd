@@ -68,6 +68,8 @@ const DetailPlayerStyle = styled.div`
             font-weight: 800;
             color: #fff;
             line-height: 1.2em;
+            margin-top: 0;
+            padding: 10px;
 
             span {
               font-size: 0.75em;
@@ -92,23 +94,17 @@ const DetailPlayerStyle = styled.div`
               }
             }
           }
+        }
 
-          .actionButton {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 5px;
+        .container-image {
+          width: 50px;
+          overflow: hidden;
 
-            button {
-              padding: 10px 30px;
-              border-radius: 5px;
-              border: none;
-              outline: none;
-              font-size: 1em;
-              background: rgb(224, 13, 222);
-              color: black;
-              font-weight: 600;
-              cursor: pointer;
-            }
+          img {
+            width: 100%;
+            height: 100%;
+            border-radius: 30%;
+            object-fit: cover;
           }
         }
       }

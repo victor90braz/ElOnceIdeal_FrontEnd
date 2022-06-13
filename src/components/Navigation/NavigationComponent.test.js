@@ -7,6 +7,8 @@ import NavigationComponent from "./NavigationComponent";
 describe("Given a NavigationComponent", () => {
   describe("When its called to be rendered", () => {
     test("Then it should create a NavigationComponent with four list components", () => {
+      const listItem = 3;
+
       render(
         <Provider store={store}>
           <BrowserRouter>
@@ -16,7 +18,7 @@ describe("Given a NavigationComponent", () => {
       );
 
       const displayHeader = screen.getAllByRole("listitem");
-      expect(displayHeader).toHaveLength(5);
+      expect(displayHeader).toHaveLength(listItem);
     });
   });
 });
