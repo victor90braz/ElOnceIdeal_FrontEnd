@@ -11,8 +11,6 @@ import Player from "./Player";
 describe("Given the Player component", () => {
   describe("When its rendered", () => {
     test("Then it should show a heading h3 element", () => {
-      const expectedResult = "SPEED";
-
       render(
         <Provider store={store}>
           <BrowserRouter>
@@ -21,7 +19,10 @@ describe("Given the Player component", () => {
         </Provider>
       );
 
-      const receivedResult = screen.getByText(expectedResult);
+      const receivedResult = screen.getByRole("heading", {
+        level: 3,
+        name: /SPEED/i,
+      });
 
       expect(receivedResult).toBeInTheDocument();
     });

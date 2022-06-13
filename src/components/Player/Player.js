@@ -1,13 +1,21 @@
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { deletePlayerThunk } from "../../redux/thunks/playersThunks";
 import PlayerStyles from "./PlayerStyles";
 
 const Player = ({
   player: { name, image, speed, shoot, pass, agility, defense, strength, id },
 }) => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleAdd = () => {
     navigate(`/detail/${id}`);
+  };
+
+  const handleDelete = () => {
+    dispatch(deletePlayerThunk(id));
+    navigate(`/home`);
   };
 
   return (
@@ -37,8 +45,11 @@ const Player = ({
         </div>
       </div>
       <div className="container-element">
-        <button className="elemento-add" onClick={handleAdd}>
-          ADD PLAYER
+        <button className="elemento-icon" onClick={handleAdd}>
+          detail
+        </button>
+        <button className="elemento-icon" onClick={handleDelete}>
+          delete
         </button>
       </div>
     </PlayerStyles>
