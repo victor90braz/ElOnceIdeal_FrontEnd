@@ -5,11 +5,18 @@ import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import store from "../../redux/store/store";
 
+const mockDispatch = jest.fn();
+const player = "cr7";
+
+jest.mock("react-redux", () => ({
+  ...jest.requireActual("react-redux"),
+  useDispatch: () => mockDispatch,
+  useSelector: () => ({ player: { name: player } }),
+}));
+
 describe("Given a EditPage component", () => {
   describe("When it's rendered and the noteId param matches with a note", () => {
     test("Then it should show the text 'Agility'", () => {
-      const expectedText = "Agility";
-
       render(
         <Provider store={store}>
           <BrowserRouter>
@@ -18,7 +25,7 @@ describe("Given a EditPage component", () => {
         </Provider>
       );
 
-      const element = screen.getByLabelText(expectedText);
+      const element = screen.getByRole("heading");
 
       expect(element).toBeInTheDocument();
     });

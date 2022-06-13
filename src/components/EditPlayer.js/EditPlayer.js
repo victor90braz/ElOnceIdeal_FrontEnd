@@ -48,6 +48,7 @@ const EditPlayer = () => {
             strength: valuePlayer.strength,
           })
         );
+
         dispatch(blankStateActionCreator());
         correctAction("Nice!! Player edited");
         navigate("/home");

@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { blankStateActionCreator } from "../../redux/features/playerSlice";
 import {
   deletePlayerThunk,
   getPlayerThunk,
@@ -23,6 +24,7 @@ const Player = ({
 
   const handleEdit = () => {
     dispatch(getPlayerThunk(id));
+    dispatch(blankStateActionCreator());
     navigate(`/edit/${id}`);
   };
 
