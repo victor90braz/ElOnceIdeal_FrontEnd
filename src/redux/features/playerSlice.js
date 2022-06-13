@@ -16,7 +16,7 @@ const playerSlice = createSlice({
       player: action.payload,
     }),
 
-    blankState: () => ({ player: {} }),
+    blankState: (players) => ({ ...players, player: {} }),
 
     deletePlayer: (players, action) => ({
       ...players,

@@ -56,7 +56,6 @@ export const editPlayerThunk = (id, formPlayer) => async (dispatch) => {
         },
       }
     );
-    dispatch(loadPlayerActionCreator(data));
     dispatch(editPlayerActionCreator(data));
   }
 };
