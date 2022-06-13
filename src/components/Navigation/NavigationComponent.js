@@ -39,27 +39,6 @@ const NavigationComponent = () => {
               </div>
             </NavLink>
           </li>
-          <li>
-            <NavLink to="/edit">
-              <div className="container-image">
-                <img
-                  src="https://p.kindpng.com/picc/s/154-1541056_edit-edit-icon-svg-hd-png-download.png"
-                  alt="Edit your player"
-                />
-              </div>
-            </NavLink>
-          </li>
-
-          <li>
-            <NavLink to="/detail/:id">
-              <div className="container-image">
-                <img
-                  src="https://static.vecteezy.com/system/resources/previews/003/158/485/original/line-icon-for-policy-vector.jpg"
-                  alt="Detail page of player"
-                />
-              </div>
-            </NavLink>
-          </li>
 
           <li>
             <NavLink to="/login">

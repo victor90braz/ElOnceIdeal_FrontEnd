@@ -43,12 +43,12 @@ export const createrThunk = (playerData) => async (dispatch) => {
   await axios.post(`${process.env.REACT_APP_API_URL}players/`, playerData);
 };
 
-export const editPlayerThunk = (idToEdit, formPlayer) => async (dispatch) => {
+export const editPlayerThunk = (id, formPlayer) => async (dispatch) => {
   const token = localStorage.getItem("token");
 
   if (token) {
-    const { data: dataPlayer } = await axios.put(
-      `${process.env.REACT_APP_API_URL}players/${idToEdit}`,
+    const { data } = await axios.put(
+      `${process.env.REACT_APP_API_URL}players/${id}`,
       formPlayer,
       {
         headers: {
@@ -56,6 +56,7 @@ export const editPlayerThunk = (idToEdit, formPlayer) => async (dispatch) => {
         },
       }
     );
-    dispatch(editPlayerActionCreator(dataPlayer));
+    dispatch(loadPlayerActionCreator(data));
+    dispatch(editPlayerActionCreator(data));
   }
 };

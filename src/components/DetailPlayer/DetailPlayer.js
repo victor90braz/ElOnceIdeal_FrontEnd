@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { getPlayerThunk } from "../../redux/thunks/playersThunks";
 
 import DetailPlayerStyle from "./DetailPlayerStyle";
@@ -28,16 +28,12 @@ const DetailPlayer = () => {
                 <div className="details">
                   <h2>
                     {allPlayers.name} <br />
-                    <div className="actionButton">
-                      <button>see more...</button>
-                    </div>
                     <span>
                       Ronaldo começou a jogar futebol aos oito anos de idade nas
                       categorias de base do Clube Futebol Andorinha de Santo
                       António, time modesto da ilha da Madeira.
                     </span>
                   </h2>
-
                   <div className="data">
                     <div className="data-row">
                       <h3>
@@ -61,6 +57,18 @@ const DetailPlayer = () => {
                         {allPlayers.strength} <br /> <span>STRENGHT</span>
                       </h3>
                     </div>
+                  </div>
+                  <div className="element-button">
+                    <button>
+                      <NavLink to="/edit/:playerId">
+                        <div className="container-image">
+                          <img
+                            src="https://p.kindpng.com/picc/s/154-1541056_edit-edit-icon-svg-hd-png-download.png"
+                            alt="Edit your player"
+                          />
+                        </div>
+                      </NavLink>
+                    </button>
                   </div>
                 </div>
               </div>
