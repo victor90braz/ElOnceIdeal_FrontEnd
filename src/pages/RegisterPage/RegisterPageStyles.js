@@ -5,7 +5,7 @@ const RegisterPageStyled = styled.div`
   align-items: center;
   flex-direction: column;
   top: 150px;
-  width: 100%;
+  width: 100vw;
   background: black;
   color: white;
   height: 100vh;
