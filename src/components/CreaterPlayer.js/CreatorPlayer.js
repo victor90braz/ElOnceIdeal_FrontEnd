@@ -55,7 +55,9 @@ const CreatorPlayer = () => {
       correctAction("Nice!! Player created XD");
       navigate("/home");
     } catch (error) {
-      wrongAction("Error to create your player. Try again!");
+      wrongAction(
+        "Error! All fields are required. Please set a number between 1 to 99. Try again!"
+      );
     }
   };
 

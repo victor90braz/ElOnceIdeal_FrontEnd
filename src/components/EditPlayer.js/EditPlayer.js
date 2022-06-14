@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { blankStateActionCreator } from "../../redux/features/playerSlice";
 import { editPlayerThunk } from "../../redux/thunks/playersThunks";
-import { correctAction, wrongAction } from "../modals/modals";
 import EditPlayerStyle from "./EditPlayerStyle";
 
 const EditPlayer = () => {
@@ -32,29 +31,24 @@ const EditPlayer = () => {
   };
 
   const submitEdit = (event) => {
-    try {
-      event.preventDefault();
+    event.preventDefault();
 
-      if (player) {
-        dispatch(
-          editPlayerThunk(valuePlayer.id, {
-            name: valuePlayer.name,
-            image: valuePlayer.image,
-            speed: valuePlayer.speed,
-            shoot: valuePlayer.shoot,
-            pass: valuePlayer.pass,
-            agility: valuePlayer.agility,
-            defense: valuePlayer.defense,
-            strength: valuePlayer.strength,
-          })
-        );
+    if (player) {
+      dispatch(
+        editPlayerThunk(valuePlayer.id, {
+          name: valuePlayer.name,
+          image: valuePlayer.image,
+          speed: valuePlayer.speed,
+          shoot: valuePlayer.shoot,
+          pass: valuePlayer.pass,
+          agility: valuePlayer.agility,
+          defense: valuePlayer.defense,
+          strength: valuePlayer.strength,
+        })
+      );
 
-        dispatch(blankStateActionCreator());
-        correctAction("Nice!! Player edited");
-        navigate("/home");
-      }
-    } catch (error) {
-      wrongAction("Error to edit your player. Try again!");
+      dispatch(blankStateActionCreator());
+      navigate("/home");
     }
   };
 
@@ -87,7 +81,7 @@ const EditPlayer = () => {
           value={valuePlayer.speed}
           onChange={editPlayerData}
           min="1"
-          max="2"
+          max="99"
           required
           placeholder="Insert speed"
         />
@@ -99,7 +93,7 @@ const EditPlayer = () => {
           value={valuePlayer.shoot}
           onChange={editPlayerData}
           min="1"
-          max="2"
+          max="99"
           required
           placeholder="Insert shoot"
         />
@@ -111,7 +105,7 @@ const EditPlayer = () => {
           value={valuePlayer.pass}
           onChange={editPlayerData}
           min="1"
-          max="2"
+          max="99"
           required
           placeholder="Insert pass"
         />
@@ -123,7 +117,7 @@ const EditPlayer = () => {
           value={valuePlayer.agility}
           onChange={editPlayerData}
           min="1"
-          max="2"
+          max="99"
           required
           placeholder="Insert agility"
         />
@@ -135,7 +129,7 @@ const EditPlayer = () => {
           value={valuePlayer.defense}
           onChange={editPlayerData}
           min="1"
-          max="2"
+          max="99"
           required
           placeholder="Insert defense"
         />
@@ -147,7 +141,7 @@ const EditPlayer = () => {
           value={valuePlayer.strength}
           onChange={editPlayerData}
           min="1"
-          max="2"
+          max="99"
           required
           placeholder="Insert strength"
         />

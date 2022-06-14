@@ -5,6 +5,25 @@ import { BrowserRouter } from "react-router-dom";
 import store from "../../redux/store/store";
 import CreatorPlayer from "./CreatorPlayer";
 
+const mockUseNavigate = jest.fn();
+const mockUseDispatch = jest.fn();
+
+jest.mock("react-router-dom", () => ({
+  ...jest.requireActual("react-router-dom"),
+  useNavigate: () => mockUseNavigate("/home"),
+  useDispatch: () =>
+    mockUseDispatch({
+      name: "",
+      image: "",
+      speed: "",
+      shoot: "",
+      pass: "",
+      agility: "",
+      defense: "",
+      strength: "",
+    }),
+}));
+
 describe("Given a CreatorPlayer component", () => {
   describe("When the word 'Pelé' is written to the name input field", () => {
     test("Then the value of the name input field should be 'Pelé'", () => {
@@ -93,9 +112,9 @@ describe("Given a CreatorPlayer component", () => {
     });
   });
 
-  describe("Given a NavigationComponent", () => {
+  describe("Given a CreatorPlayer", () => {
     describe("When its called to be rendered", () => {
-      test("Then it should create a NavigationComponent with four list components", () => {
+      test("Then it should create a CreatorPlayer with four list components", () => {
         const listItem = 8;
 
         render(
@@ -110,5 +129,20 @@ describe("Given a CreatorPlayer component", () => {
         expect(displayHeader).toHaveLength(listItem);
       });
     });
+  });
+
+  test("Then the two inputs should render a text '/home'", () => {
+    render(
+      <Provider store={store}>
+        <BrowserRouter>
+          <CreatorPlayer />
+        </BrowserRouter>
+      </Provider>
+    );
+
+    const submitButton = screen.getByRole("button");
+    userEvent.click(submitButton);
+
+    expect(mockUseNavigate).toHaveBeenCalledWith("/home");
   });
 });
