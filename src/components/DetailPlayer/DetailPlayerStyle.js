@@ -10,7 +10,7 @@ const DetailPlayerStyle = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transform: translateY(160px);
+    transform: translateY(40px);
 
     .card {
       position: relative;
