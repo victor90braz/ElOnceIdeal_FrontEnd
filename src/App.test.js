@@ -19,21 +19,22 @@ jest.mock("react-router-dom", () => ({
 }));
 
 describe("Given a App component", () => {
-  describe("When the word 'Register' is written to the navlink", () => {
-    test("Then the value of the navlink element should be 'Register'", () => {
-      const expectedResult = "Register";
+  describe("When it's invoked", () => {
+    test("Then it should render the text 'REGISTER'", () => {
+      const expectedText = "REGISTER";
 
       render(
-        <Provider store={store}>
-          <BrowserRouter>
-            <App />
-          </BrowserRouter>
-        </Provider>
+        <>
+          <Provider store={store}>
+            <BrowserRouter>
+              <App />
+            </BrowserRouter>
+          </Provider>
+        </>
       );
 
-      const receivedResult = screen.getByText(expectedResult);
-
-      expect(receivedResult).toBeInTheDocument();
+      const result = screen.getByText(expectedText);
+      expect(result).toBeInTheDocument();
     });
   });
 });

@@ -1,11 +1,18 @@
 import { NavLink } from "react-router-dom";
 import RegisterForm from "../../components/RegisterForm/RegisterForm";
+import RegisterPageStyled from "./RegisterPageStyles";
 
 const RegisterPage = () => {
   return (
     <>
-      <RegisterForm />
-      <NavLink to="/login">Login</NavLink>
+      <RegisterPageStyled>
+        <RegisterForm />
+        <NavLink to="/login">
+          <p>
+            Have an account already? Please, <span> LOGIN </span>
+          </p>
+        </NavLink>
+      </RegisterPageStyled>
     </>
   );
 };

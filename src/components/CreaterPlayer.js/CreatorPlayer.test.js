@@ -73,4 +73,42 @@ describe("Given a CreatorPlayer component", () => {
       expect(name).toHaveValue(inputText);
     });
   });
+
+  describe("When it's invoked", () => {
+    test("Then it should render the text 'New Player'", () => {
+      const expectedText = "New Player";
+
+      render(
+        <>
+          <Provider store={store}>
+            <BrowserRouter>
+              <CreatorPlayer />
+            </BrowserRouter>
+          </Provider>
+        </>
+      );
+
+      const result = screen.getByRole("heading", { level: 2 });
+      expect(result.textContent).toBe(expectedText);
+    });
+  });
+
+  describe("Given a NavigationComponent", () => {
+    describe("When its called to be rendered", () => {
+      test("Then it should create a NavigationComponent with four list components", () => {
+        const listItem = 8;
+
+        render(
+          <Provider store={store}>
+            <BrowserRouter>
+              <CreatorPlayer />
+            </BrowserRouter>
+          </Provider>
+        );
+
+        const displayHeader = screen.getAllByRole("listitem");
+        expect(displayHeader).toHaveLength(listItem);
+      });
+    });
+  });
 });

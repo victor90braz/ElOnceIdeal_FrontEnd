@@ -29,6 +29,7 @@ const NavigationComponent = () => {
               </div>
             </NavLink>
           </li>
+
           <li>
             <NavLink to="/create">
               <div className="container-image">
@@ -45,7 +46,7 @@ const NavigationComponent = () => {
               <div className="container-image">
                 <button onClick={logOut} className="logOut">
                   <img
-                    src="https://www.freeiconspng.com/thumbs/sign-out-icon/sign-out-logout-icon-0.png"
+                    src="https://cdn-icons-png.flaticon.com/512/126/126467.png"
                     alt="Logout to login"
                   />
                 </button>

@@ -19,9 +19,8 @@ describe("Given the Player component", () => {
         </Provider>
       );
 
-      const receivedResult = screen.getByRole("heading", {
-        level: 3,
-        name: /SPEED/i,
+      const receivedResult = screen.getByRole("button", {
+        name: "Delete",
       });
 
       expect(receivedResult).toBeInTheDocument();

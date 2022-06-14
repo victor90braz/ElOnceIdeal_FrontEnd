@@ -6,8 +6,8 @@ import ListPlayers from "./ListPlayers";
 
 describe("Given a ListPlayers component", () => {
   describe("When it's invoked", () => {
-    test("Then it should render a title with a text 'All Players'", () => {
-      const expectedText = "All Players";
+    test("Then it should render a title with a text 'LET'S START MAKING A LIST OF PLAYERS'", () => {
+      const expectedText = "LET'S START MAKING A LIST OF PLAYERS";
       render(
         <Provider store={store}>
           <BrowserRouter>

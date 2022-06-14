@@ -1,88 +1,91 @@
 import styled from "styled-components";
 
 const PlayerStyles = styled.div`
+  .container {
+    width: 100%;
+    height: auto;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
   .card {
-    margin-top: 70px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: auto;
+    width: 100%;
+    height: auto;
+  }
+
+  .photo {
+    background: linear-gradient(to bottom, #fcf5aa, #ddc771);
     display: flex;
-    flex-direction: column;
     align-items: center;
-    position: relative;
-    width: 60vh;
-    height: 400px;
-    border-radius: 20px;
-    box-shadow: 0 35px 80px rgba(0, 0, 1, 1);
-  }
-
-  .card .player-name {
-    color: #7e27ed;
-    top: -50px;
-    position: absolute;
-    align-items: center;
-  }
-
-  .card-image {
-    position: absolute;
-    border-radius: 20px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .card-image img {
-    position: absolute;
-    border-radius: 20px;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .card .card-content {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
     justify-content: center;
-    align-items: flex-end;
+    width: 80vh;
+    height: 50vh;
+    object-fit: cover;
   }
 
-  .card-content .card-content_details {
-    padding: 40px;
-    text-align: center;
+  .photo img {
     width: 100%;
-    transition: 0.5s;
-    background-color: #fff;
-    opacity: 0.8;
+    height: 100%;
   }
 
-  .card-content .card-content_details h2 {
-    font-size: 2.2em;
+  .details {
+    background: linear-gradient(to bottom, #feec97, #dcc673);
+    border-top: 1px solid #ffffee;
+    color: #46390c;
   }
 
-  .card-content .card-content_details .data {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-
-  .card-content .card-content_details .data h3 {
-    font-size: 1.2em;
-    color: #555;
-    line-height: 1.2em;
-    font-weight: 600;
-  }
-
-  .container-element {
-    margin-top: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    transform: translateY(-100%);
-  }
-  .elemento-icon {
+  .details .name {
+    text-transform: uppercase;
+    font-weight: bold;
     font-size: 2em;
+    text-align: center;
+  }
+
+  .details .stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0 0.5em;
+    list-style: none;
+    padding: 0.5em 0;
+    width: 80%;
+    border-top: 1px solid #b4a25b;
+    margin: auto;
+  }
+
+  .details .stats li {
+    font-size: 2.15em;
+    padding: 0.3em 0 0;
+  }
+
+  .details .stats li > span {
+    font-weight: bold;
+  }
+
+  .details .stats li:nth-child(2n) {
+    border-left: 1px solid #b4a25b;
+    padding-left: 1em;
+  }
+
+  .details .actions {
+    z-index: 2;
+    margin-top: 3px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .details .actions button {
+    background: white;
+    border-radius: 3px;
+    font-size: 3em;
+    text-transform: lowercase;
+    border: 0;
+    padding: 4px 8px;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.8);
     cursor: pointer;
   }
 `;

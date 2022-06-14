@@ -86,6 +86,9 @@ const EditPlayer = () => {
           id="speed"
           value={valuePlayer.speed}
           onChange={editPlayerData}
+          min="1"
+          max="2"
+          required
           placeholder="Insert speed"
         />
 
@@ -95,6 +98,9 @@ const EditPlayer = () => {
           id="shoot"
           value={valuePlayer.shoot}
           onChange={editPlayerData}
+          min="1"
+          max="2"
+          required
           placeholder="Insert shoot"
         />
 
@@ -104,6 +110,9 @@ const EditPlayer = () => {
           id="pass"
           value={valuePlayer.pass}
           onChange={editPlayerData}
+          min="1"
+          max="2"
+          required
           placeholder="Insert pass"
         />
 
@@ -113,6 +122,9 @@ const EditPlayer = () => {
           id="agility"
           value={valuePlayer.agility}
           onChange={editPlayerData}
+          min="1"
+          max="2"
+          required
           placeholder="Insert agility"
         />
 
@@ -122,6 +134,9 @@ const EditPlayer = () => {
           id="defense"
           value={valuePlayer.defense}
           onChange={editPlayerData}
+          min="1"
+          max="2"
+          required
           placeholder="Insert defense"
         />
 
@@ -131,6 +146,9 @@ const EditPlayer = () => {
           id="strength"
           value={valuePlayer.strength}
           onChange={editPlayerData}
+          min="1"
+          max="2"
+          required
           placeholder="Insert strength"
         />
 

@@ -39,7 +39,18 @@ const CreatorPlayer = () => {
   const submitCreate = async (event) => {
     try {
       event.preventDefault();
-      await dispatch(createrThunk(formPlayer));
+      await dispatch(
+        createrThunk({
+          name: formPlayer.name,
+          image: formPlayer.image,
+          speed: formPlayer.speed,
+          shoot: formPlayer.shoot,
+          pass: formPlayer.pass,
+          agility: formPlayer.agility,
+          defense: formPlayer.defense,
+          strength: formPlayer.strength,
+        })
+      );
       setFormPlayer(blankFields);
       correctAction("Nice!! Player created XD");
       navigate("/home");
@@ -50,79 +61,101 @@ const CreatorPlayer = () => {
 
   return (
     <CreatorPlayerStyle>
-      <h2>Create</h2>
       <form autoComplete="off" noValidate onSubmit={submitCreate}>
-        <label htmlFor="name">Name</label>
-        <input
-          type="text"
-          id="name"
-          value={formPlayer.name}
-          onChange={changePlayerData}
-          placeholder="Name"
-        />
+        <h2>New Player</h2>
+        <ul>
+          <div className="block-list-left">
+            <li>
+              <label htmlFor="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                value={formPlayer.name}
+                onChange={changePlayerData}
+                placeholder="Name"
+              />
+            </li>
 
-        <label htmlFor="image">Image</label>
-        <input
-          type="url"
-          id="image"
-          value={formPlayer.image}
-          onChange={changePlayerData}
-          placeholder="Insert image URL"
-        />
+            <li>
+              <label htmlFor="image">Image</label>
+              <input
+                type="url"
+                id="image"
+                value={formPlayer.image}
+                onChange={changePlayerData}
+                placeholder="Insert image URL"
+              />
+            </li>
 
-        <label htmlFor="speed">Speed</label>
-        <input
-          type="number"
-          id="speed"
-          value={formPlayer.speed}
-          onChange={changePlayerData}
-          placeholder="Insert speed"
-        />
+            <li>
+              <label htmlFor="speed">Speed</label>
+              <input
+                type="number"
+                id="speed"
+                value={formPlayer.speed}
+                onChange={changePlayerData}
+                placeholder="Insert speed"
+              />
+            </li>
 
-        <label htmlFor="shoot">Shoot</label>
-        <input
-          type="number"
-          id="shoot"
-          value={formPlayer.shoot}
-          onChange={changePlayerData}
-          placeholder="Insert shoot"
-        />
+            <li>
+              <label htmlFor="shoot">Shoot</label>
+              <input
+                type="number"
+                id="shoot"
+                value={formPlayer.shoot}
+                onChange={changePlayerData}
+                placeholder="Insert shoot"
+              />
+            </li>
+          </div>
 
-        <label htmlFor="pass">Pass</label>
-        <input
-          type="number"
-          id="pass"
-          value={formPlayer.pass}
-          onChange={changePlayerData}
-          placeholder="Insert pass"
-        />
+          <div className="block-list-right">
+            <li>
+              <label htmlFor="pass">Pass</label>
+              <input
+                type="number"
+                id="pass"
+                value={formPlayer.pass}
+                onChange={changePlayerData}
+                placeholder="Insert pass"
+              />
+            </li>
 
-        <label htmlFor="agility">Agility</label>
-        <input
-          type="number"
-          id="agility"
-          value={formPlayer.agility}
-          onChange={changePlayerData}
-          placeholder="Insert agility"
-        />
+            <li>
+              <label htmlFor="agility">Agility</label>
+              <input
+                type="number"
+                id="agility"
+                value={formPlayer.agility}
+                onChange={changePlayerData}
+                placeholder="Insert agility"
+              />
+            </li>
 
-        <label htmlFor="speed">Defense</label>
-        <input
-          type="number"
-          id="defense"
-          value={formPlayer.defense}
-          onChange={changePlayerData}
-          placeholder="Insert defense"
-        />
+            <li>
+              <label htmlFor="defense">Defense</label>
+              <input
+                type="number"
+                id="defense"
+                value={formPlayer.defense}
+                onChange={changePlayerData}
+                placeholder="Insert defense"
+              />
+            </li>
 
-        <label htmlFor="strength">Strength</label>
-        <input
-          type="number"
-          id="strength"
-          value={formPlayer.strength}
-          onChange={changePlayerData}
-          placeholder="Insert strength"
-        />
+            <li>
+              <label htmlFor="strength">Strength</label>
+              <input
+                type="number"
+                id="strength"
+                value={formPlayer.strength}
+                onChange={changePlayerData}
+                placeholder="Insert strength"
+              />
+            </li>
+          </div>
+        </ul>
 
         <button disabled={buttonDisabled} type="submit" className="form-button">
           Create
