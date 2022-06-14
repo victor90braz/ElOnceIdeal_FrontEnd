@@ -41,6 +41,7 @@ const LoginForm = () => {
           value={formValues.username}
           onChange={handleInputChange}
           autoComplete="off"
+          placeholder="Username"
         />
         <label htmlFor="password">Password</label>
         <input
@@ -49,6 +50,7 @@ const LoginForm = () => {
           value={formValues.password}
           onChange={handleInputChange}
           autoComplete="off"
+          placeholder="Password"
         />
         <button className="form-button" type="submit">
           Login

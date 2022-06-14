@@ -12,14 +12,16 @@ const RegisterPageStyled = styled.div`
   align-items: center;
   justify-content: center;
   font-size: 1.5em;
+  margin: 0;
 
   p {
     color: white;
+    font-size: 12px;
   }
 
   span {
-    color: red;
-    font-size: 1.2em;
+    color: #5ac8fa;
+    font-size: 20px;
     cursor: pointer;
   }
 `;
