@@ -9,7 +9,7 @@ const ListPlayersStyles = styled.ul`
   align-items: center;
 
   h3 {
-    font-size: 2rem;
+    font-size: 1.5em;
     margin: auto;
   }
 

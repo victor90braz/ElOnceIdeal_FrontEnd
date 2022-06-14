@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const DetailPlayerStyle = styled.div`
-  ul li {
+  ul {
     padding: 0;
     list-style-type: none;
   }
