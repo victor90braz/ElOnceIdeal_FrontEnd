@@ -5,7 +5,7 @@ const EditPageContainer = styled.div`
   align-items: center;
   flex-direction: column;
   top: 150px;
-  width: 100%;
+  width: 100vw;
 `;
 
 export default EditPageContainer;
