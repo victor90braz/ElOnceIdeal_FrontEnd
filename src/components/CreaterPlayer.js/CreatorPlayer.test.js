@@ -69,9 +69,9 @@ describe("Given a CreatorPlayer component", () => {
   });
 
   describe("When the label Name has a value but one of the others fields are empties and the submit is clicked", () => {
-    test("Then the label name should rendered an input with value ''", async () => {
-      const nameLabel = "Name";
+    test("Then the label name should rendered an input with value ''", () => {
       const inputText = "Pelé";
+      const inputNumber = "1";
 
       render(
         <Provider store={store}>
@@ -81,15 +81,22 @@ describe("Given a CreatorPlayer component", () => {
         </Provider>
       );
 
-      const name = screen.getByLabelText(nameLabel);
+      const inputTexts = screen.getAllByRole("textbox");
+      const inputNumbers = screen.getAllByRole("textbox");
 
-      const submitButton = screen.getByRole("button");
+      const submitButton = screen.getByRole("button", { name: "Create" });
 
-      userEvent.type(name, inputText);
+      inputTexts.forEach((input) => {
+        userEvent.type(input, inputText);
+      });
 
-      await userEvent.click(submitButton);
+      inputNumbers.forEach((input) => {
+        userEvent.type(input, inputNumber);
+      });
 
-      expect(name).toHaveValue(inputText);
+      userEvent.click(submitButton);
+
+      expect(mockUseNavigate).toHaveBeenCalled();
     });
   });
 

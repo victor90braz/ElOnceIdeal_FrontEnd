@@ -40,6 +40,7 @@ const EditPlayerStyle = styled.div`
     margin-top: 10px;
     font-family: inherit;
     font-size: 0.9em;
+    width: 40%;
   }
 
   .form-button {
@@ -53,7 +54,6 @@ const EditPlayerStyle = styled.div`
     color: #f5f8fa;
     cursor: pointer;
     background-color: #1da1f2;
-    border-radius: 40px;
   }
 `;
 
