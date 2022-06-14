@@ -36,10 +36,10 @@ const CreatorPlayer = () => {
     setFormPlayer({ ...formPlayer, [event.target.id]: event.target.value });
   };
 
-  const submitCreate = async (event) => {
+  const submitCreate = (event) => {
     try {
       event.preventDefault();
-      await dispatch(
+      dispatch(
         createrThunk({
           name: formPlayer.name,
           image: formPlayer.image,

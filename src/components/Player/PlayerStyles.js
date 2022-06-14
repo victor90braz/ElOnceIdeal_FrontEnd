@@ -2,10 +2,9 @@ import styled from "styled-components";
 
 const PlayerStyles = styled.div`
   .container {
-    width: 100%;
-    height: auto;
-    align-items: center;
-    margin-bottom: 40px;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 20px;
   }
 
   .card {
@@ -14,6 +13,7 @@ const PlayerStyles = styled.div`
     margin: auto;
     width: 100%;
     height: auto;
+    box-shadow: 1px 3px 5px rgb(0 0 0 / 10%);
   }
 
   .photo {
@@ -23,13 +23,13 @@ const PlayerStyles = styled.div`
     justify-content: center;
     width: 80vh;
     height: 50vh;
-    object-fit: cover;
+    object-fit: fill;
   }
 
   .photo img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
   }
 
   .details {
@@ -77,16 +77,14 @@ const PlayerStyles = styled.div`
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+    background: white;
   }
 
   .details .actions button {
-    background: white;
-    border-radius: 3px;
-    font-size: 3em;
-    text-transform: lowercase;
-    border: 0;
-    padding: 4px 8px;
-    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.8);
+    padding: 10px 8px;
+    width: 100%;
+    color: #71aad3;
+    box-shadow: rgb(0 0 0 / 80%) 0px 1px 1px;
     cursor: pointer;
   }
 `;

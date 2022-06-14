@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { logoutActionCreator } from "../../redux/features/userSlice";
 import { correctAction } from "../modals/modals";
 import { NavigationComponentStyled } from "./NavigationComponentStyle";
+import { AiOutlineLogin } from "react-icons/ai";
 
 const NavigationComponent = () => {
   const Navigate = useNavigate();
@@ -23,7 +24,7 @@ const NavigationComponent = () => {
             <NavLink to="/home">
               <div className="container-image">
                 <img
-                  src="https://www.kindpng.com/picc/m/207-2070607_back-to-the-home-page-back-to-home.png"
+                  src="images/home-icon.png"
                   alt="Home page with the list of all players"
                 />
               </div>
@@ -34,7 +35,7 @@ const NavigationComponent = () => {
             <NavLink to="/create">
               <div className="container-image">
                 <img
-                  src="https://www.vhv.rs/dpng/d/276-2761848_user-plus-user-user-add-profile-avatar-person.png"
+                  src="images/create-icon.jpg"
                   alt="Create a new player card"
                 />
               </div>
@@ -44,12 +45,7 @@ const NavigationComponent = () => {
           <li>
             <NavLink to="/login">
               <div className="container-image">
-                <button onClick={logOut} className="logOut">
-                  <img
-                    src="https://cdn-icons-png.flaticon.com/512/126/126467.png"
-                    alt="Logout to login"
-                  />
-                </button>
+                <AiOutlineLogin size={50} color="white" onClick={logOut} />
               </div>
             </NavLink>
           </li>

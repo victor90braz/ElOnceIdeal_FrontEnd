@@ -71,7 +71,7 @@ const CreatorPlayerStyle = styled.div`
     color: #f5f8fa;
     cursor: pointer;
     background-color: #1da1f2;
-    border-radius: 40px;
+    justify-content: center;
   }
 `;
 
