@@ -58,13 +58,13 @@ const DetailPlayer = () => {
                       </h3>
                     </div>
                   </div>
-                  <div className="element-button">
+                  <div className="container-element">
                     <button>
                       <NavLink to="/edit/:playerId">
                         <div className="container-image">
                           <img
-                            src="https://p.kindpng.com/picc/s/154-1541056_edit-edit-icon-svg-hd-png-download.png"
-                            alt="Edit your player"
+                            src="https://iconarchive.com/download/i91967/icons8/windows-8/Users-Edit-User.ico"
+                            alt="Edit a new player card"
                           />
                         </div>
                       </NavLink>

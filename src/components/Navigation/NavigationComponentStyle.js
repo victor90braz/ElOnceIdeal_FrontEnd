@@ -1,14 +1,11 @@
 import styled from "styled-components";
 
 export const NavigationComponentStyled = styled.header`
-  padding: 0;
-  height: 100px;
   background-color: red;
   padding: 20px;
   display: flex;
   justify-content: center;
   width: 100%;
-  position: fixed;
 
   .top-nav {
     display: flex;

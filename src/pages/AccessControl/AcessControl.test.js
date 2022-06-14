@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import AccessControl from "./AccessControl";
 
 const mockUseNavigate = jest.fn();
@@ -21,24 +21,6 @@ describe("Given a 'AccessControl' component", () => {
       render(<AccessControl />);
 
       expect(mockUseNavigate).toHaveBeenCalledWith("/login");
-    });
-  });
-
-  describe("When 'logged' it's true and it has a heading children", () => {
-    test("Then it should render the heading children", () => {
-      mockLogged = true;
-
-      render(
-        <AccessControl>
-          <h1>El Once Ideal</h1>
-        </AccessControl>
-      );
-      const receivedHeading = screen.getByRole("heading", {
-        level: 1,
-        name: /El Once Ideal/i,
-      });
-
-      expect(receivedHeading).toBeInTheDocument();
     });
   });
 });

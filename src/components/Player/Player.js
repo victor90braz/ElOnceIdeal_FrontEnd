@@ -30,40 +30,41 @@ const Player = ({
 
   return (
     <PlayerStyles>
-      <div className="card">
-        <div className="player-name">
-          <h2>{name}</h2>
-        </div>
-        <div className="card-image">
-          <img src={image} alt={name} />
-        </div>
-        <div className="card-content">
-          <div className="card-content_details">
-            <div className="data">
-              <div className="data_props">
-                <h3>SPEED {speed}</h3>
-                <h3>SHOOT {shoot}</h3>
-                <h3>PASS {pass}</h3>
-              </div>
-              <div className="data_props">
-                <h3>AGILITY {agility}</h3>
-                <h3>DEFENSE {defense}</h3>
-                <h3>STRENGTH {strength}</h3>
-              </div>
+      <div className="container">
+        <div className="card">
+          <div className="photo">
+            <img src={image} alt="Player" />
+          </div>
+          <div className="details">
+            <h3 className="name">{name}</h3>
+            <ul className="stats">
+              <li>
+                <span>{speed}</span> PAC
+              </li>
+              <li>
+                <span>{shoot}</span> SHO
+              </li>
+              <li>
+                <span>{pass}</span> PAS
+              </li>
+              <li>
+                <span>{agility}</span> DRI
+              </li>
+              <li>
+                <span>{defense}</span> DEF
+              </li>
+              <li>
+                <span>{strength}</span> PHY
+              </li>
+            </ul>
+
+            <div className="actions">
+              <button onClick={handleAdd}>Detail</button>
+              <button onClick={handleDelete}>Delete</button>
+              <button onClick={handleEdit}>Edit</button>
             </div>
           </div>
         </div>
-      </div>
-      <div className="container-element">
-        <button className="elemento-icon" onClick={handleAdd}>
-          detail
-        </button>
-        <button className="elemento-icon" onClick={handleDelete}>
-          delete
-        </button>
-        <button className="elemento-icon" onClick={handleEdit}>
-          edit
-        </button>
       </div>
     </PlayerStyles>
   );
