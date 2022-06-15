@@ -52,7 +52,7 @@ const CreatorPlayer = () => {
         })
       );
       setFormPlayer(blankFields);
-      correctAction("Nice!! Player created XD");
+      correctAction(`${formPlayer.name} is in the all list now!`);
       navigate("/home");
     } catch (error) {
       wrongAction(
