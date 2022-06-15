@@ -18,17 +18,14 @@ const PlayerStyles = styled.div`
 
   .photo {
     background: linear-gradient(to bottom, #fcf5aa, #ddc771);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 100vh;
     height: 50vh;
-    object-fit: cover;
+    overflow: hidden;
   }
 
   .photo img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: fill;
   }
 
