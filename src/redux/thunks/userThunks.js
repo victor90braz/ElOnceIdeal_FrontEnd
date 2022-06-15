@@ -15,11 +15,11 @@ export const loginThunk = (userData) => async (dispatch) => {
     );
 
     if (status === 200) {
-      correctAction("Login correct!");
       const { id, username } = jwtDecode(data.token);
       localStorage.setItem("token", data.token);
-
+      correctAction(`Welcome to our page ${username}`);
       dispatch(loginActionCreator({ id, username }));
+    } else {
     }
   } catch (error) {
     wrongAction("Incorrect username or password. Please retry!");
