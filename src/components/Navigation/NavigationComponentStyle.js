@@ -5,7 +5,7 @@ export const NavigationComponentStyled = styled.header`
   padding: 20px;
   display: flex;
   justify-content: center;
-  width: 100%;
+  width: 100vw;
 
   .menu {
     display: flex;
