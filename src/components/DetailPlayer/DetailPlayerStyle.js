@@ -20,6 +20,7 @@ const DetailPlayerStyle = styled.ul`
       border-radius: 20px 20px 0 0;
       box-shadow: 0 35px 80px rgba(1, 2, 3, 35);
       transition: 0.5s;
+      overflow: hidden;
 
       .image-box {
         position: absolute;
@@ -27,7 +28,7 @@ const DetailPlayerStyle = styled.ul`
         top: -30px;
         transform: translateX(-50%);
         width: 100%;
-        height: 400px;
+        height: auto;
         background: blue;
         border-radius: 20px;
         box-shadow: 0 15px 50px rgba(0, 0, 0, 0.35);
