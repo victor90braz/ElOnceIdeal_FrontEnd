@@ -7,7 +7,9 @@ import DetailPlayer from "./DetailPlayer";
 
 describe("Given a DetailPlayer", () => {
   describe("When its called to be rendered", () => {
-    test("Then it should create a DetailPlayer with four list components", () => {
+    test("Then it should create a DetailPlayer with one list components", () => {
+      const listItem = 1;
+
       render(
         <Provider store={store}>
           <BrowserRouter>
@@ -16,8 +18,8 @@ describe("Given a DetailPlayer", () => {
         </Provider>
       );
 
-      const displayHeader = screen.getAllByRole("listitem");
-      expect(displayHeader).toHaveLength(1);
+      const expectedResult = screen.getAllByRole("listitem");
+      expect(expectedResult).toHaveLength(listItem);
     });
   });
 });

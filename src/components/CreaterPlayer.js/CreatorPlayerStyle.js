@@ -31,8 +31,6 @@ const CreatorPlayerStyle = styled.div`
     padding: 0;
     list-style-type: none;
     margin: auto;
-    background: black;
-    opacity: 0.8;
     padding: 30px;
     width: 100vw;
   }

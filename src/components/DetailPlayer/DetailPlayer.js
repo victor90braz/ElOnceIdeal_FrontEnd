@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getPlayerThunk } from "../../redux/thunks/playersThunks";
 
 import DetailPlayerStyle from "./DetailPlayerStyle";
@@ -57,18 +57,6 @@ const DetailPlayer = () => {
                         {allPlayers.strength} <br /> <span>STRENGHT</span>
                       </h3>
                     </div>
-                  </div>
-                  <div className="container-element">
-                    <button>
-                      <NavLink to="/edit/:playerId">
-                        <div className="container-image">
-                          <img
-                            src="https://iconarchive.com/download/i91967/icons8/windows-8/Users-Edit-User.ico"
-                            alt="Edit a new player card"
-                          />
-                        </div>
-                      </NavLink>
-                    </button>
                   </div>
                 </div>
               </div>
