@@ -1,4 +1,3 @@
-import { configureStore, createSlice } from "@reduxjs/toolkit";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Provider } from "react-redux";
@@ -29,19 +28,8 @@ describe("Given the Player component", () => {
 
   describe("When it's rendered with a user param that matches the user logged and the rendered delete button is clicked", () => {
     test("Then it should call dispatch", async () => {
-      const playerMockSlice = createSlice({
-        name: "player",
-        initialState: {
-          allPlayers: [],
-        },
-      });
-
-      const mockStore = configureStore({
-        reducer: { player: playerMockSlice },
-      });
-
       render(
-        <Provider store={mockStore}>
+        <Provider store={store}>
           <BrowserRouter>
             <Player player={mockPlayer} />
           </BrowserRouter>

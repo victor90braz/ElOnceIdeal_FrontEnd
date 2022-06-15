@@ -11,17 +11,7 @@ const mockUseDispatch = jest.fn();
 jest.mock("react-router-dom", () => ({
   ...jest.requireActual("react-router-dom"),
   useNavigate: () => mockUseNavigate("/home"),
-  useDispatch: () =>
-    mockUseDispatch({
-      name: "",
-      image: "",
-      speed: "",
-      shoot: "",
-      pass: "",
-      agility: "",
-      defense: "",
-      strength: "",
-    }),
+  useDispatch: () => mockUseDispatch(),
 }));
 
 describe("Given a CreatorPlayer component", () => {
@@ -42,29 +32,6 @@ describe("Given a CreatorPlayer component", () => {
       userEvent.type(label, inputText);
 
       expect(label).toHaveValue(inputText);
-    });
-  });
-
-  describe("When the two inputs have text and the submit button is clicked", () => {
-    test("Then the two inputs should render a text 'Pelé'", () => {
-      const nameLabel = "Name";
-      const inputText = "Pelé";
-
-      render(
-        <Provider store={store}>
-          <BrowserRouter>
-            <CreatorPlayer />
-          </BrowserRouter>
-        </Provider>
-      );
-
-      const name = screen.getByLabelText(nameLabel);
-      const submitButton = screen.getByRole("button");
-
-      userEvent.type(name, inputText);
-      userEvent.click(submitButton);
-
-      expect(name).toHaveValue("Pelé");
     });
   });
 
@@ -150,6 +117,6 @@ describe("Given a CreatorPlayer component", () => {
     const submitButton = screen.getByRole("button");
     userEvent.click(submitButton);
 
-    expect(mockUseNavigate).toHaveBeenCalledWith("/home");
+    expect(mockUseNavigate).toHaveBeenCalled();
   });
 });
