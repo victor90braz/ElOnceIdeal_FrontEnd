@@ -51,6 +51,7 @@ const CreatorPlayer = () => {
           strength: formPlayer.strength,
         })
       );
+
       setFormPlayer(blankFields);
       correctAction(`${formPlayer.name} is in the all list now!`);
       navigate("/home");
