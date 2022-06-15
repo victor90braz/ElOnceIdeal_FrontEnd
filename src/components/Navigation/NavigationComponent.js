@@ -4,6 +4,8 @@ import { logoutActionCreator } from "../../redux/features/userSlice";
 import { correctAction } from "../modals/modals";
 import { NavigationComponentStyled } from "./NavigationComponentStyle";
 import { AiOutlineLogin } from "react-icons/ai";
+import { SiHomebridge } from "react-icons/si";
+import { MdCreateNewFolder } from "react-icons/md";
 
 const NavigationComponent = () => {
   const Navigate = useNavigate();
@@ -13,44 +15,36 @@ const NavigationComponent = () => {
     localStorage.removeItem("token");
     dispatch(logoutActionCreator());
     Navigate("/login");
-    correctAction("Logged out");
+    correctAction("Logout successful!");
   };
 
   return (
     <NavigationComponentStyled>
-      <nav className="top-nav">
-        <ul className="menu">
-          <li>
-            <NavLink to="/home">
-              <div className="container-image">
-                <img
-                  src="images/home-icon.png"
-                  alt="Home page with the list of all players"
-                />
-              </div>
-            </NavLink>
-          </li>
+      <ul className="menu">
+        <li>
+          <NavLink to="/home">
+            <div className="container-icon">
+              <SiHomebridge size={50} color="white" />
+            </div>
+          </NavLink>
+        </li>
 
-          <li>
-            <NavLink to="/create">
-              <div className="container-image">
-                <img
-                  src="images/create-icon.jpg"
-                  alt="Create a new player card"
-                />
-              </div>
-            </NavLink>
-          </li>
+        <li>
+          <NavLink to="/create">
+            <div className="container-icon">
+              <MdCreateNewFolder size={50} color="white" />
+            </div>
+          </NavLink>
+        </li>
 
-          <li>
-            <NavLink to="/login">
-              <div className="container-image">
-                <AiOutlineLogin size={50} color="white" onClick={logOut} />
-              </div>
-            </NavLink>
-          </li>
-        </ul>
-      </nav>
+        <li>
+          <NavLink to="/login">
+            <div className="container-icon">
+              <AiOutlineLogin size={50} color="white" onClick={logOut} />
+            </div>
+          </NavLink>
+        </li>
+      </ul>
     </NavigationComponentStyled>
   );
 };

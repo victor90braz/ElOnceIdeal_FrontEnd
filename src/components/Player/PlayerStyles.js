@@ -21,9 +21,9 @@ const PlayerStyles = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 80vh;
+    width: 100vh;
     height: 50vh;
-    object-fit: fill;
+    object-fit: cover;
   }
 
   .photo img {

@@ -5,14 +5,7 @@ export const NavigationComponentStyled = styled.header`
   padding: 20px;
   display: flex;
   justify-content: center;
-  width: 100vw;
-
-  .top-nav {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
+  width: 100%;
 
   .menu {
     display: flex;
@@ -22,7 +15,7 @@ export const NavigationComponentStyled = styled.header`
     list-style-type: none;
     padding: 0;
 
-    .container-image {
+    .container-icon {
       width: 50px;
       overflow: hidden;
 
