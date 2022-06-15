@@ -116,7 +116,6 @@ const DetailPlayerStyle = styled.ul`
     }
 
     .card:hover .image-box {
-      cursor: pointer;
       width: 250px;
       height: 250px;
     }

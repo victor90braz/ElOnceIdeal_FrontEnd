@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import ListPlayers from "../../components/ListPlayers/ListPlayers";
 import { loadPlayersThunk } from "../../redux/thunks/playersThunks";
 import HomePageStyled from "./HomePageStyled";
@@ -7,9 +7,11 @@ import HomePageStyled from "./HomePageStyled";
 const HomePage = () => {
   const dispatch = useDispatch();
 
+  const players = useSelector((state) => state.player);
+
   useEffect(() => {
     dispatch(loadPlayersThunk());
-  }, [dispatch]);
+  }, [dispatch, players]);
 
   return (
     <>
