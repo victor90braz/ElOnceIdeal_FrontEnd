@@ -53,7 +53,7 @@ const CreatorPlayer = () => {
       );
 
       setFormPlayer(blankFields);
-      correctAction(`${formPlayer.name} is in the all list now!`);
+      correctAction(`Greate, ${formPlayer.name} has been added in the list.`);
       navigate("/home");
     } catch (error) {
       wrongAction(

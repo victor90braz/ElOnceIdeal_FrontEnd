@@ -5,6 +5,7 @@ import {
   deletePlayerThunk,
   getPlayerThunk,
 } from "../../redux/thunks/playersThunks";
+import { correctAction } from "../modals/modals";
 import PlayerStyles from "./PlayerStyles";
 
 const Player = ({
@@ -19,6 +20,7 @@ const Player = ({
 
   const handleDelete = () => {
     dispatch(deletePlayerThunk(id));
+    correctAction(`${name} has been deleted`);
     navigate(`/home`);
   };
 
