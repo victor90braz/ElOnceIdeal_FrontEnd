@@ -86,6 +86,7 @@ const PlayerStyles = styled.div`
     color: #71aad3;
     box-shadow: rgb(0 0 0 / 80%) 0px 1px 1px;
     cursor: pointer;
+    background-color: black;
   }
 `;
 
