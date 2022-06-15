@@ -33,6 +33,7 @@ const RegisterForm = () => {
       await dispatch(registerThunk(formData));
       setFormData(blankFields);
       correctAction("Register successfully.");
+
       Navigate("/login");
     } catch (error) {
       wrongAction("Error. Username already exists. Please try again.");

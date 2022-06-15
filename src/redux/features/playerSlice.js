@@ -11,6 +11,7 @@ const playerSlice = createSlice({
       ...players,
       allPlayers: action.payload,
     }),
+
     loadPlayer: (player, action) => ({
       ...player,
       player: action.payload,
