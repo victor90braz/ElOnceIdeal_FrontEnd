@@ -32,6 +32,7 @@ const CreatorPlayerStyle = styled.div`
     background: black;
     opacity: 0.8;
     padding: 30px;
+    width: 100vw;
   }
 
   li {
