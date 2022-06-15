@@ -24,6 +24,9 @@ const playerSlice = createSlice({
         (player) => player.id !== action.payload
       ),
     }),
+
+    createPlayer: (players, action) => [...players, action.payload],
+
     editPlayer: (player, action) => ({
       ...player,
       allPlayers: player.allPlayers.map((player) =>
@@ -40,6 +43,7 @@ export const {
   editPlayer: editPlayerActionCreator,
   loadPlayer: loadPlayerActionCreator,
   blankState: blankStateActionCreator,
+  createPlayer: createPlayerActionCreator,
 } = playerSlice.actions;
 
 export default playerSlice.reducer;
