@@ -9,8 +9,8 @@ const ListPlayers = () => {
     <ListPlayersStyles>
       <h3>LET'S START MAKING A LIST OF PLAYERS</h3>
 
-      {allPlayers.map((player) => (
-        <Player player={player} key={player.id} />
+      {allPlayers.map((player, index) => (
+        <Player player={player} key={index} />
       ))}
     </ListPlayersStyles>
   );
