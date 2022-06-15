@@ -25,7 +25,10 @@ const playerSlice = createSlice({
       ),
     }),
 
-    createPlayer: (players, action) => [...players, action.payload],
+    createPlayer: (players, action) => ({
+      ...players,
+      allPlayers: [...players.allPlayers, action.payload],
+    }),
 
     editPlayer: (player, action) => ({
       ...player,

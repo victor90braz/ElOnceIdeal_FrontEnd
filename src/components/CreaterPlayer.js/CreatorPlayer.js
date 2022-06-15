@@ -39,6 +39,7 @@ const CreatorPlayer = () => {
   const submitCreate = (event) => {
     try {
       event.preventDefault();
+
       dispatch(
         createrThunk({
           name: formPlayer.name,
