@@ -2,11 +2,13 @@ import styled from "styled-components";
 
 const CreatorPlayerStyle = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 200vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: 1.2em;
+  background: url("https://besthqwallpapers.com/Uploads/29-1-2020/120140/thumb2-blue-abstract-background-blue-creative-background-neon-lines-background-neon-blue-light.jpg");
+  object-fit: cover;
 
   h2 {
     color: white;
