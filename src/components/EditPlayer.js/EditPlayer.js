@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { blankStateActionCreator } from "../../redux/features/playerSlice";
 import { editPlayerThunk } from "../../redux/thunks/playersThunks";
+import { correctAction } from "../modals/modals";
 import EditPlayerStyle from "./EditPlayerStyle";
 
 const EditPlayer = () => {
@@ -48,6 +49,7 @@ const EditPlayer = () => {
       );
 
       dispatch(blankStateActionCreator());
+      correctAction(`${valuePlayer.name} has been edited successfully`);
       navigate("/home");
     }
   };
