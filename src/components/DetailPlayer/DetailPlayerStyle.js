@@ -28,7 +28,7 @@ const DetailPlayerStyle = styled.ul`
         top: -30px;
         transform: translateX(-50%);
         width: 100%;
-        height: auto;
+        height: 100%;
         background: blue;
         border-radius: 20px;
         box-shadow: 0 15px 50px rgba(0, 0, 0, 0.35);
@@ -36,7 +36,7 @@ const DetailPlayerStyle = styled.ul`
         transition: 0.5s;
 
         img {
-          position: absolute;
+          position: relative;
           top: 0;
           left: 0;
           width: 100%;
