@@ -35,7 +35,7 @@ const RegisterForm = () => {
       correctAction("Register successfully.");
       Navigate("/login");
     } catch (error) {
-      wrongAction("Sorry. Username already exists. Try again please.");
+      wrongAction("Error. Username already exists. Please try again.");
     }
   };
 

@@ -1,7 +1,6 @@
 import { useDispatch } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
 import { logoutActionCreator } from "../../redux/features/userSlice";
-import { correctAction } from "../modals/modals";
 import { NavigationComponentStyled } from "./NavigationComponentStyle";
 import { AiOutlineLogin } from "react-icons/ai";
 import { SiHomebridge } from "react-icons/si";
@@ -15,7 +14,6 @@ const NavigationComponent = () => {
     localStorage.removeItem("token");
     dispatch(logoutActionCreator());
     Navigate("/login");
-    correctAction("Logout successful!");
   };
 
   return (

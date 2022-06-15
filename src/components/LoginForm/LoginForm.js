@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loginThunk } from "../../redux/thunks/userThunks";
+import { wrongAction } from "../modals/modals";
 
 import LoginFormStyle from "./LoginFormStyle";
 
@@ -23,10 +24,12 @@ const LoginForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (formValues.username === "" || formValues.password === "") {
+      wrongAction("Please fill out this field");
       return;
     }
     await dispatch(loginThunk(formValues));
     setFormValues(initialFormValue);
+
     navigate("/home");
   };
 
