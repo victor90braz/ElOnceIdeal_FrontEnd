@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const DetailPlayerStyle = styled.div`
+const DetailPlayerStyle = styled.ul`
   ul {
     padding: 0;
     list-style-type: none;

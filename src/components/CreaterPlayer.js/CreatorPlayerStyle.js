@@ -7,13 +7,11 @@ const CreatorPlayerStyle = styled.div`
   flex-direction: column;
   align-items: center;
   font-size: 1.2em;
-  background: url("https://e0.365dm.com/20/05/2048x1152/skysports-aguero-pogba-ibra_5001727.png");
-  object-fit: cover;
 
   h2 {
     color: white;
     background-color: #1da1f2;
-    width: 100vw;
+    width: 80%;
     display: flex;
     justify-content: center;
   }
