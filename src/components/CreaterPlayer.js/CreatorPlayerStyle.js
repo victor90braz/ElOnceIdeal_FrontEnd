@@ -13,9 +13,10 @@ const CreatorPlayerStyle = styled.div`
   h2 {
     color: white;
     background-color: #1da1f2;
-    width: 80%;
+    width: 100%;
     display: flex;
     justify-content: center;
+    margin: auto;
   }
 
   form {
