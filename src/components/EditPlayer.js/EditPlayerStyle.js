@@ -13,7 +13,6 @@ const EditPlayerStyle = styled.div`
     color: #f5f8fa;
     background: #1da1f2;
     width: 100%;
-    padding: 20px;
     margin: auto;
     display: flex;
     justify-content: center;
