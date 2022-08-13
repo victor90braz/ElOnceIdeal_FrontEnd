@@ -7,7 +7,7 @@ import LoginPage from "./LoginPage";
 describe("Given a RegistersPage Component", () => {
   describe("When it's invoked", () => {
     test("Then it should render the text 'Username'", () => {
-      const expectedResult = "Username";
+      const expectedResult = "USERNAME";
 
       render(
         <Provider store={store}>
