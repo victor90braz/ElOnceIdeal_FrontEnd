@@ -3,7 +3,6 @@ import styled from "styled-components";
 import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import AccessControl from "./pages/AccessControl/AccessControl";
-import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import jwtDecode from "jwt-decode";
@@ -12,6 +11,7 @@ import CreatorPlayer from "./components/CreaterPlayer.js/CreatorPlayer";
 import EditPage from "./pages/EditPage/EditPage";
 import DetailPlayer from "./components/DetailPlayer/DetailPlayer";
 import NavigationComponent from "./components/Navigation/NavigationComponent";
+import UserRegister from "./components/UserRegister/UserRegister";
 
 const AppStyle = styled.div`
   display: flex;
@@ -46,7 +46,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/register" element={<UserRegister />} />
         <Route
           path="/create"
           element={
