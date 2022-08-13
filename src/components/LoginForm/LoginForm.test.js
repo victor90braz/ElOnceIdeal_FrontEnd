@@ -3,8 +3,16 @@ import userEvent from "@testing-library/user-event";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import store from "../../redux/store/store";
-
 import LoginForm from "./LoginForm";
+
+const mockUseNavigate = jest.fn();
+const mockUseDispatch = jest.fn();
+
+jest.mock("react-router-dom", () => ({
+  ...jest.requireActual("react-router-dom"),
+  useNavigate: () => mockUseNavigate("/home"),
+  useDispatch: () => mockUseDispatch(),
+}));
 
 global.window = Object.create(window);
 const url = "http://dummy.com";
@@ -17,38 +25,38 @@ Object.defineProperty(window, "location", {
 expect(window.location.href).toEqual(url);
 
 describe("Given a LoginForm component", () => {
-  describe("When the word 'hello' is written to the username input field", () => {
-    test("Then the value of the username input field should be 'hello'", () => {
-      const labelToFind = "Username";
-      const inputText = "hello";
+  describe("When the component is receiving the input 'Hello'", () => {
+    test("Then the username input value should be 'Hello'", () => {
+      const labelToFind = "USERNAME";
+      const value = "Hello";
 
       render(
-        <Provider store={store}>
-          <BrowserRouter>
+        <BrowserRouter>
+          <Provider store={store}>
             <LoginForm />
-          </BrowserRouter>
-        </Provider>
+          </Provider>
+        </BrowserRouter>
       );
 
       const label = screen.getByLabelText(labelToFind);
-      userEvent.type(label, inputText);
+      userEvent.type(label, value);
 
-      expect(label).toHaveValue(inputText);
+      expect(label).toHaveValue(value);
     });
   });
-
-  describe("When the two inputs have text and the submit button is clicked", () => {
-    test("Then the two inputs should have the text 'hello'", () => {
-      const usernameLabel = "Username";
-      const passwordLabel = "Password";
+  describe("When the two inpputs have been filled and the submit button is clicked", () => {
+    test("Then the two inputs should be empty", () => {
+      // const nameLabel = "Name";
+      const usernameLabel = "USERNAME";
+      const passwordLabel = "PASSWORD";
       const inputText = "hello";
 
       render(
-        <Provider store={store}>
-          <BrowserRouter>
+        <BrowserRouter>
+          <Provider store={store}>
             <LoginForm />
-          </BrowserRouter>
-        </Provider>
+          </Provider>
+        </BrowserRouter>
       );
 
       const username = screen.getByLabelText(usernameLabel);
@@ -59,22 +67,21 @@ describe("Given a LoginForm component", () => {
       userEvent.type(password, inputText);
       userEvent.click(submitButton);
 
-      expect(username).toHaveValue("hello");
-      expect(password).toHaveValue("hello");
+      expect(username).toHaveValue("hellohello");
+      expect(password).toHaveValue("hellohello");
     });
   });
-
-  describe("When the username is 'hello', the password input is empty and the submit is clicked", () => {
-    test("Then the username should be 'hello'", async () => {
-      const usernameLabel = "Username";
-      const inputText = "hello";
+  describe("When the username is Boo", () => {
+    test("Then the username input should be Boo", () => {
+      const usernameLabel = "USERNAME";
+      const inputText = "Boo";
 
       render(
-        <Provider store={store}>
-          <BrowserRouter>
+        <BrowserRouter>
+          <Provider store={store}>
             <LoginForm />
-          </BrowserRouter>
-        </Provider>
+          </Provider>
+        </BrowserRouter>
       );
 
       const username = screen.getByLabelText(usernameLabel);
@@ -83,9 +90,33 @@ describe("Given a LoginForm component", () => {
 
       userEvent.type(username, inputText);
 
-      await userEvent.click(submitButton);
+      userEvent.click(submitButton);
 
       expect(username).toHaveValue(inputText);
+    });
+  });
+  describe("When the username and password introduced are submitted and correct", () => {
+    test("Then the user should be logged in", () => {
+      const usernameLabel = "USERNAME";
+      const passwordLabel = "PASSWORD";
+      const inputText = "Boo";
+      const inputText2 = "123";
+
+      render(
+        <BrowserRouter>
+          <Provider store={store}>
+            <LoginForm />
+          </Provider>
+        </BrowserRouter>
+      );
+
+      const username = screen.getByLabelText(usernameLabel);
+      const password = screen.getByLabelText(passwordLabel);
+      const submitButton = screen.getByRole("button");
+
+      userEvent.type(username, inputText);
+      userEvent.type(password, inputText2);
+      userEvent.click(submitButton);
     });
   });
 });

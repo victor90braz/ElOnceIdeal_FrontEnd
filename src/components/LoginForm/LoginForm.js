@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { loginThunk } from "../../redux/thunks/userThunks";
 import { wrongAction } from "../modals/modals";
 
@@ -9,56 +9,65 @@ import LoginFormStyle from "./LoginFormStyle";
 const LoginForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
   const initialFormValue = {
     username: "",
     password: "",
   };
 
-  const [formValues, setFormValues] = useState(initialFormValue);
+  const [formValue, setFormValue] = useState(initialFormValue);
 
   const handleInputChange = (event) => {
-    setFormValues({ ...formValues, [event.target.id]: event.target.value });
+    event.preventDefault();
+    setFormValue({ ...formValue, [event.target.id]: event.target.value });
   };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (formValues.username === "" || formValues.password === "") {
-      wrongAction("Please fill out this field");
-      return;
+    if (formValue.username === "" || formValue.password === "") {
+      wrongAction("Please fill all fields");
     }
-    await dispatch(loginThunk(formValues));
-    setFormValues(initialFormValue);
 
+    await dispatch(loginThunk(formValue));
     navigate("/home");
   };
 
   return (
     <LoginFormStyle>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit} noValidate>
-        <label htmlFor="username">Username</label>
-        <input
-          type="text"
-          id="username"
-          value={formValues.username}
-          onChange={handleInputChange}
-          autoComplete="off"
-          placeholder="Username"
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          id="password"
-          value={formValues.password}
-          onChange={handleInputChange}
-          autoComplete="off"
-          placeholder="Password"
-        />
-        <button className="form-button" type="submit">
-          Login
-        </button>
-      </form>
+      <div class="container">
+        <div>
+          <img src="./top11-logo.png" alt="" class="brand-logo" />
+        </div>
+        <small>Are you a new user?</small>
+        <NavLink to={"/register"} style={{ textDecoration: "none" }}>
+          <div class="register">
+            <small>Click to </small>REGISTER
+          </div>
+        </NavLink>
+
+        <form autoComplete="off" noValidate onSubmit={handleSubmit}>
+          <div class="inputs">
+            <label htmlFor="username">USERNAME</label>
+            <input
+              type="text"
+              id="username"
+              onChange={handleInputChange}
+              value={formValue.username}
+              placeholder="ronaldofenomeno"
+              required
+            />
+            <label htmlFor="username">PASSWORD</label>
+            <input
+              type="password"
+              id="password"
+              onChange={handleInputChange}
+              value={formValue.password}
+              placeholder="Min 9 charaters long"
+              minLength={9}
+              required
+            />
+            <button type="submit">LOGIN</button>
+          </div>
+        </form>
+      </div>
     </LoginFormStyle>
   );
 };
