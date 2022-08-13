@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
-import { loginThunk } from "../../redux/thunks/userThunks";
+import { registerThunk } from "../../redux/thunks/userThunks";
 import { wrongAction } from "../modals/modals";
+import UserRegisterStyle from "./UserRegisterStyle";
 
-import LoginFormStyle from "./LoginFormStyle";
-
-const LoginForm = () => {
+const UserRegister = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const initialFormValue = {
+    name: "",
     username: "",
     password: "",
   };
@@ -22,29 +22,42 @@ const LoginForm = () => {
   };
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (formValue.username === "" || formValue.password === "") {
+    if (
+      formValue.name === "" ||
+      formValue.username === "" ||
+      formValue.password === ""
+    ) {
       wrongAction("Please fill all fields");
     }
 
-    await dispatch(loginThunk(formValue));
-    navigate("/home");
+    await dispatch(registerThunk(formValue));
+    navigate("/login");
   };
 
   return (
-    <LoginFormStyle>
+    <UserRegisterStyle>
       <div className="container">
         <div>
           <img src="./top11-logo.png" alt="" className="brand-logo" />
         </div>
-        <small>Are you a new user?</small>
-        <NavLink to={"/register"} style={{ textDecoration: "none" }}>
-          <div className="register">
-            <small>Click to </small>REGISTER
+        <small>Have you already an account? </small>
+        <NavLink to={"/login"} style={{ textDecoration: "none" }}>
+          <div className="login">
+            <small>Back to </small>Login
           </div>
         </NavLink>
 
         <form autoComplete="off" noValidate onSubmit={handleSubmit}>
           <div className="inputs">
+            <label htmlFor="username">NAME</label>
+            <input
+              type="text"
+              id="name"
+              onChange={handleInputChange}
+              value={formValue.name}
+              placeholder="ronaldo"
+              required
+            />
             <label htmlFor="username">USERNAME</label>
             <input
               type="text"
@@ -64,12 +77,12 @@ const LoginForm = () => {
               minLength={9}
               required
             />
-            <button type="submit">LOGIN</button>
+            <button type="submit">REGISTER</button>
           </div>
         </form>
       </div>
-    </LoginFormStyle>
+    </UserRegisterStyle>
   );
 };
 
-export default LoginForm;
+export default UserRegister;
