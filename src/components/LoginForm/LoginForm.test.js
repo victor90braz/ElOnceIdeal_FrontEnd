@@ -14,6 +14,16 @@ jest.mock("react-router-dom", () => ({
   useDispatch: () => mockUseDispatch(),
 }));
 
+global.window = Object.create(window);
+const url = "http://dummy.com";
+Object.defineProperty(window, "location", {
+  value: {
+    href: url,
+  },
+});
+
+expect(window.location.href).toEqual(url);
+
 describe("Given a LoginForm component", () => {
   describe("When the component is receiving the input 'Hello'", () => {
     test("Then the username input value should be 'Hello'", () => {
