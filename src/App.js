@@ -1,7 +1,6 @@
 import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import HomePage from "./pages/HomePage/HomePage";
-import LoginPage from "./pages/LoginPage/LoginPage";
 import AccessControl from "./pages/AccessControl/AccessControl";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -12,6 +11,7 @@ import EditPage from "./pages/EditPage/EditPage";
 import DetailPlayer from "./components/DetailPlayer/DetailPlayer";
 import NavigationComponent from "./components/Navigation/NavigationComponent";
 import UserRegister from "./components/UserRegister/UserRegister";
+import LoginForm from "./components/LoginForm/LoginForm";
 
 const AppStyle = styled.div`
   display: flex;
@@ -45,7 +45,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Navigate to="/login" />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/login" element={<LoginForm />} />
         <Route path="/register" element={<UserRegister />} />
         <Route
           path="/create"
