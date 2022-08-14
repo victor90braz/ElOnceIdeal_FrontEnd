@@ -9,9 +9,9 @@ import { loginActionCreator } from "./redux/features/userSlice";
 import CreatorPlayer from "./components/CreaterPlayer.js/CreatorPlayer";
 import EditPage from "./pages/EditPage/EditPage";
 import DetailPlayer from "./components/DetailPlayer/DetailPlayer";
-import NavigationComponent from "./components/Navigation/NavigationComponent";
 import UserRegister from "./components/UserRegister/UserRegister";
 import LoginForm from "./components/LoginForm/LoginForm";
+import MenuNavigate from "./components/MenuNavigate/MenuNavigate";
 
 const AppStyle = styled.div`
   display: flex;
@@ -39,7 +39,7 @@ function App() {
       {window.location.pathname !== "/login" &&
         window.location.pathname !== "/register" && (
           <>
-            <NavigationComponent />
+            <MenuNavigate />
           </>
         )}
 
