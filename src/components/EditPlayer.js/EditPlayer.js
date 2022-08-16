@@ -22,7 +22,10 @@ const EditPlayer = () => {
     valuePlayer.pass === "" ||
     valuePlayer.agility === "" ||
     valuePlayer.defense === "" ||
-    valuePlayer.strength === "";
+    valuePlayer.strength === "" ||
+    valuePlayer.video === "" ||
+    valuePlayer.perfil === "" ||
+    valuePlayer.nationality === "";
 
   const editPlayerData = (event) => {
     setFormEditPlayer({
@@ -45,6 +48,9 @@ const EditPlayer = () => {
           agility: valuePlayer.agility,
           defense: valuePlayer.defense,
           strength: valuePlayer.strength,
+          video: valuePlayer.video,
+          perfil: valuePlayer.perfil,
+          nationality: valuePlayer.nationality,
         })
       );
 
@@ -74,6 +80,33 @@ const EditPlayer = () => {
           value={valuePlayer.image}
           onChange={editPlayerData}
           placeholder="Insert image URL"
+        />
+
+        <label htmlFor="video">Video</label>
+        <input
+          type="text"
+          id="video"
+          value={valuePlayer.video}
+          onChange={editPlayerData}
+          placeholder="Insert video embedId"
+        />
+
+        <label htmlFor="perfil">Perfil</label>
+        <input
+          type="text"
+          id="perfil"
+          value={valuePlayer.perfil}
+          onChange={editPlayerData}
+          placeholder="Perfil"
+        />
+
+        <label htmlFor="nationality">Nationality</label>
+        <input
+          type="text"
+          id="nationality"
+          value={valuePlayer.nationality}
+          onChange={editPlayerData}
+          placeholder="Nationality"
         />
 
         <label htmlFor="speed">Speed</label>
