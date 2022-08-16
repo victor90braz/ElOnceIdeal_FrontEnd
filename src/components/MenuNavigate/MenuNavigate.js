@@ -1,14 +1,16 @@
 import { NavLink } from "react-router-dom";
+
 import MenuNavigateStyle from "./MenuNavigateStyle";
+import LogOut from "../LogOut/LogOut";
 
 const MenuNavigate = () => {
   return (
     <MenuNavigateStyle>
       <nav className="navbar navbar-expand-lg bg-light">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#/">
-            Urban Sport
-          </a>
+          <NavLink to="/home" className="navbar-brand">
+            <h1>El Once Ideal</h1>
+          </NavLink>
           <button
             className="navbar-toggler"
             type="button"
@@ -23,26 +25,22 @@ const MenuNavigate = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/home">
-                  <NavLink to="/home">Home</NavLink>
-                </a>
+                <NavLink
+                  to="/home"
+                  className="nav-link active"
+                  aria-current="page"
+                >
+                  Home
+                </NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/edit/:playerId">
-                  <NavLink to="/edit/:playerId">Edit</NavLink>
-                </a>
+                <NavLink to="/create" className="nav-link">
+                  Add Player
+                </NavLink>
               </li>
             </ul>
-            <form className="d-flex" role="search">
-              <input
-                className="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button className="btn btn-outline-success" type="submit">
-                Search
-              </button>
+            <form className="logout">
+              <LogOut />
             </form>
           </div>
         </div>
