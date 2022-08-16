@@ -40,9 +40,9 @@ const DetailPlayer = () => {
                         <iframe
                           width="853"
                           height="480"
-                          src={`https://www.youtube.com/embed/rokGy0huYEA`}
+                          src={`https://www.youtube.com/embed/${allPlayers.video}`}
                           frameBorder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                           allowFullScreen
                           title="Embedded youtube"
                         />
