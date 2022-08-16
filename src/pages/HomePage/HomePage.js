@@ -14,7 +14,6 @@ const HomePage = () => {
   return (
     <>
       <HomePageStyled>
-        <h1>El Once Ideal</h1>
         <ListPlayers />
       </HomePageStyled>
     </>
