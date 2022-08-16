@@ -9,7 +9,18 @@ import { correctAction } from "../modals/modals";
 import PlayerStyles from "./PlayerStyles";
 
 const Player = ({
-  player: { name, image, speed, shoot, pass, agility, defense, strength, id },
+  player: {
+    name,
+    image,
+    speed,
+    shoot,
+    pass,
+    agility,
+    defense,
+    strength,
+    id,
+    video,
+  },
 }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();

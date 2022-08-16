@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/iframe-has-title */
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -29,33 +30,23 @@ const DetailPlayer = () => {
                   <h2>
                     {allPlayers.name} <br />
                     <span>
-                      Ronaldo começou a jogar futebol aos oito anos de idade nas
-                      categorias de base do Clube Futebol Andorinha de Santo
-                      António, time modesto da ilha da Madeira.
+                      {allPlayers.nationality} <br />
                     </span>
                   </h2>
                   <div className="data">
                     <div className="data-row">
-                      <h3>
-                        {allPlayers.speed} <br /> <span>SPEED</span>
-                      </h3>
-                      <h3>
-                        {allPlayers.shoot} <br /> <span>SHOOT</span>
-                      </h3>
-                      <h3>
-                        {allPlayers.pass} <br /> <span>PASS</span>
-                      </h3>
-                    </div>
-                    <div className="data-row">
-                      <h3>
-                        {allPlayers.agility} <br /> <span>AGILITY</span>
-                      </h3>
-                      <h3>
-                        {allPlayers.defense} <br /> <span>DEFENSE</span>
-                      </h3>
-                      <h3>
-                        {allPlayers.strength} <br /> <span>STRENGHT</span>
-                      </h3>
+                      <h3>{allPlayers.perfil}</h3>
+                      <div className="video-responsive">
+                        <iframe
+                          width="853"
+                          height="480"
+                          src={`https://www.youtube.com/embed/rokGy0huYEA`}
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                          title="Embedded youtube"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
