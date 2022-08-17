@@ -6,7 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import store from "../../redux/store/store";
 
 const mockDispatch = jest.fn();
-const player = "cr7";
+const player = "Name";
 
 jest.mock("react-redux", () => ({
   ...jest.requireActual("react-redux"),
@@ -16,7 +16,7 @@ jest.mock("react-redux", () => ({
 
 describe("Given a EditPage component", () => {
   describe("When it's rendered and the noteId param matches with a note", () => {
-    test("Then it should show the text 'Agility'", () => {
+    test("Then it should show the text 'Name'", () => {
       render(
         <Provider store={store}>
           <BrowserRouter>
@@ -25,7 +25,7 @@ describe("Given a EditPage component", () => {
         </Provider>
       );
 
-      const element = screen.getByRole("heading");
+      const element = screen.getByRole("heading", { level: 2 });
 
       expect(element).toBeInTheDocument();
     });

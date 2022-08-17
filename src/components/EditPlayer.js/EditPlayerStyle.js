@@ -1,12 +1,11 @@
 import styled from "styled-components";
 
 const EditPlayerStyle = styled.div`
-  background: url("https://i.pinimg.com/originals/de/65/80/de65803bb7183902a820eda364c3282c.png");
-  object-fit: cover;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: black;
 
   h2 {
     font-size: 2em;
@@ -53,6 +52,14 @@ const EditPlayerStyle = styled.div`
     color: #f5f8fa;
     cursor: pointer;
     background-color: #1da1f2;
+  }
+
+  small {
+    color: white;
+  }
+  span {
+    color: red;
+    font-weight: 600;
   }
 `;
 
