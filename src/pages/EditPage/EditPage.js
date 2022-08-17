@@ -1,9 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import EditPlayer from "../../components/EditPlayer.js/EditPlayer";
+import Edit from "../../components/Edit/Edit";
 import { getPlayerThunk } from "../../redux/thunks/playersThunks";
-import EditPageContainer from "./EditPageStyles";
 
 const EditPage = () => {
   const { playerId } = useParams();
@@ -15,11 +14,7 @@ const EditPage = () => {
     dispatch(getPlayerThunk(playerId));
   }, [dispatch, playerId]);
 
-  return (
-    <>
-      <EditPageContainer>{player.name && <EditPlayer />}</EditPageContainer>
-    </>
-  );
+  return <>{player.name && <Edit />}</>;
 };
 
 export default EditPage;

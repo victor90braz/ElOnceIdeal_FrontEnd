@@ -4,9 +4,9 @@ import { useNavigate } from "react-router-dom";
 import { blankStateActionCreator } from "../../redux/features/playerSlice";
 import { editPlayerThunk } from "../../redux/thunks/playersThunks";
 import { correctAction } from "../modals/modals";
-import EditPlayerStyle from "./EditPlayerStyle";
+import EditStyle from "./EditStyle";
 
-const EditPlayer = () => {
+const Edit = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -61,52 +61,57 @@ const EditPlayer = () => {
   };
 
   return (
-    <EditPlayerStyle>
-      <h2>Edit Card</h2>
+    <EditStyle>
       <form autoComplete="off" noValidate onSubmit={submitEdit}>
-        <label htmlFor="name">Name</label>
+        <label htmlFor="name">
+          <h2>Name</h2>
+        </label>
         <input
-          type="text"
           id="name"
+          type="text"
+          placeholder="Name"
           value={valuePlayer.name}
           onChange={editPlayerData}
-          placeholder="Name"
         />
-        <label htmlFor="image">Image</label>
-        <input
-          type="url"
-          id="image"
-          value={valuePlayer.image}
-          onChange={editPlayerData}
-          placeholder="Insert image URL"
-        />
-        <label htmlFor="video">Video </label>
-        <small>Insert the embedId</small>
-        <input
-          type="text"
-          id="video"
-          value={valuePlayer.video}
-          onChange={editPlayerData}
-          placeholder="Insert video embedId"
-        />
-        <small>Ex: src={`https://www.youtube.com/embedId`}</small>
 
-        <label htmlFor="perfil">Perfil</label>
+        <label htmlFor="nationality">
+          <h3>Nationality</h3>
+        </label>
         <input
-          type="text"
-          id="perfil"
-          value={valuePlayer.perfil}
-          onChange={editPlayerData}
-          placeholder="Perfil"
-        />
-        <label htmlFor="nationality">Nationality</label>
-        <input
-          type="text"
           id="nationality"
+          type="text"
+          placeholder="Shoot"
           value={valuePlayer.nationality}
           onChange={editPlayerData}
-          placeholder="Nationality"
         />
+
+        <label htmlFor="image">Image</label>
+        <input
+          id="image"
+          type="text"
+          placeholder="Image Url"
+          value={valuePlayer.image}
+          onChange={editPlayerData}
+        />
+
+        <label htmlFor="video">Video </label>
+        <input
+          id="video"
+          type="text"
+          placeholder="Nationality"
+          value={valuePlayer.video}
+          onChange={editPlayerData}
+        />
+        <label htmlFor="perfil">Perfil </label>
+        <textarea
+          id="perfil"
+          name="textarea"
+          rows="10"
+          cols="50"
+          value={valuePlayer.perfil}
+          onChange={editPlayerData}
+        />
+
         <label htmlFor="speed">Speed</label>
         <input
           type="number"
@@ -173,17 +178,15 @@ const EditPlayer = () => {
           required
           placeholder="Insert strength"
         />
-        <button
+        <input
           disabled={buttonDisabled}
           type="submit"
           className="form-button"
-          value={player}
-        >
-          Edit
-        </button>
+          value="Edit Player"
+        />
       </form>
-    </EditPlayerStyle>
+    </EditStyle>
   );
 };
 
-export default EditPlayer;
+export default Edit;
