@@ -13,7 +13,6 @@ const HomePage = () => {
 
   return (
     <HomePageStyled>
-      <h3>LET'S START MAKING A LIST OF PLAYERS</h3>
       <ListPlayers />
     </HomePageStyled>
   );
