@@ -84,7 +84,7 @@ const CreatorPlayer = () => {
           type="text"
           value={formPlayer.name}
           onChange={changePlayerData}
-          class="inputbox"
+          className="inputbox"
           name="name"
           required
         />
@@ -94,7 +94,7 @@ const CreatorPlayer = () => {
           type="text"
           value={formPlayer.nationality}
           onChange={changePlayerData}
-          class="inputbox"
+          className="inputbox"
           name="nationality"
           required
         />
@@ -104,7 +104,7 @@ const CreatorPlayer = () => {
           type="text"
           value={formPlayer.image}
           onChange={changePlayerData}
-          class="inputbox"
+          className="inputbox"
           name="image"
           required
         />
@@ -115,7 +115,7 @@ const CreatorPlayer = () => {
           type="text"
           value={formPlayer.video}
           onChange={changePlayerData}
-          class="inputbox"
+          className="inputbox"
           name="video"
           required
         />
@@ -125,7 +125,7 @@ const CreatorPlayer = () => {
           type="textarea"
           value={formPlayer.perfil}
           onChange={changePlayerData}
-          class="inputbox"
+          className="inputbox"
           name="perfil"
           required
         />
@@ -140,7 +140,7 @@ const CreatorPlayer = () => {
               type="range"
               value={formPlayer.speed}
               onChange={changePlayerData}
-              class="inputbox"
+              className="inputbox"
               name="speed"
               min="0"
               max="99"
@@ -155,7 +155,7 @@ const CreatorPlayer = () => {
               type="range"
               value={formPlayer.shoot}
               onChange={changePlayerData}
-              class="inputbox"
+              className="inputbox"
               name="shoot"
               min="0"
               max="99"
@@ -170,7 +170,7 @@ const CreatorPlayer = () => {
               type="range"
               value={formPlayer.pass}
               onChange={changePlayerData}
-              class="inputbox"
+              className="inputbox"
               name="pass"
               min="0"
               max="99"
@@ -185,7 +185,7 @@ const CreatorPlayer = () => {
               type="range"
               value={formPlayer.agility}
               onChange={changePlayerData}
-              class="inputbox"
+              className="inputbox"
               name="agility"
               min="0"
               max="99"
@@ -200,7 +200,7 @@ const CreatorPlayer = () => {
               type="range"
               value={formPlayer.defense}
               onChange={changePlayerData}
-              class="inputbox"
+              className="inputbox"
               name="defense"
               min="0"
               max="99"
@@ -215,7 +215,7 @@ const CreatorPlayer = () => {
               type="range"
               value={formPlayer.strength}
               onChange={changePlayerData}
-              class="inputbox"
+              className="inputbox"
               name="strength"
               min="0"
               max="99"
