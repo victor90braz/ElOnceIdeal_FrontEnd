@@ -124,7 +124,7 @@ const Edit = () => {
             type="range"
             value={valuePlayer.speed}
             onChange={editPlayerData}
-            class="inputbox"
+            className="inputbox"
             name="speed"
             min="0"
             max="99"
@@ -140,7 +140,7 @@ const Edit = () => {
             type="range"
             value={valuePlayer.shoot}
             onChange={editPlayerData}
-            class="inputbox"
+            className="inputbox"
             name="shoot"
             min="0"
             max="99"
@@ -156,7 +156,7 @@ const Edit = () => {
             type="range"
             value={valuePlayer.pass}
             onChange={editPlayerData}
-            class="inputbox"
+            className="inputbox"
             name="pass"
             min="0"
             max="99"
@@ -172,7 +172,7 @@ const Edit = () => {
             type="range"
             value={valuePlayer.agility}
             onChange={editPlayerData}
-            class="inputbox"
+            className="inputbox"
             name="agility"
             min="0"
             max="99"
@@ -188,7 +188,7 @@ const Edit = () => {
             type="range"
             value={valuePlayer.defense}
             onChange={editPlayerData}
-            class="inputbox"
+            className="inputbox"
             name="defense"
             min="0"
             max="99"
@@ -204,7 +204,7 @@ const Edit = () => {
             type="range"
             value={valuePlayer.strength}
             onChange={editPlayerData}
-            class="inputbox"
+            className="inputbox"
             name="strength"
             min="0"
             max="99"
