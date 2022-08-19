@@ -51,7 +51,9 @@ describe("Given a CreatorPlayer component", () => {
       const inputTexts = screen.getAllByRole("textbox");
       const inputNumbers = screen.getAllByRole("textbox");
 
-      const submitButton = screen.getByRole("button", { name: "Create" });
+      const submitButton = screen.getByRole("button", {
+        name: "Add New Player",
+      });
 
       inputTexts.forEach((input) => {
         userEvent.type(input, inputText);
@@ -67,29 +69,10 @@ describe("Given a CreatorPlayer component", () => {
     });
   });
 
-  describe("When it's invoked", () => {
-    test("Then it should render the text 'New Player'", () => {
-      const expectedText = "New Player";
-
-      render(
-        <>
-          <Provider store={store}>
-            <BrowserRouter>
-              <CreatorPlayer />
-            </BrowserRouter>
-          </Provider>
-        </>
-      );
-
-      const result = screen.getByRole("heading", { level: 2 });
-      expect(result.textContent).toBe(expectedText);
-    });
-  });
-
   describe("Given a CreatorPlayer", () => {
     describe("When its called to be rendered", () => {
       test("Then it should create a CreatorPlayer with four list components", () => {
-        const listItem = 8;
+        const listItem = 6;
 
         render(
           <Provider store={store}>

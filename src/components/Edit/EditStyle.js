@@ -7,6 +7,11 @@ const EditStyle = styled.div`
     align-items: center;
   }
 
+  .container-inputs {
+    display: flex;
+    gap: 3px;
+  }
+
   form {
     display: flex;
     flex-direction: column;

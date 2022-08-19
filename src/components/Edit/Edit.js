@@ -112,72 +112,106 @@ const Edit = () => {
           onChange={editPlayerData}
         />
 
-        <label htmlFor="speed">Speed</label>
-        <input
-          type="number"
-          id="speed"
-          value={valuePlayer.speed}
-          onChange={editPlayerData}
-          min="1"
-          max="99"
-          required
-          placeholder="Insert speed"
-        />
-        <label htmlFor="shoot">Shoot</label>
-        <input
-          type="number"
-          id="shoot"
-          value={valuePlayer.shoot}
-          onChange={editPlayerData}
-          min="1"
-          max="99"
-          required
-          placeholder="Insert shoot"
-        />
-        <label htmlFor="pass">Pass</label>
-        <input
-          type="number"
-          id="pass"
-          value={valuePlayer.pass}
-          onChange={editPlayerData}
-          min="1"
-          max="99"
-          required
-          placeholder="Insert pass"
-        />
-        <label htmlFor="agility">Agility</label>
-        <input
-          type="number"
-          id="agility"
-          value={valuePlayer.agility}
-          onChange={editPlayerData}
-          min="1"
-          max="99"
-          required
-          placeholder="Insert agility"
-        />
-        <label htmlFor="defense">Defense</label>
-        <input
-          type="number"
-          id="defense"
-          value={valuePlayer.defense}
-          onChange={editPlayerData}
-          min="1"
-          max="99"
-          required
-          placeholder="Insert defense"
-        />
-        <label htmlFor="strength">Strength</label>
-        <input
-          type="number"
-          id="strength"
-          value={valuePlayer.strength}
-          onChange={editPlayerData}
-          min="1"
-          max="99"
-          required
-          placeholder="Insert strength"
-        />
+        <br />
+        <h4>Set Player Skills</h4>
+        <small>Insert a value between 0 and 99</small>
+        <br />
+
+        <div className="container-inputs">
+          <label htmlFor="speed">Speed</label>
+          <input
+            id="speed"
+            type="range"
+            value={valuePlayer.speed}
+            onChange={editPlayerData}
+            class="inputbox"
+            name="speed"
+            min="0"
+            max="99"
+            required
+          />
+          <output id="speed">{valuePlayer.speed}</output>
+        </div>
+
+        <div className="container-inputs">
+          <label htmlFor="shoot">Shoot</label>
+          <input
+            id="shoot"
+            type="range"
+            value={valuePlayer.shoot}
+            onChange={editPlayerData}
+            class="inputbox"
+            name="shoot"
+            min="0"
+            max="99"
+            required
+          />
+          <output id="shoot">{valuePlayer.shoot}</output>
+        </div>
+
+        <div className="container-inputs">
+          <label htmlFor="pass">Pass</label>
+          <input
+            id="pass"
+            type="range"
+            value={valuePlayer.pass}
+            onChange={editPlayerData}
+            class="inputbox"
+            name="pass"
+            min="0"
+            max="99"
+            required
+          />
+          <output id="pass">{valuePlayer.pass}</output>
+        </div>
+
+        <div className="container-inputs">
+          <label htmlFor="agility">Agility</label>
+          <input
+            id="agility"
+            type="range"
+            value={valuePlayer.agility}
+            onChange={editPlayerData}
+            class="inputbox"
+            name="agility"
+            min="0"
+            max="99"
+            required
+          />
+          <output id="agility">{valuePlayer.agility}</output>
+        </div>
+
+        <div className="container-inputs">
+          <label htmlFor="defense">Defense</label>
+          <input
+            id="defense"
+            type="range"
+            value={valuePlayer.defense}
+            onChange={editPlayerData}
+            class="inputbox"
+            name="defense"
+            min="0"
+            max="99"
+            required
+          />
+          <output id="defense">{valuePlayer.defense}</output>
+        </div>
+
+        <div className="container-inputs">
+          <label htmlFor="strength">Strength</label>
+          <input
+            id="strength"
+            type="range"
+            value={valuePlayer.strength}
+            onChange={editPlayerData}
+            class="inputbox"
+            name="strength"
+            min="0"
+            max="99"
+            required
+          />
+          <output id="strength">{valuePlayer.strength}</output>
+        </div>
         <input
           disabled={buttonDisabled}
           type="submit"
