@@ -1,10 +1,14 @@
 import styled from "styled-components";
 
 const DetailPlayerStyle = styled.ul`
+  padding: 0;
+  list-style-type: none;
+
   ul {
     padding: 0;
     list-style-type: none;
   }
+
   .container-card {
     display: flex;
     flex-direction: column;
@@ -15,12 +19,12 @@ const DetailPlayerStyle = styled.ul`
     .card {
       position: relative;
       width: 400px;
-      height: 200px;
       background: white;
       border-radius: 20px 20px 0 0;
       box-shadow: 0 35px 80px rgba(1, 2, 3, 35);
       transition: 0.5s;
       overflow: hidden;
+      min-height: 70vh;
 
       .image-box {
         position: absolute;
@@ -63,6 +67,7 @@ const DetailPlayerStyle = styled.ul`
           background: black;
           opacity: 0.8;
           border-radius: 0 0;
+          height: inherit;
 
           h2 {
             font-size: 1.25em;
@@ -121,7 +126,7 @@ const DetailPlayerStyle = styled.ul`
     }
 
     .card:hover .content .details {
-      transform: translateY(0px);
+      transform: translateY(75px);
     }
 
     .video-responsive {
@@ -137,6 +142,26 @@ const DetailPlayerStyle = styled.ul`
       height: 100%;
       width: 100%;
       position: absolute;
+    }
+  }
+
+  .container-settings {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    transform: translateY(40px);
+    gap: 20px;
+
+    .button-edit,
+    .button-remove {
+      background: none;
+      border: none;
+    }
+    .button-edit {
+      color: blue;
+    }
+    .button-remove {
+      color: red;
     }
   }
 `;

@@ -63,6 +63,12 @@ const Edit = () => {
   return (
     <EditStyle>
       <form autoComplete="off" noValidate onSubmit={submitEdit}>
+        <input
+          disabled={buttonDisabled}
+          type="submit"
+          className="form-button"
+          value="Edit Player"
+        />
         <label htmlFor="name">
           <h2>Name</h2>
         </label>
@@ -75,7 +81,7 @@ const Edit = () => {
         />
 
         <label htmlFor="nationality">
-          <h3>Nationality</h3>
+          <h4>Nationality</h4>
         </label>
         <input
           id="nationality"
@@ -85,7 +91,17 @@ const Edit = () => {
           onChange={editPlayerData}
         />
 
-        <label htmlFor="image">Image</label>
+        <label htmlFor="image">
+          <h4>Image</h4>
+        </label>
+        <a
+          href="https://www.futwiz.com/en/fifa22/custom-player"
+          Target="_blank"
+        >
+          <small>
+            Take a look! Search here your player image... (copy address image)
+          </small>
+        </a>
         <input
           id="image"
           type="text"
@@ -94,7 +110,9 @@ const Edit = () => {
           onChange={editPlayerData}
         />
 
-        <label htmlFor="video">Video </label>
+        <label htmlFor="video">
+          <h4>Video</h4>
+        </label>
         <input
           id="video"
           type="text"
@@ -102,7 +120,9 @@ const Edit = () => {
           value={valuePlayer.video}
           onChange={editPlayerData}
         />
-        <label htmlFor="perfil">Perfil </label>
+        <label htmlFor="perfil">
+          <h4>Perfil</h4>
+        </label>
         <textarea
           id="perfil"
           name="textarea"
@@ -118,7 +138,9 @@ const Edit = () => {
         <br />
 
         <div className="container-inputs">
-          <label htmlFor="speed">Speed</label>
+          <label htmlFor="speed">
+            <h4>Speed</h4>
+          </label>
           <input
             id="speed"
             type="range"
@@ -134,7 +156,9 @@ const Edit = () => {
         </div>
 
         <div className="container-inputs">
-          <label htmlFor="shoot">Shoot</label>
+          <label htmlFor="shoot">
+            <h4>Shoot</h4>
+          </label>
           <input
             id="shoot"
             type="range"
@@ -150,7 +174,9 @@ const Edit = () => {
         </div>
 
         <div className="container-inputs">
-          <label htmlFor="pass">Pass</label>
+          <label htmlFor="pass">
+            <h4>Pass</h4>
+          </label>
           <input
             id="pass"
             type="range"
@@ -166,7 +192,9 @@ const Edit = () => {
         </div>
 
         <div className="container-inputs">
-          <label htmlFor="agility">Agility</label>
+          <label htmlFor="agility">
+            <h4>Agility</h4>
+          </label>
           <input
             id="agility"
             type="range"
@@ -182,7 +210,9 @@ const Edit = () => {
         </div>
 
         <div className="container-inputs">
-          <label htmlFor="defense">Defense</label>
+          <label htmlFor="defense">
+            <h4>Defense</h4>
+          </label>
           <input
             id="defense"
             type="range"
@@ -198,7 +228,9 @@ const Edit = () => {
         </div>
 
         <div className="container-inputs">
-          <label htmlFor="strength">Strength</label>
+          <label htmlFor="strength">
+            <h4>Strength</h4>
+          </label>
           <input
             id="strength"
             type="range"
@@ -212,12 +244,6 @@ const Edit = () => {
           />
           <output id="strength">{valuePlayer.strength}</output>
         </div>
-        <input
-          disabled={buttonDisabled}
-          type="submit"
-          className="form-button"
-          value="Edit Player"
-        />
       </form>
     </EditStyle>
   );
