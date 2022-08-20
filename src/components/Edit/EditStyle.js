@@ -30,9 +30,10 @@ const EditStyle = styled.div`
     padding: 0.75rem 1rem;
 
     &[type="submit"] {
-      background: greenyellow;
+      background: green;
       color: white;
       box-shadow: 0 0.75rem 0.5rem -0.5rem hsl(0 50% 80%);
+      font-size: 1.25rem;
     }
   }
 `;

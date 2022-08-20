@@ -1,15 +1,34 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
-import { getPlayerThunk } from "../../redux/thunks/playersThunks";
-
+import { useNavigate, useParams } from "react-router-dom";
+import { blankStateActionCreator } from "../../redux/features/playerSlice";
+import {
+  deletePlayerThunk,
+  getPlayerThunk,
+} from "../../redux/thunks/playersThunks";
+import { correctAction } from "../modals/modals";
+import { TiDelete } from "react-icons/ti";
+import { FiEdit } from "react-icons/fi";
 import DetailPlayerStyle from "./DetailPlayerStyle";
 
 const DetailPlayer = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { id } = useParams();
   const { player: allPlayers } = useSelector((state) => state.player);
+
+  const handleDelete = () => {
+    dispatch(deletePlayerThunk(id));
+    correctAction(`${allPlayers.name} has been deleted`);
+    navigate(`/home`);
+  };
+
+  const handleEdit = () => {
+    dispatch(getPlayerThunk(id));
+    dispatch(blankStateActionCreator());
+    navigate(`/edit/${id}`);
+  };
 
   useEffect(() => {
     dispatch(getPlayerThunk(id));
@@ -17,6 +36,15 @@ const DetailPlayer = () => {
 
   return (
     <DetailPlayerStyle>
+      <div className="container-settings">
+        <button onClick={handleEdit} className="button-edit">
+          <FiEdit size={35} />
+        </button>
+
+        <button onClick={handleDelete} className="button-remove">
+          <TiDelete size={50} />
+        </button>
+      </div>
       <ul>
         <li>
           <div className="container-card">
