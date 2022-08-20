@@ -37,7 +37,7 @@ const Player = ({
             <div id="card-inner">
               <div id="card-top">
                 <div className="info">
-                  <div className="value">{speed}</div>
+                  <div className="value">{pass}</div>
                   <div className="position">st</div>
                   <div className="country">
                     <div>{nationality}</div>
