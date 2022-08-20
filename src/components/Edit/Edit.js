@@ -63,187 +63,158 @@ const Edit = () => {
   return (
     <EditStyle>
       <form autoComplete="off" noValidate onSubmit={submitEdit}>
-        <input
-          disabled={buttonDisabled}
-          type="submit"
-          className="form-button"
-          value="Edit Player"
-        />
-        <label htmlFor="name">
-          <h2>Name</h2>
-        </label>
+        <h2>CHANGE PLAYER</h2>
+
+        <label htmlFor="name">Name</label>
         <input
           id="name"
           type="text"
-          placeholder="Name"
           value={valuePlayer.name}
           onChange={editPlayerData}
+          className="inputbox"
+          name="name"
+          required
         />
-
-        <label htmlFor="nationality">
-          <h4>Nationality</h4>
-        </label>
+        <label htmlFor="nationality">Nationality</label>
         <input
           id="nationality"
           type="text"
-          placeholder="Shoot"
           value={valuePlayer.nationality}
           onChange={editPlayerData}
+          className="inputbox"
+          name="nationality"
+          required
         />
-
-        <label htmlFor="image">
-          <h4>Image</h4>
-        </label>
-        <a
-          href="https://www.futwiz.com/en/fifa22/custom-player"
-          Target="_blank"
-        >
-          <small>
-            Take a look! Search here your player image... (copy address image)
-          </small>
-        </a>
+        <label htmlFor="image">Image</label>
         <input
           id="image"
           type="text"
-          placeholder="Image Url"
           value={valuePlayer.image}
           onChange={editPlayerData}
+          className="inputbox"
+          name="image"
+          required
         />
 
-        <label htmlFor="video">
-          <h4>Video</h4>
-        </label>
+        <label htmlFor="video">Video</label>
         <input
           id="video"
           type="text"
-          placeholder="Nationality"
           value={valuePlayer.video}
           onChange={editPlayerData}
+          className="inputbox"
+          name="video"
+          required
         />
-        <label htmlFor="perfil">
-          <h4>Perfil</h4>
-        </label>
-        <textarea
+        <label htmlFor="perfil">Perfil</label>
+        <input
           id="perfil"
-          name="textarea"
-          rows="10"
-          cols="50"
+          type="textarea"
           value={valuePlayer.perfil}
           onChange={editPlayerData}
+          className="inputbox"
+          name="perfil"
+          required
         />
 
-        <br />
-        <h4>Set Player Skills</h4>
-        <small>Insert a value between 0 and 99</small>
-        <br />
+        <h4>Player Skills</h4>
 
-        <div className="container-inputs">
-          <label htmlFor="speed">
-            <h4>Speed</h4>
-          </label>
-          <input
-            id="speed"
-            type="range"
-            value={valuePlayer.speed}
-            onChange={editPlayerData}
-            className="inputbox"
-            name="speed"
-            min="0"
-            max="99"
-            required
-          />
-          <output id="speed">{valuePlayer.speed}</output>
-        </div>
+        <ul className="container-inputs">
+          <li>
+            <label htmlFor="speed">Speed</label>
+            <input
+              id="speed"
+              type="range"
+              value={valuePlayer.speed}
+              onChange={editPlayerData}
+              className="inputbox"
+              name="speed"
+              min="0"
+              max="99"
+              required
+            />
+            <output id="speed">{valuePlayer.speed}</output>
+          </li>
+          <li>
+            <label htmlFor="shoot">Shoot</label>
+            <input
+              id="shoot"
+              type="range"
+              value={valuePlayer.shoot}
+              onChange={editPlayerData}
+              className="inputbox"
+              name="shoot"
+              min="0"
+              max="99"
+              required
+            />
+            <output id="shoot">{valuePlayer.shoot}</output>
+          </li>
+          <li>
+            <label htmlFor="pass">Pass</label>
+            <input
+              id="pass"
+              type="range"
+              value={valuePlayer.pass}
+              onChange={editPlayerData}
+              className="inputbox"
+              name="pass"
+              min="0"
+              max="99"
+              required
+            />
+            <output id="pass">{valuePlayer.pass}</output>
+          </li>
+          <li>
+            <label htmlFor="agility">Agility</label>
+            <input
+              id="agility"
+              type="range"
+              value={valuePlayer.agility}
+              onChange={editPlayerData}
+              className="inputbox"
+              name="agility"
+              min="0"
+              max="99"
+              required
+            />
+            <output id="agility">{valuePlayer.agility}</output>
+          </li>
+          <li>
+            <label htmlFor="defense">Defense</label>
+            <input
+              id="defense"
+              type="range"
+              value={valuePlayer.defense}
+              onChange={editPlayerData}
+              className="inputbox"
+              name="defense"
+              min="0"
+              max="99"
+              required
+            />
+            <output id="defense">{valuePlayer.defense}</output>
+          </li>
+          <li>
+            <label htmlFor="strength">Strength</label>
+            <input
+              id="strength"
+              type="range"
+              value={valuePlayer.strength}
+              onChange={editPlayerData}
+              className="inputbox"
+              name="strength"
+              min="0"
+              max="99"
+              required
+            />
+            <output id="strength">{valuePlayer.strength}</output>
+          </li>
+        </ul>
 
-        <div className="container-inputs">
-          <label htmlFor="shoot">
-            <h4>Shoot</h4>
-          </label>
-          <input
-            id="shoot"
-            type="range"
-            value={valuePlayer.shoot}
-            onChange={editPlayerData}
-            className="inputbox"
-            name="shoot"
-            min="0"
-            max="99"
-            required
-          />
-          <output id="shoot">{valuePlayer.shoot}</output>
-        </div>
-
-        <div className="container-inputs">
-          <label htmlFor="pass">
-            <h4>Pass</h4>
-          </label>
-          <input
-            id="pass"
-            type="range"
-            value={valuePlayer.pass}
-            onChange={editPlayerData}
-            className="inputbox"
-            name="pass"
-            min="0"
-            max="99"
-            required
-          />
-          <output id="pass">{valuePlayer.pass}</output>
-        </div>
-
-        <div className="container-inputs">
-          <label htmlFor="agility">
-            <h4>Agility</h4>
-          </label>
-          <input
-            id="agility"
-            type="range"
-            value={valuePlayer.agility}
-            onChange={editPlayerData}
-            className="inputbox"
-            name="agility"
-            min="0"
-            max="99"
-            required
-          />
-          <output id="agility">{valuePlayer.agility}</output>
-        </div>
-
-        <div className="container-inputs">
-          <label htmlFor="defense">
-            <h4>Defense</h4>
-          </label>
-          <input
-            id="defense"
-            type="range"
-            value={valuePlayer.defense}
-            onChange={editPlayerData}
-            className="inputbox"
-            name="defense"
-            min="0"
-            max="99"
-            required
-          />
-          <output id="defense">{valuePlayer.defense}</output>
-        </div>
-
-        <div className="container-inputs">
-          <label htmlFor="strength">
-            <h4>Strength</h4>
-          </label>
-          <input
-            id="strength"
-            type="range"
-            value={valuePlayer.strength}
-            onChange={editPlayerData}
-            className="inputbox"
-            name="strength"
-            min="0"
-            max="99"
-            required
-          />
-          <output id="strength">{valuePlayer.strength}</output>
-        </div>
+        <button disabled={buttonDisabled} type="submit" className="button">
+          Set Player
+        </button>
       </form>
     </EditStyle>
   );
