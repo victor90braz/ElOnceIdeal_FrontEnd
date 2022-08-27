@@ -106,15 +106,17 @@ const Edit = () => {
           name="video"
           required
         />
+
         <label htmlFor="perfil">Perfil</label>
-        <input
+        <textarea
           id="perfil"
-          type="textarea"
           value={valuePlayer.perfil}
           onChange={editPlayerData}
           className="inputbox"
           name="perfil"
           required
+          rows="6"
+          cols="50"
         />
 
         <h4>Player Skills</h4>

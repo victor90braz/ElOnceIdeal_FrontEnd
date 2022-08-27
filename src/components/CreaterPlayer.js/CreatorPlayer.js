@@ -120,14 +120,16 @@ const CreatorPlayer = () => {
           required
         />
         <label htmlFor="perfil">Perfil</label>
-        <input
+        <textarea
           id="perfil"
-          type="textarea"
           value={formPlayer.perfil}
           onChange={changePlayerData}
           className="inputbox"
           name="perfil"
           required
+          rows="4"
+          cols="50"
+          placeholder="Write a description about the player"
         />
 
         <h4>Player Skills</h4>
