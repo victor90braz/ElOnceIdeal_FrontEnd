@@ -26,72 +26,70 @@ const Player = ({
 
   return (
     <PlayerStyles>
-      <body>
-        <button onClick={handleAdd} className="detail-button">
-          <div id="card" className="active">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 267.3 427.3">
-              <clipPath id="svgPath">
-                <path fill="#000" d={pathAttributeD} />
-              </clipPath>
-            </svg>
-            <div id="card-inner">
-              <div id="card-top">
-                <div className="info">
-                  <div className="value">{pass}</div>
-                  <div className="position">st</div>
-                  <div className="country">
-                    <div>{nationality}</div>
-                  </div>
-                  <div className="club">
-                    <div></div>
-                  </div>
+      <button onClick={handleAdd} className="detail-button">
+        <div id="card" className="active">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 267.3 427.3">
+            <clipPath id="svgPath">
+              <path fill="#000" d={pathAttributeD} />
+            </clipPath>
+          </svg>
+          <div id="card-inner">
+            <div id="card-top">
+              <div className="info">
+                <div className="value">{pass}</div>
+                <div className="position">st</div>
+                <div className="country">
+                  <div>{nationality}</div>
                 </div>
-
-                <div className="image">
-                  <img src={image} alt={name} />
+                <div className="club">
+                  <div></div>
                 </div>
               </div>
-              <div id="card-bottom">
-                <div className="name">{name}</div>
-                <div className="stats">
-                  <div>
-                    <ul>
-                      <li>
-                        <span>{speed}</span>
-                        <span>pac</span>
-                      </li>
-                      <li>
-                        <span>{shoot}</span>
-                        <span>sho</span>
-                      </li>
-                      <li>
-                        <span>{pass}</span>
-                        <span>pas</span>
-                      </li>
-                    </ul>
-                  </div>
-                  <div>
-                    <ul>
-                      <li>
-                        <span>{agility}</span>
-                        <span>dri</span>
-                      </li>
-                      <li>
-                        <span>{defense}</span>
-                        <span>def</span>
-                      </li>
-                      <li>
-                        <span>{strength}</span>
-                        <span>phy</span>
-                      </li>
-                    </ul>
-                  </div>
+
+              <div className="image">
+                <img src={image} alt={name} />
+              </div>
+            </div>
+            <div id="card-bottom">
+              <div className="name">{name}</div>
+              <div className="stats">
+                <div>
+                  <ul>
+                    <li>
+                      <span>{speed}</span>
+                      <span>pac</span>
+                    </li>
+                    <li>
+                      <span>{shoot}</span>
+                      <span>sho</span>
+                    </li>
+                    <li>
+                      <span>{pass}</span>
+                      <span>pas</span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <ul>
+                    <li>
+                      <span>{agility}</span>
+                      <span>dri</span>
+                    </li>
+                    <li>
+                      <span>{defense}</span>
+                      <span>def</span>
+                    </li>
+                    <li>
+                      <span>{strength}</span>
+                      <span>phy</span>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
           </div>
-        </button>
-      </body>
+        </div>
+      </button>
     </PlayerStyles>
   );
 };
