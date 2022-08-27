@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { createrThunk } from "../../redux/thunks/playersThunks";
 import { correctAction, wrongAction } from "../modals/modals";
 import CreatorPlayerStyle from "./CreatorPlayerStyle";
+import { MdImageSearch, MdOndemandVideo } from "react-icons/md";
 
 const CreatorPlayer = () => {
   const dispatch = useDispatch();
@@ -98,18 +99,38 @@ const CreatorPlayer = () => {
           name="nationality"
           required
         />
-        <label htmlFor="image">Image</label>
+
+        <label htmlFor="image">
+          <a
+            href="https://www.futwiz.com/en/fifa22/custom-player"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <MdImageSearch size={40} />
+          </a>
+        </label>
+
         <input
           id="image"
-          type="text"
+          type="url"
           value={formPlayer.image}
           onChange={changePlayerData}
           className="inputbox"
           name="image"
           required
+          placeholder="Search the player and past the image address here"
         />
 
-        <label htmlFor="video">Video</label>
+        <label htmlFor="video">
+          <a
+            href="https://www.youtube.com/watch?v=VMNGga0644w&ab_channel=100%25Atualizado"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <MdOndemandVideo size={40} />
+          </a>
+        </label>
+
         <input
           id="video"
           type="text"
@@ -118,6 +139,7 @@ const CreatorPlayer = () => {
           className="inputbox"
           name="video"
           required
+          placeholder="Click in share video and copy the embled id: https://youtu.be/embedId"
         />
         <label htmlFor="perfil">Perfil</label>
         <textarea
@@ -128,7 +150,7 @@ const CreatorPlayer = () => {
           name="perfil"
           required
           rows="4"
-          cols="50"
+          cols="70"
           placeholder="Write a description about the player"
         />
 
