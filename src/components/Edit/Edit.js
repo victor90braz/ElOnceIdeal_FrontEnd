@@ -5,6 +5,7 @@ import { blankStateActionCreator } from "../../redux/features/playerSlice";
 import { editPlayerThunk } from "../../redux/thunks/playersThunks";
 import { correctAction } from "../modals/modals";
 import EditStyle from "./EditStyle";
+import { MdImageSearch, MdOndemandVideo } from "react-icons/md";
 
 const Edit = () => {
   const dispatch = useDispatch();
@@ -85,10 +86,22 @@ const Edit = () => {
           name="nationality"
           required
         />
-        <label htmlFor="image">Image</label>
+        <label htmlFor="image">
+          <a
+            href="https://www.futwiz.com/en/fifa22/custom-player"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <p>
+              <MdImageSearch size={40} />
+              <span>Search the player and past the image address here</span>
+            </p>
+          </a>
+        </label>
+
         <input
           id="image"
-          type="text"
+          type="url"
           value={valuePlayer.image}
           onChange={editPlayerData}
           className="inputbox"
@@ -96,7 +109,22 @@ const Edit = () => {
           required
         />
 
-        <label htmlFor="video">Video</label>
+        <label htmlFor="video">
+          <a
+            href="https://www.youtube.com/watch?v=VMNGga0644w&ab_channel=100%25Atualizado"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <p>
+              <MdOndemandVideo size={40} />
+              <span>
+                Click in share video and copy the embled id:
+                https://youtu.be/embedId
+              </span>
+            </p>
+          </a>
+        </label>
+
         <input
           id="video"
           type="text"
@@ -105,6 +133,7 @@ const Edit = () => {
           className="inputbox"
           name="video"
           required
+          placeholder="Click in share video and copy the embled id: https://youtu.be/embedId"
         />
 
         <label htmlFor="perfil">Perfil</label>
