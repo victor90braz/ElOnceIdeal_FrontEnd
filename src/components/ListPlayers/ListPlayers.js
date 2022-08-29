@@ -7,7 +7,7 @@ const ListPlayers = () => {
 
   return (
     <ListPlayersStyles>
-      <h3>LET'S START MAKING A LIST OF PLAYERS</h3>
+      <h3>Squad Builder</h3>
 
       {allPlayers.map((player, index) => (
         <Player player={player} key={index} />
