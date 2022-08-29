@@ -43,6 +43,7 @@ export const deletePlayerThunk = (id) => async (dispatch) => {
 export const createrThunk = (playerData) => async (dispatch) => {
   await axios.post(`${process.env.REACT_APP_API_URL}players/`, playerData);
   dispatch(createPlayerActionCreator(playerData));
+  dispatch(loadPlayerActionCreator(playerData));
 };
 
 export const editPlayerThunk = (id, formPlayer) => async (dispatch) => {
