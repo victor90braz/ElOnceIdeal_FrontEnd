@@ -27,7 +27,7 @@ expect(window.location.href).toEqual(url);
 describe("Given a LoginForm component", () => {
   describe("When the component is receiving the input 'Hello'", () => {
     test("Then the username input value should be 'Hello'", () => {
-      const labelToFind = "USERNAME";
+      const labelToFind = "* USERNAME";
       const value = "Hello";
 
       render(
@@ -46,9 +46,9 @@ describe("Given a LoginForm component", () => {
   });
   describe("When the two inpputs have been filled and the submit button is clicked", () => {
     test("Then the two inputs should be empty", () => {
-      const nameLabel = "NAME";
-      const usernameLabel = "USERNAME";
-      const passwordLabel = "PASSWORD";
+      const nameLabel = "* NAME";
+      const usernameLabel = "* USERNAME";
+      const passwordLabel = "* PASSWORD";
       const inputText = "hello";
 
       render(
@@ -76,7 +76,7 @@ describe("Given a LoginForm component", () => {
   });
   describe("When the username is Boo", () => {
     test("Then the username input should be Boo", () => {
-      const usernameLabel = "USERNAME";
+      const usernameLabel = "* USERNAME";
       const inputText = "Boo";
 
       render(
@@ -100,9 +100,9 @@ describe("Given a LoginForm component", () => {
   });
   describe("When the username and password introduced are submitted and correct", () => {
     test("Then the user should be logged in", () => {
-      const nameLabel = "NAME";
-      const usernameLabel = "USERNAME";
-      const passwordLabel = "PASSWORD";
+      const nameLabel = "* NAME";
+      const usernameLabel = "* USERNAME";
+      const passwordLabel = "* PASSWORD";
       const inputText = "Boo1";
       const inputText1 = "Boo2";
       const inputText2 = "Boo3";

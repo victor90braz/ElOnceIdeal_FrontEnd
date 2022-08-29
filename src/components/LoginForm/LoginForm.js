@@ -22,8 +22,10 @@ const LoginForm = () => {
   };
   const handleSubmit = async (event) => {
     event.preventDefault();
+
     if (formValue.username === "" || formValue.password === "") {
-      wrongAction("Please fill all fields");
+      wrongAction("Please fill in the required field (*)");
+      return;
     }
 
     await dispatch(loginThunk(formValue));
@@ -45,23 +47,20 @@ const LoginForm = () => {
 
         <form autoComplete="off" noValidate onSubmit={handleSubmit}>
           <div className="inputs">
-            <label htmlFor="username">USERNAME</label>
+            <label htmlFor="username">* USERNAME</label>
             <input
               type="text"
               id="username"
               onChange={handleInputChange}
               value={formValue.username}
-              placeholder="ronaldofenomeno"
               required
             />
-            <label htmlFor="username">PASSWORD</label>
+            <label htmlFor="username">* PASSWORD</label>
             <input
               type="password"
               id="password"
               onChange={handleInputChange}
               value={formValue.password}
-              placeholder="Min 9 charaters long"
-              minLength={9}
               required
             />
             <button type="submit">LOGIN</button>
