@@ -22,6 +22,6 @@ export const loginThunk = (userData) => async (dispatch) => {
     } else {
     }
   } catch (error) {
-    wrongAction("Incorrect username or password. Please retry! frotend");
+    wrongAction("Incorrect username or password.");
   }
 };
