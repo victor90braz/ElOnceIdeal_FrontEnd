@@ -1,6 +1,6 @@
-# El Once Ideal - Back
+# El Once Ideal
 
-[El Once Ideal](https://victor-braz-front-final-project-202204-bcn.netlify.app/) is a PWA where you can save text notes with different categories. You can delete or edit yours football cards players.
+[El Once Ideal](https://victor-braz-front-final-project-202204-bcn.netlify.app/) where you can create your favourite football players' cards. You can also delete or edit your own cards.
 
 The technologies used for this proyect were:
 
