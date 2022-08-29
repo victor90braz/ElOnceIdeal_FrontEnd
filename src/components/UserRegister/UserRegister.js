@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
 import { registerThunk } from "../../redux/thunks/userThunks";
-import { wrongAction } from "../modals/modals";
+import { correctAction, wrongAction } from "../modals/modals";
 import UserRegisterStyle from "./UserRegisterStyle";
 
 const UserRegister = () => {
@@ -22,15 +22,21 @@ const UserRegister = () => {
   };
   const handleSubmit = async (event) => {
     event.preventDefault();
+
     if (
       formValue.name === "" ||
       formValue.username === "" ||
       formValue.password === ""
     ) {
-      wrongAction("Please fill all fields");
+      wrongAction("Please fill in the required field (*)");
+      return;
     }
-
+    if (formValue.password.length < 9) {
+      wrongAction("Password must be at least 9 characters");
+      return;
+    }
     await dispatch(registerThunk(formValue));
+    correctAction(`${formValue.name} has been registered`);
     navigate("/login");
   };
 
@@ -49,7 +55,7 @@ const UserRegister = () => {
 
         <form autoComplete="off" noValidate onSubmit={handleSubmit}>
           <div className="inputs">
-            <label htmlFor="username">NAME</label>
+            <label htmlFor="username">* NAME</label>
             <input
               type="text"
               id="name"
@@ -58,23 +64,21 @@ const UserRegister = () => {
               placeholder="ronaldo"
               required
             />
-            <label htmlFor="username">USERNAME</label>
+
+            <label htmlFor="username">* USERNAME</label>
             <input
               type="text"
               id="username"
               onChange={handleInputChange}
               value={formValue.username}
-              placeholder="ronaldofenomeno"
               required
             />
-            <label htmlFor="username">PASSWORD</label>
+            <label htmlFor="username">* PASSWORD</label>
             <input
               type="password"
               id="password"
               onChange={handleInputChange}
               value={formValue.password}
-              placeholder="Min 9 charaters long"
-              minLength={9}
               required
             />
             <button type="submit">REGISTER</button>

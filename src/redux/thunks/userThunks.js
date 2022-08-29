@@ -3,7 +3,7 @@ import jwtDecode from "jwt-decode";
 import { correctAction, wrongAction } from "../../components/modals/modals";
 import { loginActionCreator } from "../features/userSlice";
 
-export const registerThunk = (userData) => async (dispatch) => {
+export const registerThunk = (userData) => async () => {
   await axios.post(`${process.env.REACT_APP_API_URL}users/register`, userData);
 };
 
@@ -22,6 +22,6 @@ export const loginThunk = (userData) => async (dispatch) => {
     } else {
     }
   } catch (error) {
-    wrongAction("Incorrect username or password. Please retry!");
+    wrongAction("Incorrect username or password. Please retry! frotend");
   }
 };
