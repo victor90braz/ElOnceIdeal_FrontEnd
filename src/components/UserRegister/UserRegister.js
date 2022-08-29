@@ -61,7 +61,6 @@ const UserRegister = () => {
               id="name"
               onChange={handleInputChange}
               value={formValue.name}
-              placeholder="ronaldo"
               required
             />
 
