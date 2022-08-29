@@ -1,112 +1,59 @@
-# FRONT END
+# El Once Ideal - Back
 
-# COMPONENTS
+[El Once Ideal](https://victor-braz-front-final-project-202204-bcn.netlify.app/) is a PWA where you can save text notes with different categories. You can delete or edit yours football cards players.
 
-- App
-- List
-- LogIn
-- Register
-- LogInPage
-- RegisterPage
-- GamePage
-- 404Page
+The technologies used for this proyect were:
 
-# Task App
+### 🔸 Front
 
-- root
-- styles
-- test
+React | Redux | Styled Components | Jest
 
-# List
+### 🔸 Back
 
-# Task LogIn
+NodeJS | ExpressJS | MongoDB | Mongoose | JWT | Jest |
 
-- form
-  - username
-  - password
-- styles
-- test
+### 🔸 Tools
 
-# Task Register
+Trello | Postman | Figma | Git
 
-- form
-  - name
-  - username
-  - password
-- styles
-- test
+## Metrics
 
-# Task LogInPage
+🚀 Lighthouse
 
-- form
-- styles
-- test
+<img src="./lighthouse_performance.png" width="600">
 
-# Task LOG IN PAGE
+📈 [Back SonarCloud metrics](https://sonarcloud.io/summary/overall?id=isdi-coders-2022_Victor-Braz_Back-Final-Project-202204-BCN)
 
-- styles
-- test
+📈 [Front SonarCloud metrics](https://sonarcloud.io/summary/overall?id=isdi-coders-2022_Victor-Braz_Front-Final-Project-202204-BCN)
 
-# Task RegisterPage
+## Links
 
-- styles
-- test
+🌐✨ [El Once Ideal](https://victor-braz-front-final-project-202204-bcn.netlify.app/login)
 
-# Task GamePage
+💻🗄 [Back deploy on Render](https://victor-braz-back-final-project-202204-bcn.onrender.com/)
 
-- styles
-- test
+## Back endpoints
 
-# Task 404Page
+`🔹 POST ➡️ .../users/register`  
+Register a user. The payload should have a name, an username and a password.
 
-- styles
-- test
+`🔹 POST ➡️ .../users/login`  
+Login with an existing user to get a valid token. The payload should have an existing username and password.
 
-# Responsabilities
+`🔹 GET ➡️ .../users/:username`  
+Get all the data of an existing user, including the notes created by him.
 
-- Datos
-  - Create User
-  - UpdateUser
-- App
-  - Render setting the router
-    - login form page
-    - register form page
-    - not found page
-    - game page
-- NotFoundPage
-  - Render a header with a text "404 page not found"
-- GamePage
-  - Render a header with a text "list of games"
-- LoginFormPage
-  - Dato:
-    - formData
-      - Create
-      - Update
-      - Delete
-  - Render a form with:
-    - label + input (username)
-    - label + input (password)
-  - Render an input type submit
-  - Onchange
-    - switch status when it receives an value
-  - Onsubmit
-    - send lanza ler item de actualizar el estado
-  - Clean form
+`🔹 GET ➡️ .../players`  
+Get all the players.
 
-# Architecture Pattern Redux
+`🔹 GET ➡️ .../players/:idPlayer`  
+Get the players created by one user.
 
-# SliceUser
+`🔹 POST ➡️ .../`  
+Create a card player. The payload should have a name, a infos and a skills about the player.
 
-- LogIn
-  - test
-- LogOut
-  - test
+`🔹 DEL ➡️ .../players/:idPlayer`  
+Delete a card player with it's ID. A card player can be deleted only by it's creator.
 
-# Store
-
-# Thunks
-
-- Register
-  - test
-- Login
-  - login
+`🔹 PUT ➡️ .../players/:idPlayer`  
+Edit a card player with it's ID. A card player can be edited only by it's creator.
