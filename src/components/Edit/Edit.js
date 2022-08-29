@@ -64,7 +64,7 @@ const Edit = () => {
   return (
     <EditStyle>
       <form autoComplete="off" noValidate onSubmit={submitEdit}>
-        <h2>CHANGE PLAYER</h2>
+        <h2>EDIT PLAYER</h2>
 
         <label htmlFor="name">Name</label>
         <input

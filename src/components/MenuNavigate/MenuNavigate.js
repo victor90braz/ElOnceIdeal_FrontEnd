@@ -35,7 +35,7 @@ const MenuNavigate = () => {
               </li>
               <li className="nav-item">
                 <NavLink to="/create" className="nav-link">
-                  Add Player
+                  Builder Player
                 </NavLink>
               </li>
             </ul>

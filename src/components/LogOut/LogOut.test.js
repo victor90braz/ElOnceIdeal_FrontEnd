@@ -7,9 +7,7 @@ import store from "../../redux/store/store";
 
 describe("Given a LogOut component", () => {
   describe("When its invoked", () => {
-    test("Then it should render a button with a text LogOut", async () => {
-      const textToFind = "LogOut";
-
+    test("Then it should render a button", () => {
       render(
         <Provider store={store}>
           <BrowserRouter>
@@ -17,8 +15,8 @@ describe("Given a LogOut component", () => {
           </BrowserRouter>
         </Provider>
       );
-      const result = screen.getByRole("button", { name: textToFind });
-      expect(result.textContent).toBe(textToFind);
+      const result = screen.getByRole("button");
+      expect(result).toBeInTheDocument();
     });
   });
 });

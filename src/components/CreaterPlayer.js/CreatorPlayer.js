@@ -77,7 +77,7 @@ const CreatorPlayer = () => {
     <CreatorPlayerStyle>
       <form autoComplete="off" noValidate onSubmit={submit}>
         <h1>CheckOut</h1>
-        <h2>Player Information</h2>
+        <h2>Set Player Information</h2>
 
         <label htmlFor="name">Name</label>
         <input
