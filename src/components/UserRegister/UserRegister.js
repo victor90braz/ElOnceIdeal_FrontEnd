@@ -32,7 +32,7 @@ const UserRegister = () => {
       return;
     }
     if (formValue.password.length < 9) {
-      wrongAction("Password must be at least 9 characters");
+      wrongAction("Your password must be at least 9 characters long.");
       return;
     }
     await dispatch(registerThunk(formValue));
