@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const EditStyle = styled.div`
+const EditPlayerStyle = styled.div`
   .mainscreen {
     min-height: 100vh;
     width: 100%;
@@ -9,6 +9,13 @@ const EditStyle = styled.div`
     background-color: #dfdbe5;
 
     color: #963e7b;
+  }
+
+  h2,
+  h3,
+  label {
+    color: white;
+    margin: 15px 0 15px;
   }
 
   .container-inputs {
@@ -193,4 +200,4 @@ const EditStyle = styled.div`
   }
 `;
 
-export default EditStyle;
+export default EditPlayerStyle;

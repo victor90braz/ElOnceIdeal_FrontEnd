@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const UserRegisterStyle = styled.div`
+const RegisterFormStyle = styled.div`
   @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap");
 
   input {
@@ -29,7 +29,6 @@ const UserRegisterStyle = styled.div`
     padding: 40px;
     box-sizing: border-box;
     background: #ecf0f3;
-    box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -118,4 +117,4 @@ const UserRegisterStyle = styled.div`
   }
 `;
 
-export default UserRegisterStyle;
+export default RegisterFormStyle;

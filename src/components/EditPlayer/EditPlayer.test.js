@@ -3,7 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import store from "../../redux/store/store";
-import Edit from "./Edit";
+import EditPlayer from "./EditPlayer";
 
 describe("Given a CreatorPlayer component", () => {
   describe("When the word 'Pelé' is written to the name input field", () => {
@@ -14,7 +14,7 @@ describe("Given a CreatorPlayer component", () => {
       render(
         <Provider store={store}>
           <BrowserRouter>
-            <Edit />
+            <EditPlayer />
           </BrowserRouter>
         </Provider>
       );
@@ -34,7 +34,7 @@ describe("Given a CreatorPlayer component", () => {
       render(
         <Provider store={store}>
           <BrowserRouter>
-            <Edit />
+            <EditPlayer />
           </BrowserRouter>
         </Provider>
       );
@@ -57,7 +57,7 @@ describe("Given a CreatorPlayer component", () => {
       render(
         <Provider store={store}>
           <BrowserRouter>
-            <Edit />
+            <EditPlayer />
           </BrowserRouter>
         </Provider>
       );

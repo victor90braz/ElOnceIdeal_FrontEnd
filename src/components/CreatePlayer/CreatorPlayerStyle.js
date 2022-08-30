@@ -1,13 +1,23 @@
 import styled from "styled-components";
 
 const CreatorPlayerStyle = styled.div`
+  h1,
+  h2,
+  h3,
+  label {
+    color: white;
+  }
+
+  h1,
+  h2 {
+    margin: 15px 0 15px;
+  }
   .mainscreen {
     min-height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     background-color: #dfdbe5;
-
     color: #963e7b;
   }
 

@@ -4,10 +4,10 @@ import { useNavigate } from "react-router-dom";
 import { blankStateActionCreator } from "../../redux/features/playerSlice";
 import { editPlayerThunk } from "../../redux/thunks/playersThunks";
 import { correctAction } from "../modals/modals";
-import EditStyle from "./EditStyle";
 import { MdImageSearch, MdOndemandVideo } from "react-icons/md";
+import EditPlayerStyle from "./EditPlayerStyle";
 
-const Edit = () => {
+const EditPlayer = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -62,7 +62,7 @@ const Edit = () => {
   };
 
   return (
-    <EditStyle>
+    <EditPlayerStyle>
       <form autoComplete="off" noValidate onSubmit={submitEdit}>
         <h2>EDIT PLAYER</h2>
 
@@ -148,7 +148,7 @@ const Edit = () => {
           cols="50"
         />
 
-        <h4>Player Skills</h4>
+        <h3>Player Skills</h3>
 
         <ul className="container-inputs">
           <li>
@@ -247,8 +247,8 @@ const Edit = () => {
           Set Player
         </button>
       </form>
-    </EditStyle>
+    </EditPlayerStyle>
   );
 };
 
-export default Edit;
+export default EditPlayer;
