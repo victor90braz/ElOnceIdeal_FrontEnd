@@ -6,12 +6,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import jwtDecode from "jwt-decode";
 import { loginActionCreator } from "./redux/features/userSlice";
-import CreatorPlayer from "./components/CreaterPlayer.js/CreatorPlayer";
+
 import EditPage from "./pages/EditPage/EditPage";
 import DetailPlayer from "./components/DetailPlayer/DetailPlayer";
-import UserRegister from "./components/UserRegister/UserRegister";
 import LoginForm from "./components/LoginForm/LoginForm";
 import MenuNavigate from "./components/MenuNavigate/MenuNavigate";
+import RegisterForm from "./components/RegisterForm/RegisterForm";
+import CreatorPlayer from "./components/CreatePlayer/CreatorPlayer";
 
 const AppStyle = styled.div`
   display: flex;
@@ -46,7 +47,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/login" element={<LoginForm />} />
-        <Route path="/register" element={<UserRegister />} />
+        <Route path="/register" element={<RegisterForm />} />
         <Route
           path="/create"
           element={

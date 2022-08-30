@@ -154,7 +154,7 @@ const CreatorPlayer = () => {
           placeholder="Write a description about the player"
         />
 
-        <h4>Player Skills</h4>
+        <h3>Player Skills</h3>
 
         <ul className="container-inputs">
           <li>

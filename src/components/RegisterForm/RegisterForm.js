@@ -3,9 +3,9 @@ import { useDispatch } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
 import { registerThunk } from "../../redux/thunks/userThunks";
 import { correctAction, wrongAction } from "../modals/modals";
-import UserRegisterStyle from "./UserRegisterStyle";
+import RegisterFormStyle from "./RegisterFormStyle";
 
-const UserRegister = () => {
+const RegisterForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const initialFormValue = {
@@ -41,7 +41,7 @@ const UserRegister = () => {
   };
 
   return (
-    <UserRegisterStyle>
+    <RegisterFormStyle>
       <div className="container">
         <div>
           <img src="./top11-logo.png" alt="" className="brand-logo" />
@@ -84,8 +84,8 @@ const UserRegister = () => {
           </div>
         </form>
       </div>
-    </UserRegisterStyle>
+    </RegisterFormStyle>
   );
 };
 
-export default UserRegister;
+export default RegisterForm;

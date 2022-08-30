@@ -12,6 +12,7 @@ const ListPlayersStyles = styled.ul`
     font-size: 1.5em;
     margin: auto;
     padding: 20px;
+    color: white;
   }
 `;
 

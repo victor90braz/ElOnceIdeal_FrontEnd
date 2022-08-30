@@ -3,7 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import store from "../../redux/store/store";
-import UserRegister from "./UserRegister";
+import RegisterForm from "./RegisterForm";
 
 const mockUseNavigate = jest.fn();
 const mockUseDispatch = jest.fn();
@@ -33,7 +33,7 @@ describe("Given a LoginForm component", () => {
       render(
         <BrowserRouter>
           <Provider store={store}>
-            <UserRegister />
+            <RegisterForm />
           </Provider>
         </BrowserRouter>
       );
@@ -54,7 +54,7 @@ describe("Given a LoginForm component", () => {
       render(
         <BrowserRouter>
           <Provider store={store}>
-            <UserRegister />
+            <RegisterForm />
           </Provider>
         </BrowserRouter>
       );
@@ -82,7 +82,7 @@ describe("Given a LoginForm component", () => {
       render(
         <BrowserRouter>
           <Provider store={store}>
-            <UserRegister />
+            <RegisterForm />
           </Provider>
         </BrowserRouter>
       );
@@ -110,7 +110,7 @@ describe("Given a LoginForm component", () => {
       render(
         <BrowserRouter>
           <Provider store={store}>
-            <UserRegister />
+            <RegisterForm />
           </Provider>
         </BrowserRouter>
       );

@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 const LoginFormStyle = styled.div`
   @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap");
-
   input {
     caret-color: red;
   }
@@ -29,7 +28,6 @@ const LoginFormStyle = styled.div`
     padding: 40px;
     box-sizing: border-box;
     background: #ecf0f3;
-    box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
     position: absolute;
     top: 50%;
     left: 50%;
