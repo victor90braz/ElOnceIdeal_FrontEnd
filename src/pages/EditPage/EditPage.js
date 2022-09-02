@@ -11,9 +11,7 @@ const EditPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    (async () => {
-      dispatch(getPlayerThunk(playerId));
-    })();
+    dispatch(getPlayerThunk(playerId));
   }, [dispatch, playerId]);
 
   return <>{player.name && <EditPlayer />}</>;

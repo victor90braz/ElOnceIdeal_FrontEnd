@@ -7,12 +7,10 @@ const AccessControl = ({ children }) => {
   const { logged } = useSelector((state) => state.user);
 
   useEffect(() => {
-    (async () => {
-      if (!logged) {
-        navigate("/login");
-        return;
-      }
-    })();
+    if (!logged) {
+      navigate("/login");
+      return;
+    }
   }, [logged, navigate]);
 
   return children;

@@ -31,9 +31,7 @@ const DetailPlayer = () => {
   };
 
   useEffect(() => {
-    (async () => {
-      dispatch(getPlayerThunk(id));
-    })();
+    dispatch(getPlayerThunk(id));
   }, [dispatch, id]);
 
   return (
