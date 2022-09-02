@@ -27,15 +27,13 @@ function App() {
   const token = localStorage.getItem("token");
 
   useEffect(() => {
-    (async () => {
-      if (!logged && token) {
-        const userInfo = jwtDecode(token);
+    if (!logged && token) {
+      const userInfo = jwtDecode(token);
 
-        dispatch(loginActionCreator(userInfo));
-        navigate("/home");
-      }
-    })();
-  }, [logged, token, dispatch, navigate]);
+      dispatch(loginActionCreator(userInfo));
+      navigate("/home");
+    }
+  }, [dispatch, logged, navigate, token]);
 
   return (
     <AppStyle>

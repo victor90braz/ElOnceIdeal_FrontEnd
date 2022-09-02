@@ -8,9 +8,7 @@ const HomePage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    (async () => {
-      dispatch(loadPlayersThunk());
-    })();
+    dispatch(loadPlayersThunk());
   }, [dispatch]);
 
   return (
