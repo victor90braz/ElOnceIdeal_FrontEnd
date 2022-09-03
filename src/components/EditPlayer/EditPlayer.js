@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -135,6 +136,17 @@ const EditPlayer = () => {
           required
           placeholder="Click in share video and copy the embled id: https://youtu.be/embedId"
         />
+
+        <div className="video-container">
+          <iframe
+            width="600"
+            height="400"
+            src={`https://www.youtube.com/embed/${valuePlayer.video}`}
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            title="Youtube video"
+          />
+        </div>
 
         <label htmlFor="perfil">Perfil</label>
         <textarea
