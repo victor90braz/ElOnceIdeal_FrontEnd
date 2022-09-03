@@ -4,8 +4,7 @@ import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import { mockPlayer } from "../../mocks/playerMock";
 import store from "../../redux/store/store";
-
-import Player from "./Player";
+import PlayerCard from "./PlayerCard";
 
 describe("Given the Player component", () => {
   describe("When it's rendered with a user param that matches the user logged and the rendered delete button is clicked", () => {
@@ -13,7 +12,7 @@ describe("Given the Player component", () => {
       render(
         <Provider store={store}>
           <BrowserRouter>
-            <Player player={mockPlayer} />
+            <PlayerCard player={mockPlayer} />
           </BrowserRouter>
         </Provider>
       );

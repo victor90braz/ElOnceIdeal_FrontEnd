@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const PlayerStyles = styled.div`
+const PlayerCardStyles = styled.div`
   $color1: #e1c072;
   $color2: #fdeaa7;
   $color3: #725b16;
@@ -360,4 +360,4 @@ const PlayerStyles = styled.div`
   }
 `;
 
-export default PlayerStyles;
+export default PlayerCardStyles;

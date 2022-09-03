@@ -40,6 +40,11 @@ const EditPlayerStyle = styled.div`
     flex-direction: row;
   }
 
+  .video-container {
+    display: flex;
+    justify-content: center;
+  }
+
   .leftside {
     background: #030303;
     width: 25rem;

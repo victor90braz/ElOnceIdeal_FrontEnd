@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import Player from "../Player/Player";
+import PlayerCard from "../PlayerCard/PlayerCard";
 import ListPlayersStyles from "./ListPlayersStyles";
 
 const ListPlayers = () => {
@@ -10,7 +10,7 @@ const ListPlayers = () => {
       <h3>Squad Builder</h3>
 
       {allPlayers.map((player, index) => (
-        <Player player={player} key={index} />
+        <PlayerCard player={player} key={index} />
       ))}
     </ListPlayersStyles>
   );
