@@ -105,15 +105,16 @@ const CreatePlayer = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <div>
+            <p>
               <MdImageSearch size={40} className="icon" />
-              <ul>
-                <li>Click in the icon above to search an image;</li>
-                <li>Open a new tab image and copy the URL.</li>
-              </ul>
-            </div>
+            </p>
           </a>
         </label>
+
+        <ul>
+          <li>Click in the icon above to search an image;</li>
+          <li>Open a new tab image and copy the URL.</li>
+        </ul>
 
         <input
           id="image"
@@ -132,19 +133,20 @@ const CreatePlayer = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <div>
+            <p>
               <MdOndemandVideo size={40} className="icon" />
-              <ul>
-                <li>Click in the icon above to select the player;</li>
-                <li>On Youtube click in sharevideo and copy the ID;</li>
-                <li>
-                  https://youtu.be/
-                  <strong>6zQy_O3NoJU</strong>
-                </li>
-              </ul>
-            </div>
+            </p>
           </a>
         </label>
+
+        <ul>
+          <li>Click in the icon above to select the player;</li>
+          <li>On Youtube click in sharevideo and copy the ID;</li>
+          <li>
+            https://youtu.be/
+            <strong>6zQy_O3NoJU</strong>
+          </li>
+        </ul>
 
         <input
           id="video"
@@ -154,7 +156,7 @@ const CreatePlayer = () => {
           className="inputbox"
           name="video"
           required
-          placeholder="Click in sharevideo and copy the ID"
+          placeholder="6zQy_O3NoJU"
         />
 
         <label htmlFor="perfil">Perfil</label>
