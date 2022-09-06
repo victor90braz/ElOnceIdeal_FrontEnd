@@ -137,14 +137,11 @@ const EditPlayer = () => {
           placeholder="Click in share video and copy the embled id: https://youtu.be/embedId"
         />
 
-        <div className="video-container">
+        <div class="container">
           <iframe
-            width="100vw"
-            height="400"
+            class="responsive-iframe"
             src={`https://www.youtube.com/embed/${valuePlayer.video}`}
-            frameborder="0"
-            allow="autoplay; encrypted-media"
-            title="Youtube video"
+            title="YouTube video player"
           />
         </div>
 

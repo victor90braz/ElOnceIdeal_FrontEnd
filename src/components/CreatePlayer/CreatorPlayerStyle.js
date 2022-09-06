@@ -72,19 +72,25 @@ const CreatorPlayerStyle = styled.div`
     display: block;
     font-size: 1.1rem;
     font-weight: 400;
+
+    a {
+      margin-right: 10px;
+    }
+
+    .inputbox {
+      width: 92%;
+    }
   }
 
   .inputbox {
     color: #030303;
-    width: 100%;
-    padding: 0.5rem;
     border: none;
     border-bottom: 1.5px solid #ccc;
     margin-bottom: 1rem;
     border-radius: 0.3rem;
     font-family: "Roboto", sans-serif;
     color: #615a5a;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-weight: 500;
     outline: none;
   }

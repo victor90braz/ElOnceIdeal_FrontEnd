@@ -27,6 +27,7 @@ const LogOut = () => {
           }}
         >
           <AiOutlineLogout size={40} />
+          Logout
         </button>
       </NavLink>
     </LogOutStyle>

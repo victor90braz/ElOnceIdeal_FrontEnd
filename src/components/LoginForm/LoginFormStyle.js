@@ -51,7 +51,7 @@ const LoginFormStyle = styled.div`
     display: flex;
     justify-content: right;
     margin-top: 20px;
-    font-size: 0.8rem;
+    font-size: 1.2rem;
     color: #1da1f2;
 
     small {
