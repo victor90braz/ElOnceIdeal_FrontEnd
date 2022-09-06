@@ -63,7 +63,7 @@ const LoginForm = () => {
 
         <div className="register">
           <span>
-            You have not registered, please
+            Have you not signed? Please
             <NavLink to={"/register"} style={{ textDecoration: "none" }}>
               <small>REGISTER</small>
             </NavLink>

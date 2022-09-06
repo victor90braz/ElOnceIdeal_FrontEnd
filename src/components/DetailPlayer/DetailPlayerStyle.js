@@ -15,7 +15,6 @@ const DetailPlayerStyle = styled.ul`
     justify-content: center;
     align-items: center;
     transform: translateY(40px);
-    min-height: 100vh;
 
     .card {
       position: relative;
@@ -158,10 +157,10 @@ const DetailPlayerStyle = styled.ul`
       border: none;
     }
     .button-edit {
-      color: blue;
+      color: #ffffff;
     }
     .button-remove {
-      color: red;
+      color: #4cff00;
     }
   }
 `;

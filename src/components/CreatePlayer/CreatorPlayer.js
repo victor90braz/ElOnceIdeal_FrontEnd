@@ -101,27 +101,28 @@ const CreatorPlayer = () => {
         />
 
         <label htmlFor="image">
+          <p>Click in the icon to search image</p>
           <a
             href="https://www.futwiz.com/en/fifa22/custom-player"
             target="_blank"
             rel="noreferrer"
           >
-            <MdImageSearch size={40} />
+            <MdImageSearch size={45} />
           </a>
+          <input
+            id="image"
+            type="url"
+            value={formPlayer.image}
+            onChange={changePlayerData}
+            className="inputbox"
+            name="image"
+            required
+            placeholder="Past the image address here..."
+          />
         </label>
 
-        <input
-          id="image"
-          type="url"
-          value={formPlayer.image}
-          onChange={changePlayerData}
-          className="inputbox"
-          name="image"
-          required
-          placeholder="Search the player and past the image address here"
-        />
-
         <label htmlFor="video">
+          <p>Click in the icon to search video</p>
           <a
             href="https://www.youtube.com/watch?v=VMNGga0644w&ab_channel=100%25Atualizado"
             target="_blank"
@@ -129,18 +130,19 @@ const CreatorPlayer = () => {
           >
             <MdOndemandVideo size={40} />
           </a>
+
+          <input
+            id="video"
+            type="text"
+            value={formPlayer.video}
+            onChange={changePlayerData}
+            className="inputbox"
+            name="video"
+            required
+            placeholder="Paste the embled id: https://youtu.be/embedId ..."
+          />
         </label>
 
-        <input
-          id="video"
-          type="text"
-          value={formPlayer.video}
-          onChange={changePlayerData}
-          className="inputbox"
-          name="video"
-          required
-          placeholder="Click in share video and copy the embled id: https://youtu.be/embedId"
-        />
         <label htmlFor="perfil">Perfil</label>
         <textarea
           id="perfil"
