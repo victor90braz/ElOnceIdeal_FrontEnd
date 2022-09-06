@@ -6,13 +6,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import jwtDecode from "jwt-decode";
 import { loginActionCreator } from "./redux/features/userSlice";
-
 import EditPage from "./pages/EditPage/EditPage";
 import DetailPlayer from "./components/DetailPlayer/DetailPlayer";
 import LoginForm from "./components/LoginForm/LoginForm";
 import MenuNavigate from "./components/MenuNavigate/MenuNavigate";
 import RegisterForm from "./components/RegisterForm/RegisterForm";
-import CreatorPlayer from "./components/CreatePlayer/CreatorPlayer";
+import CreatePlayer from "./components/CreatePlayer/CreatePlayer";
 
 const AppStyle = styled.div`
   display: flex;
@@ -52,7 +51,7 @@ function App() {
           path="/create"
           element={
             <AccessControl>
-              <CreatorPlayer />
+              <CreatePlayer />
             </AccessControl>
           }
         />

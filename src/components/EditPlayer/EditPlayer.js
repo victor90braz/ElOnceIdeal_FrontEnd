@@ -93,10 +93,16 @@ const EditPlayer = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <p>
+            <div>
               <MdImageSearch size={40} />
-              <span>Search the player and past the image address here</span>
-            </p>
+              <ul>
+                <li>
+                  Click in the icon above to search the image of the player;
+                </li>
+                <li>Open the image in a new tab and copy the URL;</li>
+                <li>Past the image address below.</li>
+              </ul>
+            </div>
           </a>
         </label>
 
@@ -116,13 +122,17 @@ const EditPlayer = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <p>
+            <div>
               <MdOndemandVideo size={40} />
-              <span>
-                Click in share video and copy the embled id:
-                https://youtu.be/embedId
-              </span>
-            </p>
+              <ul>
+                <li>Click in the icon above to select the player;</li>
+                <li>On Youtube click in sharevideo and copy the ID;</li>
+                <li>
+                  https://youtu.be/
+                  <strong>6zQy_O3NoJU</strong>
+                </li>
+              </ul>
+            </div>
           </a>
         </label>
 
@@ -134,12 +144,12 @@ const EditPlayer = () => {
           className="inputbox"
           name="video"
           required
-          placeholder="Click in share video and copy the embled id: https://youtu.be/embedId"
+          placeholder="Click in sharevideo and copy the ID"
         />
 
-        <div class="container">
+        <div className="container">
           <iframe
-            class="responsive-iframe"
+            className="responsive-iframe"
             src={`https://www.youtube.com/embed/${valuePlayer.video}`}
             title="YouTube video player"
           />

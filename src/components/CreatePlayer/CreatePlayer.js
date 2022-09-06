@@ -3,10 +3,11 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { createrThunk } from "../../redux/thunks/playersThunks";
 import { correctAction, wrongAction } from "../modals/modals";
-import CreatorPlayerStyle from "./CreatorPlayerStyle";
-import { MdImageSearch, MdOndemandVideo } from "react-icons/md";
 
-const CreatorPlayer = () => {
+import { MdImageSearch, MdOndemandVideo } from "react-icons/md";
+import CreatePlayerStyle from "./CreatePlayerStyle";
+
+const CreatePlayer = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -74,10 +75,9 @@ const CreatorPlayer = () => {
   };
 
   return (
-    <CreatorPlayerStyle>
+    <CreatePlayerStyle>
       <form autoComplete="off" noValidate onSubmit={submit}>
-        <h1>CheckOut</h1>
-        <h2>Set Player Information</h2>
+        <h1>Create Player</h1>
 
         <label htmlFor="name">Name</label>
         <input
@@ -99,49 +99,63 @@ const CreatorPlayer = () => {
           name="nationality"
           required
         />
-
         <label htmlFor="image">
-          <p>Click in the icon to search image</p>
           <a
             href="https://www.futwiz.com/en/fifa22/custom-player"
             target="_blank"
             rel="noreferrer"
           >
-            <MdImageSearch size={45} />
+            <div>
+              <MdImageSearch size={40} className="icon" />
+              <ul>
+                <li>Click in the icon above to search an image;</li>
+                <li>Open a new tab image and copy the URL.</li>
+              </ul>
+            </div>
           </a>
-          <input
-            id="image"
-            type="url"
-            value={formPlayer.image}
-            onChange={changePlayerData}
-            className="inputbox"
-            name="image"
-            required
-            placeholder="Past the image address here..."
-          />
         </label>
 
+        <input
+          id="image"
+          type="url"
+          value={formPlayer.image}
+          onChange={changePlayerData}
+          className="inputbox"
+          name="image"
+          placeholder="https://www.futwiz.com/assets/img/fifa22/faces/158023.png"
+          required
+        />
+
         <label htmlFor="video">
-          <p>Click in the icon to search video</p>
           <a
             href="https://www.youtube.com/watch?v=VMNGga0644w&ab_channel=100%25Atualizado"
             target="_blank"
             rel="noreferrer"
           >
-            <MdOndemandVideo size={40} />
+            <div>
+              <MdOndemandVideo size={40} className="icon" />
+              <ul>
+                <li>Click in the icon above to select the player;</li>
+                <li>On Youtube click in sharevideo and copy the ID;</li>
+                <li>
+                  https://youtu.be/
+                  <strong>6zQy_O3NoJU</strong>
+                </li>
+              </ul>
+            </div>
           </a>
-
-          <input
-            id="video"
-            type="text"
-            value={formPlayer.video}
-            onChange={changePlayerData}
-            className="inputbox"
-            name="video"
-            required
-            placeholder="Paste the embled id: https://youtu.be/embedId ..."
-          />
         </label>
+
+        <input
+          id="video"
+          type="text"
+          value={formPlayer.video}
+          onChange={changePlayerData}
+          className="inputbox"
+          name="video"
+          required
+          placeholder="Click in sharevideo and copy the ID"
+        />
 
         <label htmlFor="perfil">Perfil</label>
         <textarea
@@ -151,9 +165,8 @@ const CreatorPlayer = () => {
           className="inputbox"
           name="perfil"
           required
-          rows="4"
-          cols="70"
-          placeholder="Write a description about the player"
+          rows="6"
+          cols="50"
         />
 
         <h3>Player Skills</h3>
@@ -255,8 +268,8 @@ const CreatorPlayer = () => {
           Add New Player
         </button>
       </form>
-    </CreatorPlayerStyle>
+    </CreatePlayerStyle>
   );
 };
 
-export default CreatorPlayer;
+export default CreatePlayer;
