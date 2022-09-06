@@ -20,8 +20,8 @@ const DetailPlayer = () => {
 
   const handleDelete = () => {
     dispatch(deletePlayerThunk(id));
-    correctAction(`${allPlayers.name} has been deleted`);
-    navigate(`/home`);
+    correctAction(`${allPlayers.name} deleted`);
+    navigate("/players");
   };
 
   const handleEdit = () => {
@@ -39,10 +39,12 @@ const DetailPlayer = () => {
       <div className="container-settings">
         <button onClick={handleEdit} className="button-edit">
           <FiEdit size={35} />
+          Edit
         </button>
 
         <button onClick={handleDelete} className="button-remove">
           <TiDelete size={50} />
+          Delete
         </button>
       </div>
       <ul>

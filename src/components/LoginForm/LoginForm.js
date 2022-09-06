@@ -38,12 +38,6 @@ const LoginForm = () => {
         <div>
           <img src="./top11-logo.png" alt="" className="brand-logo" />
         </div>
-        <small>Are you a new user?</small>
-        <NavLink to={"/register"} style={{ textDecoration: "none" }}>
-          <div className="register">
-            <small>Click to </small>REGISTER
-          </div>
-        </NavLink>
 
         <form autoComplete="off" noValidate onSubmit={handleSubmit}>
           <div className="inputs">
@@ -66,6 +60,15 @@ const LoginForm = () => {
             <button type="submit">LOGIN</button>
           </div>
         </form>
+
+        <div className="register">
+          <span>
+            You have not registered, please
+            <NavLink to={"/register"} style={{ textDecoration: "none" }}>
+              <small>REGISTER</small>
+            </NavLink>
+          </span>
+        </div>
       </div>
     </LoginFormStyle>
   );
