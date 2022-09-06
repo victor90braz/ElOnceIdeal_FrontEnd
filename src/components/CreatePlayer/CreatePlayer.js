@@ -129,7 +129,7 @@ const CreatePlayer = () => {
 
         <label htmlFor="video">
           <a
-            href="https://www.youtube.com/watch?v=VMNGga0644w&ab_channel=100%25Atualizado"
+            href="https://www.youtube.com/watch?v=rq3BQAy4B5Q&ab_channel=MagicalMessi"
             target="_blank"
             rel="noreferrer"
           >
