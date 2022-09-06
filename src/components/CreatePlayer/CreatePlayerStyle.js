@@ -1,17 +1,6 @@
 import styled from "styled-components";
 
-const CreatorPlayerStyle = styled.div`
-  h1,
-  h2,
-  h3,
-  label {
-    color: white;
-  }
-
-  h1,
-  h2 {
-    margin: 15px 0 15px;
-  }
+const CreatePlayerStyle = styled.div`
   .mainscreen {
     min-height: 100vh;
     width: 100%;
@@ -19,6 +8,19 @@ const CreatorPlayerStyle = styled.div`
     flex-direction: column;
     background-color: #dfdbe5;
     color: #963e7b;
+  }
+
+  h1,
+  h2,
+  h3,
+  label {
+    color: white;
+    margin: 15px 0 15px;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
   }
 
   .container-inputs {
@@ -48,6 +50,7 @@ const CreatorPlayerStyle = styled.div`
     width: 25rem;
     display: inline-flex;
     align-items: center;
+
     justify-content: center;
     border-top-left-radius: 1.5rem;
     border-bottom-left-radius: 1.5rem;
@@ -72,25 +75,27 @@ const CreatorPlayerStyle = styled.div`
     display: block;
     font-size: 1.1rem;
     font-weight: 400;
+  }
 
-    a {
-      margin-right: 10px;
-    }
+  .icon {
+    color: #00fd0a;
+  }
 
-    .inputbox {
-      width: 92%;
-    }
+  span {
+    color: white;
   }
 
   .inputbox {
     color: #030303;
+    width: 100%;
+    padding: 0.5rem 0;
     border: none;
     border-bottom: 1.5px solid #ccc;
     margin-bottom: 1rem;
     border-radius: 0.3rem;
     font-family: "Roboto", sans-serif;
     color: #615a5a;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: 500;
     outline: none;
   }
@@ -209,4 +214,4 @@ const CreatorPlayerStyle = styled.div`
   }
 `;
 
-export default CreatorPlayerStyle;
+export default CreatePlayerStyle;

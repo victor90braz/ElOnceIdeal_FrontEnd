@@ -18,6 +18,11 @@ const EditPlayerStyle = styled.div`
     margin: 15px 0 15px;
   }
 
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
   .container-inputs {
     display: flex;
     flex-direction: row;
@@ -44,10 +49,9 @@ const EditPlayerStyle = styled.div`
     position: relative;
     overflow: hidden;
     width: 100%;
-    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+    padding-top: 56.25%;
   }
 
-  /* Then style the iframe to fit in the container div with full height and width */
   .responsive-iframe {
     position: absolute;
     top: 0;
@@ -93,7 +97,7 @@ const EditPlayerStyle = styled.div`
   .inputbox {
     color: #030303;
     width: 100%;
-    padding: 0.5rem;
+    padding: 0.5rem 0;
     border: none;
     border-bottom: 1.5px solid #ccc;
     margin-bottom: 1rem;

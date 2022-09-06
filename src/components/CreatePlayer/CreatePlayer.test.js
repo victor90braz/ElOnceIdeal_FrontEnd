@@ -3,7 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import store from "../../redux/store/store";
-import CreatorPlayer from "./CreatorPlayer";
+import CreatePlayer from "./CreatePlayer";
 
 const mockUseNavigate = jest.fn();
 const mockUseDispatch = jest.fn();
@@ -23,7 +23,7 @@ describe("Given a CreatorPlayer component", () => {
       render(
         <Provider store={store}>
           <BrowserRouter>
-            <CreatorPlayer />
+            <CreatePlayer />
           </BrowserRouter>
         </Provider>
       );
@@ -43,7 +43,7 @@ describe("Given a CreatorPlayer component", () => {
       render(
         <Provider store={store}>
           <BrowserRouter>
-            <CreatorPlayer />
+            <CreatePlayer />
           </BrowserRouter>
         </Provider>
       );
@@ -72,12 +72,12 @@ describe("Given a CreatorPlayer component", () => {
   describe("Given a CreatorPlayer", () => {
     describe("When its called to be rendered", () => {
       test("Then it should create a CreatorPlayer with four list components", () => {
-        const listItem = 6;
+        const listItem = 11;
 
         render(
           <Provider store={store}>
             <BrowserRouter>
-              <CreatorPlayer />
+              <CreatePlayer />
             </BrowserRouter>
           </Provider>
         );
@@ -92,7 +92,7 @@ describe("Given a CreatorPlayer component", () => {
     render(
       <Provider store={store}>
         <BrowserRouter>
-          <CreatorPlayer />
+          <CreatePlayer />
         </BrowserRouter>
       </Provider>
     );
