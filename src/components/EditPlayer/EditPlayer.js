@@ -66,7 +66,6 @@ const EditPlayer = () => {
     <EditPlayerStyle>
       <form autoComplete="off" noValidate onSubmit={submitEdit}>
         <h2>EDIT PLAYER</h2>
-
         <label htmlFor="name">Name</label>
         <input
           id="name"
@@ -93,19 +92,15 @@ const EditPlayer = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <div>
-              <MdImageSearch size={40} />
+            <p>
+              <MdImageSearch size={40} className="icon" />
               <ul>
-                <li>
-                  Click in the icon above to search the image of the player;
-                </li>
-                <li>Open the image in a new tab and copy the URL;</li>
-                <li>Past the image address below.</li>
+                <li>Click in the icon above to search an image;</li>
+                <li>Open a new tab image and copy the URL.</li>
               </ul>
-            </div>
+            </p>
           </a>
         </label>
-
         <input
           id="image"
           type="url"
@@ -113,17 +108,17 @@ const EditPlayer = () => {
           onChange={editPlayerData}
           className="inputbox"
           name="image"
+          placeholder="https://www.futwiz.com/assets/img/fifa22/faces/158023.png"
           required
         />
-
         <label htmlFor="video">
           <a
             href="https://www.youtube.com/watch?v=VMNGga0644w&ab_channel=100%25Atualizado"
             target="_blank"
             rel="noreferrer"
           >
-            <div>
-              <MdOndemandVideo size={40} />
+            <p>
+              <MdOndemandVideo size={40} className="icon" />
               <ul>
                 <li>Click in the icon above to select the player;</li>
                 <li>On Youtube click in sharevideo and copy the ID;</li>
@@ -132,7 +127,7 @@ const EditPlayer = () => {
                   <strong>6zQy_O3NoJU</strong>
                 </li>
               </ul>
-            </div>
+            </p>
           </a>
         </label>
 
@@ -147,13 +142,13 @@ const EditPlayer = () => {
           placeholder="Click in sharevideo and copy the ID"
         />
 
-        <div className="container">
+        <p className="container">
           <iframe
             className="responsive-iframe"
             src={`https://www.youtube.com/embed/${valuePlayer.video}`}
             title="YouTube video player"
           />
-        </div>
+        </p>
 
         <label htmlFor="perfil">Perfil</label>
         <textarea
@@ -166,9 +161,7 @@ const EditPlayer = () => {
           rows="6"
           cols="50"
         />
-
         <h3>Player Skills</h3>
-
         <ul className="container-inputs">
           <li>
             <label htmlFor="speed">Speed</label>
@@ -261,7 +254,6 @@ const EditPlayer = () => {
             <output id="strength">{valuePlayer.strength}</output>
           </li>
         </ul>
-
         <button disabled={buttonDisabled} type="submit" className="button">
           Set Player
         </button>

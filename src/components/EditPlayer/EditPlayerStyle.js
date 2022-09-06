@@ -7,7 +7,6 @@ const EditPlayerStyle = styled.div`
     display: flex;
     flex-direction: column;
     background-color: #dfdbe5;
-
     color: #963e7b;
   }
 
@@ -28,8 +27,6 @@ const EditPlayerStyle = styled.div`
     flex-direction: row;
     align-items: center;
     gap: 3px;
-    list-style-type: none;
-    padding-left: 0;
   }
 
   .card {
@@ -78,6 +75,10 @@ const EditPlayerStyle = styled.div`
     width: 20em;
     height: 20em;
     border-radius: 100%;
+  }
+
+  .icon {
+    color: #00fd0a;
   }
 
   .rightside {
@@ -179,7 +180,6 @@ const EditPlayerStyle = styled.div`
 
     * {
       margin: 0;
-      padding: 0;
       font-family: "Poppins", sans-serif;
     }
     body {

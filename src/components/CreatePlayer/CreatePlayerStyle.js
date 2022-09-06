@@ -28,8 +28,6 @@ const CreatePlayerStyle = styled.div`
     flex-direction: row;
     align-items: center;
     gap: 3px;
-    list-style-type: none;
-    padding-left: 0;
   }
 
   .card {
@@ -54,6 +52,10 @@ const CreatePlayerStyle = styled.div`
     justify-content: center;
     border-top-left-radius: 1.5rem;
     border-bottom-left-radius: 1.5rem;
+  }
+
+  ul {
+    color: white;
   }
 
   .product {
@@ -170,7 +172,7 @@ const CreatePlayerStyle = styled.div`
 
     * {
       margin: 0;
-      padding: 0;
+
       font-family: "Poppins", sans-serif;
     }
     body {
