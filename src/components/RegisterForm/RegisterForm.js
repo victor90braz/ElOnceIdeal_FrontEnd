@@ -37,7 +37,7 @@ const RegisterForm = () => {
     }
     await dispatch(registerThunk(formValue));
     correctAction(`${formValue.name} has been registered`);
-    navigate("/login");
+    navigate("/home");
   };
 
   return (
@@ -46,12 +46,6 @@ const RegisterForm = () => {
         <div>
           <img src="./top11-logo.png" alt="" className="brand-logo" />
         </div>
-        <small>Have you already an account? </small>
-        <NavLink to={"/login"} style={{ textDecoration: "none" }}>
-          <div className="login">
-            <small>Back to </small>Login
-          </div>
-        </NavLink>
 
         <form autoComplete="off" noValidate onSubmit={handleSubmit}>
           <div className="inputs">
@@ -83,6 +77,14 @@ const RegisterForm = () => {
             <button type="submit">REGISTER</button>
           </div>
         </form>
+        <div className="login">
+          <span>
+            If you have already registered, please
+            <NavLink to={"/login"} style={{ textDecoration: "none" }}>
+              <small>LOGIN</small>
+            </NavLink>
+          </span>
+        </div>
       </div>
     </RegisterFormStyle>
   );

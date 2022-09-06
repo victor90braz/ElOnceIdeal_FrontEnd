@@ -43,6 +43,7 @@ const EditPlayerStyle = styled.div`
   .video-container {
     display: flex;
     justify-content: center;
+    width: 100vw;
   }
 
   .leftside {
@@ -50,6 +51,7 @@ const EditPlayerStyle = styled.div`
     width: 25rem;
     display: inline-flex;
     align-items: center;
+
     justify-content: center;
     border-top-left-radius: 1.5rem;
     border-bottom-left-radius: 1.5rem;

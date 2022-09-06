@@ -15,6 +15,7 @@ const DetailPlayerStyle = styled.ul`
     justify-content: center;
     align-items: center;
     transform: translateY(40px);
+    min-height: 100vh;
 
     .card {
       position: relative;

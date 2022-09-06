@@ -139,7 +139,7 @@ const EditPlayer = () => {
 
         <div className="video-container">
           <iframe
-            width="600"
+            width="100vw"
             height="400"
             src={`https://www.youtube.com/embed/${valuePlayer.video}`}
             frameborder="0"

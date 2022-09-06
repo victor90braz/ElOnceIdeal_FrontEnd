@@ -48,11 +48,17 @@ const LoginFormStyle = styled.div`
     text-decoration: "none";
   }
   .register {
-    margin-top: 10px;
-    font-weight: 900;
-    font-size: 1.8rem;
+    display: flex;
+    justify-content: right;
+    margin-top: 20px;
+    font-size: 0.8rem;
     color: #1da1f2;
-    letter-spacing: 1px;
+
+    small {
+      color: red;
+      font-weight: 900;
+      margin-left: 10px;
+    }
   }
 
   .inputs {
