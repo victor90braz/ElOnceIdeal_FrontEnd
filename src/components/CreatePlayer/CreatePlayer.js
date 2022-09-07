@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { createrThunk } from "../../redux/thunks/playersThunks";
 import { correctAction, wrongAction } from "../modals/modals";
+
 import { MdImageSearch, MdOndemandVideo } from "react-icons/md";
 import CreatePlayerStyle from "./CreatePlayerStyle";
 
@@ -104,20 +105,15 @@ const CreatePlayer = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <p>
+            <div>
               <MdImageSearch size={40} className="icon" />
-            </p>
+              <ul>
+                <li>Click in the icon above to search an image;</li>
+                <li>Open a new tab image and copy the URL.</li>
+              </ul>
+            </div>
           </a>
         </label>
-
-        <h3>Follow the steps:</h3>
-        <ul>
-          <li>Click in the icon above and choose the player image;</li>
-          <li>Open the image in a new tab and copy the URL;</li>
-          <li>
-            URL: https://www.futwiz.com/assets/img/fifa22/faces/158023.png
-          </li>
-        </ul>
 
         <input
           id="image"
@@ -126,30 +122,27 @@ const CreatePlayer = () => {
           onChange={changePlayerData}
           className="inputbox"
           name="image"
-          placeholder="URL image"
+          placeholder="https://www.futwiz.com/assets/img/fifa22/faces/158023.png"
           required
         />
 
         <label htmlFor="video">
           <a
-            href="https://www.youtube.com/watch?v=rq3BQAy4B5Q&ab_channel=MagicalMessi"
+            href="https://www.youtube.com/watch?v=VMNGga0644w&ab_channel=100%25Atualizado"
             target="_blank"
             rel="noreferrer"
           >
-            <p>
+            <div>
               <MdOndemandVideo size={40} className="icon" />
-
-              <h3>Follow the steps:</h3>
               <ul>
-                <li>Click in the icon above to open Youtube; </li>
-                <li>Select your player and click in sharevideo;</li>
-                <li>Copy the Embled ID:</li>
+                <li>Click in the icon above to select the player;</li>
+                <li>On Youtube click in sharevideo and copy the ID;</li>
                 <li>
                   https://youtu.be/
-                  <span>6zQy_O3NoJU</span>
+                  <strong>6zQy_O3NoJU</strong>
                 </li>
               </ul>
-            </p>
+            </div>
           </a>
         </label>
 
@@ -161,7 +154,7 @@ const CreatePlayer = () => {
           className="inputbox"
           name="video"
           required
-          placeholder="Ex: 6zQy_O3NoJU"
+          placeholder="Click in sharevideo and copy the ID"
         />
 
         <label htmlFor="perfil">Perfil</label>
