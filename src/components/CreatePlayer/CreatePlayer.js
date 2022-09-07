@@ -141,7 +141,8 @@ const CreatePlayer = () => {
 
         <ul>
           <li>Click in the icon above to select the player;</li>
-          <li>On Youtube click in sharevideo and copy the ID;</li>
+          <li>On Youtube click in sharevideo;</li>
+          <li>Copy the ID.</li>
           <li>
             https://youtu.be/
             <strong>6zQy_O3NoJU</strong>
