@@ -1,6 +1,6 @@
 # El Once Ideal
 
-[El Once Ideal](https://victor-braz-front-final-project-202204-bcn.netlify.app/) where you can create your favourite football players' cards. You can also delete or edit your own cards.
+[El Once Ideal]https://victor-braz-front-final-project-202204-bcn.netlify.app) where you can create your favourite football players' cards. You can also delete or edit your own cards.
 
 The technologies used for this proyect were:
 
@@ -28,7 +28,7 @@ Trello | Postman | Figma | Git
 
 ## Links
 
-🌐✨ [El Once Ideal](https://victor-braz-front-final-project-202204-bcn.netlify.app/login)
+🌐✨ [El Once Ideal](https://victor-braz-front-final-project-202204-bcn.netlify.app)
 
 💻🗄 [Back deploy on Render](https://victor-braz-back-final-project-202204-bcn.onrender.com/)
 
