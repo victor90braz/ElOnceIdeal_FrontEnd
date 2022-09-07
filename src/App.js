@@ -31,6 +31,7 @@ function App() {
       const userInfo = jwtDecode(token);
 
       dispatch(loginActionCreator(userInfo));
+      navigate("/home");
     }
   }, [dispatch, logged, navigate, token]);
 

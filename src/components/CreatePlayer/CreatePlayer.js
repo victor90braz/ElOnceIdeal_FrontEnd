@@ -106,6 +106,7 @@ const CreatePlayer = () => {
             rel="noreferrer"
           >
             <MdImageSearch size={40} className="icon" />
+            FIFA 22 Custom Card
           </a>
         </label>
 
@@ -135,6 +136,7 @@ const CreatePlayer = () => {
             rel="noreferrer"
           >
             <MdOndemandVideo size={40} className="icon" />
+            YouTube
           </a>
         </label>
 
