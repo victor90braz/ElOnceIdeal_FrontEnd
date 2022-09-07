@@ -92,7 +92,7 @@ const EditPlayer = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <p>
+            <div>
               <MdImageSearch size={40} className="icon" />
 
               <h3>Follow the steps:</h3>
@@ -103,7 +103,7 @@ const EditPlayer = () => {
                   URL: https://www.futwiz.com/assets/img/fifa22/faces/158023.png
                 </li>
               </ul>
-            </p>
+            </div>
           </a>
         </label>
 
@@ -124,9 +124,9 @@ const EditPlayer = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <p>
+            <div>
               <MdOndemandVideo size={40} className="icon" />
-            </p>
+            </div>
           </a>
         </label>
 

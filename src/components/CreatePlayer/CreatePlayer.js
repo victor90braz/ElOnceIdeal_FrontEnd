@@ -105,15 +105,15 @@ const CreatePlayer = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <div>
-              <MdImageSearch size={40} className="icon" />
-              <ul>
-                <li>Click in the icon above to search an image;</li>
-                <li>Open a new tab image and copy the URL.</li>
-              </ul>
-            </div>
+            <MdImageSearch size={40} className="icon" />{" "}
           </a>
         </label>
+
+        <h3>Follow the steps:</h3>
+        <ul>
+          <li>Click in the icon above to search an image;</li>
+          <li>Open a new tab image and copy the URL.</li>
+        </ul>
 
         <input
           id="image"
