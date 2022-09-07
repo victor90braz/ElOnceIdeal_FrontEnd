@@ -95,6 +95,10 @@ const EditPlayerStyle = styled.div`
     font-weight: 400;
   }
 
+  ul li {
+    color: white;
+  }
+
   .inputbox {
     color: #030303;
     width: 100%;
