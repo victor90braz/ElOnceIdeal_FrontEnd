@@ -105,14 +105,16 @@ const CreatePlayer = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <MdImageSearch size={40} className="icon" />{" "}
+            <MdImageSearch size={40} className="icon" />
           </a>
         </label>
 
         <h3>Follow the steps:</h3>
         <ul>
-          <li>Click in the icon above to search an image;</li>
-          <li>Open a new tab image and copy the URL.</li>
+          <li>Click in the icon above;</li>
+          <li>Search an image;</li>
+          <li>Open the image adress in a new page;</li>
+          <li>Copy the URL.</li>
         </ul>
 
         <input
@@ -122,7 +124,7 @@ const CreatePlayer = () => {
           onChange={changePlayerData}
           className="inputbox"
           name="image"
-          placeholder="https://www.futwiz.com/assets/img/fifa22/faces/158023.png"
+          placeholder="Paste the URL image here..."
           required
         />
 
@@ -132,19 +134,20 @@ const CreatePlayer = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <div>
-              <MdOndemandVideo size={40} className="icon" />
-              <ul>
-                <li>Click in the icon above to select the player;</li>
-                <li>On Youtube click in sharevideo and copy the ID;</li>
-                <li>
-                  https://youtu.be/
-                  <strong>6zQy_O3NoJU</strong>
-                </li>
-              </ul>
-            </div>
+            <MdOndemandVideo size={40} className="icon" />
           </a>
         </label>
+
+        <h3>Follow the steps:</h3>
+        <ul>
+          <li>Click in the icon above;</li>
+          <li>On Youtube select your player;</li>
+          <li>Click in sharevideo and copy the embledID;</li>
+          <li>
+            https://youtu.be/
+            <strong>6zQy_O3NoJU</strong>
+          </li>
+        </ul>
 
         <input
           id="video"
@@ -154,7 +157,7 @@ const CreatePlayer = () => {
           className="inputbox"
           name="video"
           required
-          placeholder="Click in sharevideo and copy the ID"
+          placeholder="Ex: 6zQy_O3NoJU"
         />
 
         <label htmlFor="perfil">Perfil</label>

@@ -20,7 +20,7 @@ const CreatePlayerStyle = styled.div`
 
   a {
     text-decoration: none;
-    color: white;
+    color: #00fd0a;
   }
 
   .container-inputs {

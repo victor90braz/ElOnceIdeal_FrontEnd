@@ -66,6 +66,7 @@ const EditPlayer = () => {
     <EditPlayerStyle>
       <form autoComplete="off" noValidate onSubmit={submitEdit}>
         <h2>EDIT PLAYER</h2>
+
         <label htmlFor="name">Name</label>
         <input
           id="name"
@@ -76,6 +77,7 @@ const EditPlayer = () => {
           name="name"
           required
         />
+
         <label htmlFor="nationality">Nationality</label>
         <input
           id="nationality"
@@ -86,26 +88,25 @@ const EditPlayer = () => {
           name="nationality"
           required
         />
+
         <label htmlFor="image">
           <a
             href="https://www.futwiz.com/en/fifa22/custom-player"
             target="_blank"
             rel="noreferrer"
           >
-            <div>
-              <MdImageSearch size={40} className="icon" />
-
-              <h3>Follow the steps:</h3>
-              <ul>
-                <li>Click in the icon above and choose the player image;</li>
-                <li>Open the image in a new tab and copy the URL;</li>
-                <li>
-                  URL: https://www.futwiz.com/assets/img/fifa22/faces/158023.png
-                </li>
-              </ul>
-            </div>
+            <MdImageSearch size={40} className="icon" />
+            FIFA 22 Custom Card
           </a>
         </label>
+
+        <h3>Follow the steps:</h3>
+        <ul>
+          <li>Click in the icon above;</li>
+          <li>Search an image;</li>
+          <li>Open the image adress in a new page;</li>
+          <li>Copy the URL.</li>
+        </ul>
 
         <input
           id="image"
@@ -114,30 +115,27 @@ const EditPlayer = () => {
           onChange={editPlayerData}
           className="inputbox"
           name="image"
-          placeholder="https://www.futwiz.com/assets/img/fifa22/faces/158023.png"
           required
         />
 
         <label htmlFor="video">
           <a
-            href="https://www.youtube.com/watch?v=rq3BQAy4B5Q&ab_channel=MagicalMessi"
+            href="https://www.youtube.com/watch?v=VMNGga0644w&ab_channel=100%25Atualizado"
             target="_blank"
             rel="noreferrer"
           >
-            <div>
-              <MdOndemandVideo size={40} className="icon" />
-            </div>
+            <MdOndemandVideo size={40} className="icon" /> YouTube
           </a>
         </label>
 
         <h3>Follow the steps:</h3>
         <ul>
-          <li>Click in the icon above to open Youtube; </li>
-          <li>Select your player and click in sharevideo;</li>
-          <li>Copy the Embled ID:</li>
+          <li>Click in the icon above;</li>
+          <li>On Youtube select your player;</li>
+          <li>Click in sharevideo and copy the embledID;</li>
           <li>
             https://youtu.be/
-            <span>6zQy_O3NoJU</span>
+            <strong>6zQy_O3NoJU</strong>
           </li>
         </ul>
 
@@ -149,7 +147,6 @@ const EditPlayer = () => {
           className="inputbox"
           name="video"
           required
-          placeholder="Click in sharevideo and copy the ID"
         />
 
         <p className="container">
