@@ -21,7 +21,7 @@ jest.mock("react-router-dom", () => ({
 describe("Given a App component", () => {
   describe("When it's invoked", () => {
     test("Then it should render the text 'REGISTER'", () => {
-      const expectedText = "REGISTER";
+      const expectedText = "El Once Ideal";
 
       render(
         <>
