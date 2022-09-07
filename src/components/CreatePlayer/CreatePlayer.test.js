@@ -72,7 +72,7 @@ describe("Given a CreatorPlayer component", () => {
   describe("Given a CreatorPlayer", () => {
     describe("When its called to be rendered", () => {
       test("Then it should create a CreatorPlayer with four list components", () => {
-        const listItem = 11;
+        const listItem = 12;
 
         render(
           <Provider store={store}>
