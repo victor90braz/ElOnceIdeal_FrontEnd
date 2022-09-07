@@ -193,9 +193,7 @@ const EditPlayerStyle = styled.div`
       min-height: 100vh;
       background: #151515;
     }
-    div {
-      position: absolute;
-    }
+
     #rangeValue {
       position: relative;
       display: block;
