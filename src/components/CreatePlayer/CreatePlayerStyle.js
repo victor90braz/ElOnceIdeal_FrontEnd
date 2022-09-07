@@ -182,13 +182,6 @@ const CreatePlayerStyle = styled.div`
       min-height: 100vh;
       background: #151515;
     }
-    div {
-      position: absolute;
-    }
-
-    .embledId2 {
-      color: red;
-    }
 
     #rangeValue {
       position: relative;
