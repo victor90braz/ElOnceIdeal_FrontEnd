@@ -20,6 +20,7 @@ const LoginForm = () => {
     event.preventDefault();
     setFormValue({ ...formValue, [event.target.id]: event.target.value });
   };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -29,7 +30,7 @@ const LoginForm = () => {
     }
 
     await dispatch(loginThunk(formValue));
-    navigate("/home");
+    navigate("/create");
   };
 
   return (

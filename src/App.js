@@ -12,7 +12,7 @@ import LoginForm from "./components/LoginForm/LoginForm";
 import MenuNavigate from "./components/MenuNavigate/MenuNavigate";
 import RegisterForm from "./components/RegisterForm/RegisterForm";
 import CreatePlayer from "./components/CreatePlayer/CreatePlayer";
-import { loadPlayersThunk } from "./redux/thunks/playersThunks";
+import React from "react";
 
 const AppStyle = styled.div`
   display: flex;
@@ -31,8 +31,6 @@ function App() {
       const userInfo = jwtDecode(token);
 
       dispatch(loginActionCreator(userInfo));
-      dispatch(loadPlayersThunk());
-      navigate("/home");
     }
   }, [dispatch, logged, navigate, token]);
 
