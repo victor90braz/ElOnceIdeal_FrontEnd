@@ -94,13 +94,19 @@ const EditPlayer = () => {
           >
             <p>
               <MdImageSearch size={40} className="icon" />
-              <ul>
-                <li>Click in the icon above to search an image;</li>
-                <li>Open a new tab image and copy the URL.</li>
-              </ul>
             </p>
           </a>
         </label>
+
+        <h3>Follow the steps:</h3>
+        <ul>
+          <li>Click in the icon above and choose the player image;</li>
+          <li>Open the image in a new tab and copy the URL;</li>
+          <li>
+            URL: https://www.futwiz.com/assets/img/fifa22/faces/158023.png
+          </li>
+        </ul>
+
         <input
           id="image"
           type="url"
@@ -111,6 +117,7 @@ const EditPlayer = () => {
           placeholder="https://www.futwiz.com/assets/img/fifa22/faces/158023.png"
           required
         />
+
         <label htmlFor="video">
           <a
             href="https://www.youtube.com/watch?v=rq3BQAy4B5Q&ab_channel=MagicalMessi"
@@ -119,17 +126,20 @@ const EditPlayer = () => {
           >
             <p>
               <MdOndemandVideo size={40} className="icon" />
-              <ul>
-                <li>Click in the icon above to select the player;</li>
-                <li>On Youtube click in sharevideo and copy the ID;</li>
-                <li>
-                  https://youtu.be/
-                  <strong>6zQy_O3NoJU</strong>
-                </li>
-              </ul>
             </p>
           </a>
         </label>
+
+        <h3>Follow the steps:</h3>
+        <ul>
+          <li>Click in the icon above to open Youtube; </li>
+          <li>Select your player and click in sharevideo;</li>
+          <li>Copy the Embled ID:</li>
+          <li>
+            https://youtu.be/
+            <span>6zQy_O3NoJU</span>
+          </li>
+        </ul>
 
         <input
           id="video"
