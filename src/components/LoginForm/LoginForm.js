@@ -30,7 +30,7 @@ const LoginForm = () => {
     }
 
     await dispatch(loginThunk(formValue));
-    navigate("/create");
+    navigate("/home");
   };
 
   return (
