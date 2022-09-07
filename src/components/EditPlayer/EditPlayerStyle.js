@@ -10,6 +10,7 @@ const EditPlayerStyle = styled.div`
     color: #963e7b;
   }
 
+  h1,
   h2,
   h3,
   label {
@@ -19,7 +20,7 @@ const EditPlayerStyle = styled.div`
 
   a {
     text-decoration: none;
-    color: white;
+    color: #00fd0a;
   }
 
   .container-inputs {
@@ -42,23 +43,6 @@ const EditPlayerStyle = styled.div`
     flex-direction: row;
   }
 
-  .container {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    padding-top: 56.25%;
-  }
-
-  .responsive-iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-  }
-
   .leftside {
     background: #030303;
     width: 25rem;
@@ -70,15 +54,15 @@ const EditPlayerStyle = styled.div`
     border-bottom-left-radius: 1.5rem;
   }
 
+  ul {
+    color: white;
+  }
+
   .product {
     object-fit: cover;
     width: 20em;
     height: 20em;
     border-radius: 100%;
-  }
-
-  .icon {
-    color: #00fd0a;
   }
 
   .rightside {
@@ -95,7 +79,11 @@ const EditPlayerStyle = styled.div`
     font-weight: 400;
   }
 
-  ul li {
+  .icon {
+    color: #00fd0a;
+  }
+
+  span {
     color: white;
   }
 
@@ -125,6 +113,23 @@ const EditPlayerStyle = styled.div`
   }
   .expcvv_text2 {
     padding: 0 1rem;
+  }
+
+  .container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%;
+  }
+
+  .responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
   }
 
   .button {
@@ -184,6 +189,7 @@ const EditPlayerStyle = styled.div`
 
     * {
       margin: 0;
+
       font-family: "Poppins", sans-serif;
     }
     body {
