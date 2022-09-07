@@ -138,20 +138,20 @@ const CreatePlayer = () => {
           >
             <p>
               <MdOndemandVideo size={40} className="icon" />
+
+              <h3>Follow the steps:</h3>
+              <ul>
+                <li>Click in the icon above to open Youtube; </li>
+                <li>Select your player and click in sharevideo;</li>
+                <li>Copy the Embled ID:</li>
+                <li>
+                  https://youtu.be/
+                  <span>6zQy_O3NoJU</span>
+                </li>
+              </ul>
             </p>
           </a>
         </label>
-
-        <h3>Follow the steps:</h3>
-        <ul>
-          <li>Click in the icon above to open Youtube; </li>
-          <li>Select your player and click in sharevideo;</li>
-          <li>Copy the Embled ID:</li>
-          <li>
-            https://youtu.be/
-            <span>6zQy_O3NoJU</span>
-          </li>
-        </ul>
 
         <input
           id="video"
