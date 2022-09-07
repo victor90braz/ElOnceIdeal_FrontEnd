@@ -94,18 +94,18 @@ const EditPlayer = () => {
           >
             <p>
               <MdImageSearch size={40} className="icon" />
+
+              <h3>Follow the steps:</h3>
+              <ul>
+                <li>Click in the icon above and choose the player image;</li>
+                <li>Open the image in a new tab and copy the URL;</li>
+                <li>
+                  URL: https://www.futwiz.com/assets/img/fifa22/faces/158023.png
+                </li>
+              </ul>
             </p>
           </a>
         </label>
-
-        <h3>Follow the steps:</h3>
-        <ul>
-          <li>Click in the icon above and choose the player image;</li>
-          <li>Open the image in a new tab and copy the URL;</li>
-          <li>
-            URL: https://www.futwiz.com/assets/img/fifa22/faces/158023.png
-          </li>
-        </ul>
 
         <input
           id="image"
