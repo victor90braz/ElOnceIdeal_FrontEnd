@@ -89,6 +89,7 @@ const DetailPlayerStyle = styled.ul`
             justify-content: space-around;
             margin: 20px;
             color: white;
+
             h3 {
               font-size: 1em;
               line-height: 1.2em;

@@ -21,7 +21,7 @@ const DetailPlayer = () => {
   const handleDelete = () => {
     dispatch(deletePlayerThunk(id));
     correctAction(`${allPlayers.name} deleted`);
-    navigate("/players");
+    navigate("/home");
   };
 
   const handleEdit = () => {
